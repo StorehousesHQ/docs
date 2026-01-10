@@ -1,0 +1,423 @@
+---
+title: "For Firms"
+description: "Complete guide for estate managers, wealth advisors, and law firms using the Estate Manager Portal"
+---
+
+## Getting Started
+
+This guide walks you through setting up your firm, managing your team, and working with client portfolios in the Estate Manager Portal.
+
+## Creating Your Firm
+
+<Steps>
+  <Step title="Sign Up for Enterprise">
+    Contact Storehouses to set up your Enterprise account and create your firm
+  </Step>
+  <Step title="Configure Firm Details">
+    Set your firm name, which generates your unique lookup code (slug). Clients use this code to find and invite your firm.
+
+    **Example**: Firm name "Smith Estate Planning" might have slug `smith-estate-planning`
+  </Step>
+  <Step title="Set Up Billing">
+    Configure per-seat billing for your team members
+  </Step>
+  <Step title="Access the Portal">
+    Navigate to [portal.storehouses.app](https://portal.storehouses.app) to access your firm dashboard
+  </Step>
+</Steps>
+
+## Managing Your Team
+
+### Firm User Roles
+
+Your team members can have different roles with varying capabilities:
+
+| Role | Description | Capabilities |
+|------|-------------|--------------|
+| **Owner** | Firm creator with full control | Billing, settings, delete firm, manage all users and clients |
+| **Admin** | Administrative access | Manage seats, view all clients, assign clients to team members |
+| **Manager** | Standard employee | Work with assigned clients only, full access within assignments |
+| **Viewer** | Read-only employee | View assigned client data only, cannot make changes |
+
+<Note>
+  Each firm has exactly one Owner. The Owner role cannot be transferred but can be changed by contacting support.
+</Note>
+
+### Adding Team Members
+
+<Steps>
+  <Step title="Go to Team Settings">
+    Navigate to the Team section in your firm settings
+  </Step>
+  <Step title="Click 'Add Seat'">
+    Enter the email address of the team member you want to invite
+  </Step>
+  <Step title="Assign Role">
+    Choose the appropriate role (Admin, Manager, or Viewer)
+  </Step>
+  <Step title="Send Invitation">
+    The team member receives an email invitation to join your firm
+  </Step>
+  <Step title="Accept Invitation">
+    Once they accept, they appear as an active seat and can access the portal
+  </Step>
+</Steps>
+
+### Managing Seats
+
+<Tabs>
+  <Tab title="Active Seats">
+    Active seats are team members who have accepted their invitation and can access the portal.
+
+    **Actions available**:
+    - Change role (except Owner)
+    - Manage client assignments
+    - Remove from firm
+  </Tab>
+  <Tab title="Pending Invitations">
+    Pending seats are invitations that haven't been accepted yet.
+
+    **Actions available**:
+    - Resend invitation email
+    - Cancel invitation
+    - Change role before acceptance
+  </Tab>
+</Tabs>
+
+<Warning>
+  Removing a seat immediately revokes that person's access to all client data. This action cannot be undone.
+</Warning>
+
+## Connecting with Clients
+
+There are two ways to establish a firm-client relationship:
+
+### Option A: Request Access from a Client
+
+Use this when you know a client's email and want to initiate the relationship.
+
+<Steps>
+  <Step title="Go to Clients Section">
+    Navigate to the Clients area in the portal
+  </Step>
+  <Step title="Click 'Request Client Access'">
+    Enter the client's email address
+  </Step>
+  <Step title="Wait for Approval">
+    The client receives an email notification about your request
+  </Step>
+  <Step title="Client Reviews Request">
+    The client sees your request in their Account Settings under "Estate Managers"
+  </Step>
+  <Step title="Client Approves">
+    When approved, the relationship becomes active and you can access their portfolio
+  </Step>
+</Steps>
+
+**What clients can customize during approval**:
+- Permission preset (View Only, Standard Management, etc.)
+- Individual permission toggles
+- Whether to allow specific actions like exporting or managing heirs
+
+### Option B: Client Invites Your Firm
+
+Clients can proactively invite your firm using your lookup code.
+
+<Steps>
+  <Step title="Share Your Lookup Code">
+    Give your client your firm's lookup code (slug)
+  </Step>
+  <Step title="Client Enters Code">
+    They go to Account Settings → Estate Managers and enter your code
+  </Step>
+  <Step title="Client Sets Permissions">
+    They choose what access level to grant your firm
+  </Step>
+  <Step title="Firm Receives Notification">
+    You're notified of the pending invitation
+  </Step>
+  <Step title="Accept Invitation">
+    Accept in the portal to activate the relationship
+  </Step>
+</Steps>
+
+<Tip>
+  Include your firm's lookup code in your onboarding materials so clients can easily invite you.
+</Tip>
+
+## Working with Client Data
+
+### Client Dashboard
+
+The client list shows all clients your firm has relationships with:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | Client's display name |
+| **Status** | Relationship status (Active, Pending, Revoked) |
+| **Portfolio Value** | Total value of client's portfolio |
+| **Items** | Number of items in their portfolio |
+| **Permissions** | Quick view of granted permissions |
+| **Last Activity** | When you or your team last accessed their data |
+
+### Viewing Client Portfolios
+
+Click any client to view their portfolio:
+
+<CardGroup cols={2}>
+  <Card title="Dashboard View" icon="chart-pie">
+    Portfolio overview with value charts, allocation breakdowns, and key statistics
+  </Card>
+  <Card title="Items List" icon="list">
+    Complete list of client items with filtering, sorting, and search
+  </Card>
+  <Card title="Collections" icon="folder">
+    Client's collections and organization structure
+  </Card>
+  <Card title="Locations" icon="location-dot">
+    Where client items are stored
+  </Card>
+</CardGroup>
+
+### Editing Client Items
+
+If your firm has Edit Items permission:
+
+<Steps>
+  <Step title="Navigate to Item">
+    Click on any item in the client's portfolio
+  </Step>
+  <Step title="Click 'Edit'">
+    Open the edit form for that item
+  </Step>
+  <Step title="Make Changes">
+    Update any fields as needed
+  </Step>
+  <Step title="Save">
+    Changes are saved and logged in the audit trail
+  </Step>
+</Steps>
+
+<Note>
+  All edits are logged with your user ID, timestamp, and the changes made. Clients can view this activity in their audit log.
+</Note>
+
+### Adding New Items
+
+If your firm has Edit Items permission:
+
+<Steps>
+  <Step title="Go to Client's Items">
+    Navigate to the client's item list
+  </Step>
+  <Step title="Click 'Add Item'">
+    Choose the asset category
+  </Step>
+  <Step title="Fill in Details">
+    Enter item information, values, and upload images
+  </Step>
+  <Step title="Save Item">
+    Item is added to the client's portfolio
+  </Step>
+</Steps>
+
+### Firm Notes
+
+Firm notes are private annotations that only your firm can see—clients cannot view them.
+
+**Use cases**:
+- Internal documentation about items
+- Notes for team members
+- Action items or follow-ups
+- Appraisal notes
+- Legal annotations
+
+<Steps>
+  <Step title="Open Item Detail">
+    Navigate to any client item
+  </Step>
+  <Step title="Click 'Add Firm Note'">
+    Open the firm note modal
+  </Step>
+  <Step title="Enter Note">
+    Write your private note
+  </Step>
+  <Step title="Save">
+    Note is saved and visible only to your firm
+  </Step>
+</Steps>
+
+<Warning>
+  While clients cannot see firm notes, all note activity is still recorded in the audit log (the content is not visible to clients, but they can see that notes were added or modified).
+</Warning>
+
+## Assigning Clients to Team Members
+
+For firms with multiple employees, you control who can access which clients.
+
+### How Assignments Work
+
+- **Owners and Admins**: Can see all clients automatically
+- **Managers and Viewers**: Can only see clients they're explicitly assigned to
+
+### Creating Assignments
+
+<Steps>
+  <Step title="Go to Client's Settings">
+    Open the client detail page and find "Team Assignments"
+  </Step>
+  <Step title="Click 'Assign Team Member'">
+    Select from available managers and viewers
+  </Step>
+  <Step title="Confirm Assignment">
+    The team member can now access this client's data
+  </Step>
+</Steps>
+
+### Bulk Assignments
+
+For efficiency, you can also assign team members to multiple clients at once:
+
+<Steps>
+  <Step title="Go to Team Member's Profile">
+    Find the team member in your firm settings
+  </Step>
+  <Step title="Click 'Manage Assignments'">
+    See all clients and their assignment status
+  </Step>
+  <Step title="Toggle Assignments">
+    Enable or disable access to multiple clients
+  </Step>
+</Steps>
+
+## Exporting Client Data
+
+If your firm has Export Data permission:
+
+### PDF Reports
+
+Generate professional PDF reports for client portfolios:
+
+<Steps>
+  <Step title="Go to Client Dashboard">
+    Navigate to the client's portfolio overview
+  </Step>
+  <Step title="Click 'Export'">
+    Choose PDF format
+  </Step>
+  <Step title="Configure Report">
+    Select what to include (all items, specific collections, valuations)
+  </Step>
+  <Step title="Generate">
+    Download the PDF report
+  </Step>
+</Steps>
+
+### CSV Export
+
+Export data for use in spreadsheets or other systems:
+
+<Steps>
+  <Step title="Go to Client's Items">
+    Navigate to the item list
+  </Step>
+  <Step title="Click 'Export CSV'">
+    Choose fields to include
+  </Step>
+  <Step title="Download">
+    Get the CSV file
+  </Step>
+</Steps>
+
+<Note>
+  All exports are logged in the audit trail with the exporting user, timestamp, and export type. Clients can see when their data was exported.
+</Note>
+
+## Understanding Relationship Status
+
+| Status | Meaning |
+|--------|---------|
+| **Pending** | Waiting for client approval (you requested) or your acceptance (client invited) |
+| **Active** | Relationship is active and you can access client data |
+| **Revoked** | Client has revoked access; you can no longer see their data |
+| **Suspended** | Temporarily suspended (usually due to billing issues) |
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Onboarding Clients" icon="user-plus">
+    - Provide your lookup code in welcome materials
+    - Explain what permissions you need and why
+    - Walk clients through the approval process
+    - Confirm the relationship is active before starting work
+  </Accordion>
+
+  <Accordion title="Team Management" icon="users-gear">
+    - Use the principle of least privilege—give minimum necessary access
+    - Regularly audit team member assignments
+    - Remove seats promptly when employees leave
+    - Use descriptive names when inviting team members
+  </Accordion>
+
+  <Accordion title="Client Data Handling" icon="database">
+    - Use firm notes for internal documentation
+    - Export data only when necessary
+    - Keep clients informed about significant changes
+    - Respect permission boundaries
+  </Accordion>
+
+  <Accordion title="Audit Trail" icon="clipboard-list">
+    - Review audit logs regularly
+    - Investigate any unexpected activity
+    - Use audit data for compliance reporting
+    - Understand that clients can see all activity
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Can't See Client Data" icon="eye-slash">
+    - Verify the relationship status is "Active"
+    - Check if you're assigned to this client (if you're a Manager/Viewer)
+    - Confirm the client hasn't revoked access
+    - Try refreshing or signing out and back in
+  </Accordion>
+
+  <Accordion title="Can't Edit Items" icon="pencil-slash">
+    - Verify your firm has Edit Items permission
+    - Check your role has editing capabilities
+    - Ensure the relationship is active
+  </Accordion>
+
+  <Accordion title="Team Member Can't Access Portal" icon="door-closed">
+    - Verify their invitation was accepted
+    - Check their seat status is "Active"
+    - Confirm they're using the correct login
+    - Reset their account if needed
+  </Accordion>
+
+  <Accordion title="Client Not Receiving Requests" icon="envelope">
+    - Verify the email address is correct
+    - Ask client to check spam/junk folders
+    - Resend the request
+    - Have client check their notification settings
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Permissions Reference" icon="key" href="/enterprise/permissions">
+    Detailed breakdown of all permissions
+  </Card>
+  <Card title="Security & Compliance" icon="shield-halved" href="/enterprise/security">
+    Learn about security features and audit logging
+  </Card>
+  <Card title="For Clients" icon="user" href="/enterprise/for-clients">
+    Share with clients who need to grant access
+  </Card>
+  <Card title="Portal Overview" icon="building-columns" href="/enterprise/overview">
+    Back to the portal overview
+  </Card>
+</CardGroup>

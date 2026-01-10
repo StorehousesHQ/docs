@@ -74,6 +74,16 @@
               "account/billing",
               "account/security"
             ]
+          },
+          {
+            "group": "Estate Managers",
+            "pages": [
+              "enterprise/overview",
+              "enterprise/for-firms",
+              "enterprise/for-clients",
+              "enterprise/permissions",
+              "enterprise/security"
+            ]
           }
         ]
       }

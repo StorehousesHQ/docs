@@ -1,0 +1,179 @@
+---
+title: "Estate Manager Portal"
+description: "Professional portfolio management for estate planners, wealth advisors, law firms, and family offices"
+---
+
+## What is the Estate Manager Portal?
+
+The Estate Manager Portal is Storehouses' enterprise solution for professional asset managers. It enables estate planning firms, wealth management companies, law firms, and family offices to manage their clients' alternative asset portfolios from a centralized dashboard.
+
+<Card
+  title="Access the Portal"
+  icon="building-columns"
+  href="https://portal.storehouses.app"
+  horizontal
+>
+  Sign in to the Estate Manager Portal
+</Card>
+
+## Who is it For?
+
+<CardGroup cols={2}>
+  <Card title="Estate Planners" icon="file-contract">
+    Manage client asset inventories as part of comprehensive estate planning services
+  </Card>
+  <Card title="Wealth Advisors" icon="chart-line">
+    Track client collectibles and alternative assets alongside traditional portfolios
+  </Card>
+  <Card title="Law Firms" icon="scale-balanced">
+    Document and manage client assets for legal proceedings, trusts, and estates
+  </Card>
+  <Card title="Family Offices" icon="users">
+    Oversee multi-generational wealth across precious metals, art, collectibles, and more
+  </Card>
+</CardGroup>
+
+## Enterprise Plans
+
+Storehouses offers two enterprise-level plans:
+
+### Enterprise Plan
+
+For professional firms who manage client portfolios.
+
+| Feature | Details |
+|---------|---------|
+| **Pricing** | Per-seat subscription |
+| **Portal Access** | Full Estate Manager Portal |
+| **Team Management** | Roles, permissions, client assignments |
+| **Audit Logging** | Complete activity trail |
+| **Firm Notes** | Private notes on client items |
+| **Client Capacity** | Unlimited clients |
+
+### Managed Pro
+
+Clients whose assets are managed by an Enterprise firm receive automatic Pro-tier access at no additional cost.
+
+<Note>
+  When a firm establishes a relationship with a client, that client's subscription is automatically upgraded to Pro. The client pays nothing—their Pro access is covered by the firm relationship.
+</Note>
+
+## How It Works
+
+| Layer | Description |
+|-------|-------------|
+| **Firm** | Your organization (estate planning company, law firm, family office) |
+| **Seats** | Team members within the firm (Owner, Admin, Manager, Viewer roles) |
+| **Relationship** | Connection between firm and client with defined permissions |
+| **Client** | Storehouses user who granted access to view their portfolio |
+
+The flow works like this:
+
+1. A **firm** creates an account and adds **seats** for team members
+2. The firm requests access to a **client**, or the client invites the firm
+3. A **relationship** is established with specific permissions
+4. Firm users can now access client data (items, collections, locations, etc.) based on their role and permissions
+
+### Key Concepts
+
+<AccordionGroup>
+  <Accordion title="Firms" icon="building">
+    A firm represents your organization—the estate planning company, law firm, or family office. Each firm has a unique lookup code (slug) that clients can use to find and invite you.
+  </Accordion>
+
+  <Accordion title="Seats" icon="chair">
+    Seats are individual user accounts within a firm. Each employee who needs portal access requires a seat. Seats have different roles with varying levels of access.
+  </Accordion>
+
+  <Accordion title="Client Relationships" icon="handshake">
+    A relationship is established when a client grants your firm access to their portfolio. Relationships define what permissions your firm has over the client's data.
+  </Accordion>
+
+  <Accordion title="Assignments" icon="user-check">
+    For firms with multiple employees, assignments control which team members can access which clients. Admins can see all clients; managers and viewers only see their assigned clients.
+  </Accordion>
+</AccordionGroup>
+
+## Portal Features
+
+### Client Management
+
+<CardGroup cols={2}>
+  <Card title="Client Dashboard" icon="users">
+    View all clients at a glance with portfolio summaries, total values, and quick access to detailed views
+  </Card>
+  <Card title="Item Management" icon="gem">
+    View, add, edit, and organize client items (based on granted permissions)
+  </Card>
+  <Card title="Firm Notes" icon="sticky-note">
+    Add private notes to client items that only your firm can see—perfect for internal documentation
+  </Card>
+  <Card title="Export & Reports" icon="file-export">
+    Generate PDF reports and CSV exports for client portfolios (all exports are audit-logged)
+  </Card>
+</CardGroup>
+
+### Team Management
+
+| Feature | Description |
+|---------|-------------|
+| **Role-Based Access** | Owner, Admin, Manager, and Viewer roles with distinct capabilities |
+| **Client Assignments** | Control which team members can access which clients |
+| **Seat Management** | Add, remove, and manage team member seats |
+| **Activity Monitoring** | Track team activity through audit logs |
+
+### Security & Compliance
+
+<Card title="Enterprise-Grade Security" icon="shield-halved">
+  - **Audit Logging**: Every action is logged with tamper-resistant, hash-chained records
+  - **Permission Controls**: Granular permissions at the firm-client relationship level
+  - **Row-Level Security**: Database-level access controls ensure data isolation
+  - **Legal Verification**: Heir management requires additional legal verification
+</Card>
+
+## Getting Started
+
+<Steps>
+  <Step title="Create Your Firm">
+    Set up your organization in Storehouses and configure basic settings
+  </Step>
+  <Step title="Add Team Members">
+    Invite employees and assign appropriate roles (Owner, Admin, Manager, Viewer)
+  </Step>
+  <Step title="Connect with Clients">
+    Request access from existing clients or have clients invite your firm
+  </Step>
+  <Step title="Manage Portfolios">
+    View and manage client assets through the portal dashboard
+  </Step>
+</Steps>
+
+## Portal URL
+
+The Estate Manager Portal is accessible at a dedicated subdomain:
+
+| Environment | URL |
+|-------------|-----|
+| **Production** | `https://portal.storehouses.app` |
+| **Development** | `http://localhost:3000/portal` |
+
+<Tip>
+  Bookmark `portal.storehouses.app` for quick access to your firm's dashboard.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="For Firms" icon="building" href="/enterprise/for-firms">
+    Complete guide for estate managers using the portal
+  </Card>
+  <Card title="For Clients" icon="user" href="/enterprise/for-clients">
+    Guide for clients granting firm access
+  </Card>
+  <Card title="Permissions" icon="key" href="/enterprise/permissions">
+    Understand the permission system
+  </Card>
+  <Card title="Security" icon="lock" href="/enterprise/security">
+    Security features and compliance
+  </Card>
+</CardGroup>

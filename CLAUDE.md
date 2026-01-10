@@ -29,7 +29,6 @@ When generating or updating documentation:
 - React hooks: `./app-source/src/hooks/`
 
 ## Key app sections to document
-<!-- Update this as your app evolves -->
 - **Dashboard** - Portfolio overview with value charts and allocation breakdowns
 - **Items** - Add, view, edit, and manage individual assets (precious metals, watches, gems, jewelry, wine, spirits, fine art, arms & armor)
 - **Collections** - Organize items into custom collections

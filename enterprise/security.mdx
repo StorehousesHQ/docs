@@ -1,0 +1,336 @@
+---
+title: "Security & Compliance"
+description: "How the Estate Manager Portal protects client data with enterprise-grade security controls"
+---
+
+## Overview
+
+The Estate Manager Portal is built with security at its core. This document explains the security architecture, access controls, audit capabilities, and compliance features that protect client data.
+
+## Security Architecture
+
+### Defense in Depth
+
+Every request to access client data passes through multiple security layers:
+
+<Steps>
+  <Step title="Identity Verification" icon="key">
+    First, we confirm who you are:
+    - Valid login credentials
+    - Active session
+    - Account in good standing
+  </Step>
+  <Step title="Access Authorization" icon="shield-check">
+    Then, we verify you're allowed to access this data:
+    - You belong to an active firm
+    - Your firm has a relationship with this client
+    - You're assigned to this client (if required by your role)
+    - You have the specific permission needed
+  </Step>
+  <Step title="Data Protection" icon="database">
+    Finally, the database enforces its own rules:
+    - Each table has access policies
+    - All data is encrypted
+    - Actions are logged
+  </Step>
+</Steps>
+
+<Note>
+  This multi-layer verification happens on every request. Even if someone gains unauthorized access to a session, they cannot access data they're not permitted to see.
+</Note>
+
+## Audit Logging
+
+### Comprehensive Activity Tracking
+
+Every action in the portal is logged:
+
+| Action Category | Examples |
+|-----------------|----------|
+| **Authentication** | Login, logout, session refresh |
+| **Data Views** | Dashboard access, item views, collection views |
+| **Data Modifications** | Item create/edit/delete, collection changes |
+| **Exports** | PDF generation, CSV downloads, print actions |
+| **Administrative** | Permission changes, team changes, assignments |
+| **Firm Notes** | Note creation, edits, deletions |
+
+### What's Recorded
+
+Each audit entry captures:
+
+| Information | Description |
+|-------------|-------------|
+| **Who** | The firm and specific user who performed the action |
+| **What** | The action taken (viewed, edited, exported, etc.) |
+| **When** | Precise timestamp of the action |
+| **Where** | Which item, collection, or resource was affected |
+| **Details** | Specific changes made (before and after values) |
+
+### Tamper-Proof Records
+
+Audit logs are protected by a cryptographic chain that makes tampering detectable:
+
+<CardGroup cols={3}>
+  <Card title="First Entry" icon="file-circle-check">
+    Action recorded with unique fingerprint
+  </Card>
+  <Card title="Second Entry" icon="link">
+    Links to first entry's fingerprint
+  </Card>
+  <Card title="Third Entry" icon="link">
+    Links to second entry's fingerprint
+  </Card>
+</CardGroup>
+
+Each entry contains a cryptographic fingerprint of the previous entry. If anyone attempts to modify or delete a record, the chain breaks—making the tampering immediately obvious. This ensures a trustworthy, permanent record of all activity.
+
+### Audit Log Access
+
+<Tabs>
+  <Tab title="For Firms">
+    Firms can view their own activity logs:
+    - All actions taken by their team members
+    - Filtered by client, user, date range, or action type
+    - Export audit logs for compliance reporting
+
+    **Cannot see**:
+    - Activity from other firms
+    - Client's personal account activity
+  </Tab>
+  <Tab title="For Clients">
+    Clients can view all firm activity on their account:
+    - Every action from every connected firm
+    - Complete audit trail of all data access
+    - Export activity reports
+
+    **Can see**:
+    - Which firm user performed each action
+    - Exact timestamp
+    - What was accessed or changed
+    - Export activity
+  </Tab>
+</Tabs>
+
+## Data Isolation
+
+### Firm-to-Firm Isolation
+
+Firms cannot see:
+- Other firms connected to the same client
+- Activity from other firms
+- Notes from other firms
+- Any data about other firms' existence
+
+### Client Data Boundaries
+
+<CardGroup cols={2}>
+  <Card title="Accessible with Permission" icon="check">
+    - Items (with View Items)
+    - Valuations (with View Valuations)
+    - Collections (with Manage Collections)
+    - Locations (with Manage Locations)
+    - Heirs (with View Heirs/Manage Heirs)
+  </Card>
+  <Card title="Never Accessible" icon="xmark">
+    - Client login credentials
+    - Client billing information
+    - Client's other share links
+    - Client's other firm relationships
+    - Client's personal notifications
+  </Card>
+</CardGroup>
+
+## Permission Security
+
+### Permission Verification
+
+Permissions are verified at every level of the system:
+
+1. **Before you see it**: The interface only shows actions you're permitted to take
+2. **When you request it**: Every action is checked against your permissions
+3. **At the data level**: The database independently enforces access rules
+
+### Permission Escalation Prevention
+
+- Permissions can only be modified by the client
+- Firms cannot request permission upgrades through the portal
+- Permission changes are logged
+- Clients are notified of permission changes
+
+### Sensitive Permissions
+
+Some permissions require additional verification:
+
+| Permission | Additional Requirements |
+|------------|------------------------|
+| Manage Heirs | Legal verification documentation |
+| Export Data | Client notification on each export |
+
+## Compliance Features
+
+### For Estate Planning Compliance
+
+<Card title="Complete Audit Trail" icon="clipboard-check">
+  - Every action logged with tamper-proof chain
+  - User attribution for all activities
+  - Timestamp accuracy to milliseconds
+  - Export capabilities for compliance reporting
+</Card>
+
+### For Legal Requirements
+
+<Card title="Access Documentation" icon="file-contract">
+  - Clear permission grants from clients
+  - Revocation records
+  - Legal verification for sensitive permissions
+  - Chain of custody for data access
+</Card>
+
+### For Insurance Documentation
+
+<Card title="Export Verification" icon="file-export">
+  - All exports logged with timestamp
+  - Export recipient (user) tracked
+  - Format and content recorded
+  - Prevents unauthorized distribution
+</Card>
+
+## Security Best Practices
+
+### For Firms
+
+<AccordionGroup>
+  <Accordion title="Access Management" icon="users-gear">
+    - Remove seats promptly when employees leave
+    - Use role-based access (Manager/Viewer vs Admin)
+    - Regularly audit team member access
+    - Limit Admin role to those who need it
+  </Accordion>
+
+  <Accordion title="Client Assignments" icon="user-check">
+    - Only assign clients to team members who need access
+    - Review assignments periodically
+    - Remove assignments when projects end
+    - Use Viewer role for read-only needs
+  </Accordion>
+
+  <Accordion title="Operational Security" icon="shield">
+    - Use strong, unique passwords
+    - Enable two-factor authentication if available
+    - Don't share login credentials
+    - Log out when finished
+  </Accordion>
+</AccordionGroup>
+
+### For Clients
+
+<AccordionGroup>
+  <Accordion title="Permission Management" icon="key">
+    - Grant minimum necessary permissions
+    - Start with restrictive presets, expand as needed
+    - Review and revoke unused access
+    - Be cautious with Manage Heirs
+  </Accordion>
+
+  <Accordion title="Monitoring" icon="eye">
+    - Check audit logs regularly
+    - Investigate unexpected activity
+    - Review export notifications
+    - Verify firm legitimacy independently
+  </Accordion>
+
+  <Accordion title="Relationship Management" icon="handshake">
+    - Revoke access when relationships end
+    - Modify permissions if needs change
+    - Keep track of all connected firms
+    - Don't grant access to unverified firms
+  </Accordion>
+</AccordionGroup>
+
+## Incident Response
+
+### If You Suspect Unauthorized Access
+
+**For Firms**:
+1. Review recent audit logs
+2. Verify all team member accounts
+3. Remove any suspicious seats
+4. Contact Storehouses support
+5. Notify affected clients if confirmed
+
+**For Clients**:
+1. Revoke access from suspicious firms
+2. Review audit logs for unauthorized activity
+3. Change your account password
+4. Contact Storehouses support
+5. Document the timeline of events
+
+### Reporting Security Issues
+
+To report security vulnerabilities or incidents:
+- Email: security@storehouses.app
+- Include: Description, steps to reproduce, impact assessment
+- Do not publicly disclose until resolved
+
+## Data Retention
+
+| Data Type | Retention Period |
+|-----------|------------------|
+| Audit logs | Indefinite (never deleted) |
+| Active relationships | Until revoked |
+| Revoked relationships | 90 days after revocation |
+| Firm notes | Until firm deletes or relationship ends |
+| User sessions | 24 hours of inactivity |
+
+## Encryption
+
+All data is protected with industry-standard encryption:
+
+| What | Protection |
+|------|------------|
+| Data sent over the internet | Encrypted in transit (same security as online banking) |
+| Data stored in our database | Encrypted at rest |
+| Passwords | Securely hashed (we never store actual passwords) |
+| Login sessions | Cryptographically signed tokens |
+| Audit logs | Tamper-evident cryptographic chain |
+
+## Questions
+
+<AccordionGroup>
+  <Accordion title="Can firms see deleted data?" icon="trash">
+    No. When items or other data are deleted, they are removed from the database. Firms cannot view deleted data. However, the audit log records that a deletion occurred.
+  </Accordion>
+
+  <Accordion title="Can firms access data after revocation?" icon="ban">
+    No. When a client revokes access, the firm immediately loses all access to client data. Our security controls prevent any data retrieval after revocation.
+  </Accordion>
+
+  <Accordion title="Are audit logs truly tamper-proof?" icon="link">
+    The cryptographic chain makes tampering detectable. Any modification to an entry breaks the chain, creating an obvious discrepancy. While no system is 100% tamper-proof, altering our audit logs would require extraordinary effort and would leave forensic evidence.
+  </Accordion>
+
+  <Accordion title="Can Storehouses staff access my data?" icon="building">
+    Storehouses staff do not have routine access to client data. Administrative access requires documented justification and is logged. We never share data with third parties except as required by law.
+  </Accordion>
+
+  <Accordion title="What happens if a firm account is compromised?" icon="shield-exclamation">
+    If you suspect a firm account is compromised, immediately revoke their access. This cuts off their ability to view your data. Review your audit logs to understand what was accessed.
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="For Firms" icon="building" href="/enterprise/for-firms">
+    Using the portal securely
+  </Card>
+  <Card title="For Clients" icon="user" href="/enterprise/for-clients">
+    Managing firm access
+  </Card>
+  <Card title="Permissions" icon="key" href="/enterprise/permissions">
+    Permission system reference
+  </Card>
+  <Card title="Portal Overview" icon="building-columns" href="/enterprise/overview">
+    Estate Manager Portal overview
+  </Card>
+</CardGroup>

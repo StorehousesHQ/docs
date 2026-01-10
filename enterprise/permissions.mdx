@@ -1,0 +1,554 @@
+---
+title: "Permissions Reference"
+description: "Complete reference for Estate Manager Portal permissions and access controls"
+---
+
+## Overview
+
+The Estate Manager Portal uses a granular permission system to control what firms can do with client data. Permissions are set at the **firm-client relationship** level, meaning they apply to all users within a firm who have access to a particular client.
+
+## Permission Model
+
+Permissions are granted at the **firm-client relationship** level. When a client grants access to a firm, they choose which permissions to enable:
+
+| Permission | Description |
+|------------|-------------|
+| View Items | See items in the portfolio |
+| Edit Items | Create, update, and delete items |
+| View Valuations | See prices and portfolio totals |
+| Export Data | Download PDF/CSV reports |
+| Manage Collections | Create and organize collections |
+| Manage Locations | Manage storage locations |
+| Manage Alerts | Set up price alerts |
+| Manage Shares | Create share links |
+| View Heirs | See heir designations |
+| Manage Heirs | Modify heir settings (requires legal verification) |
+
+### How Permissions Apply to Users
+
+Firm users inherit relationship permissions based on their **role**:
+
+| Role | Client Access | Can Edit | Can Export |
+|------|---------------|:--------:|:----------:|
+| **Owner** | All clients | Yes | Yes |
+| **Admin** | All clients | Yes | Yes |
+| **Manager** | Assigned only | Yes | Yes |
+| **Viewer** | Assigned only | No | No |
+
+<Note>
+  Permissions define **what actions are allowed**. Roles define **who can perform those actions**. Both must align—a Viewer cannot edit even if the relationship allows editing.
+</Note>
+
+## Individual Permissions
+
+### View Items
+
+<ParamField path="view_items" type="boolean">
+  Allows viewing items in the client's portfolio.
+</ParamField>
+
+**What it enables**:
+- See item list and search/filter items
+- View item detail pages
+- See item images and attachments
+- Read item descriptions and notes (not firm notes)
+- View item history
+
+**What it does NOT enable**:
+- Seeing values or prices (requires `view_valuations`)
+- Making any modifications
+- Exporting data
+
+**Typical use cases**:
+- Initial relationship setup
+- Review-only scenarios
+- When combined with other permissions
+
+---
+
+### Edit Items
+
+<ParamField path="edit_items" type="boolean">
+  Allows creating, updating, and deleting items in the client's portfolio.
+</ParamField>
+
+**What it enables**:
+- Create new items
+- Edit existing item details
+- Delete items
+- Upload and manage item images
+- Update item notes
+
+**What it does NOT enable**:
+- Seeing valuations (requires `view_valuations`)
+- Managing collections or locations (separate permissions)
+- Exporting data
+
+**Typical use cases**:
+- Active portfolio management
+- Inventory documentation
+- Ongoing advisory relationships
+
+<Warning>
+  This permission allows permanent data modification. Grant only to trusted firms that need to actively manage items.
+</Warning>
+
+---
+
+### View Valuations
+
+<ParamField path="view_valuations" type="boolean">
+  Allows viewing prices, market values, and portfolio totals.
+</ParamField>
+
+**What it enables**:
+- See item purchase prices
+- See current valuations
+- View spot prices for precious metals
+- See portfolio total value
+- View allocation breakdowns by value
+- See value charts and trends
+
+**What it does NOT enable**:
+- Modifying valuations (requires `edit_items`)
+- Exporting value data (requires `export_data`)
+
+**Typical use cases**:
+- Financial planning
+- Insurance documentation
+- Estate valuation
+- Wealth management
+
+---
+
+### Export Data
+
+<ParamField path="export_data" type="boolean">
+  Allows exporting client data to PDF or CSV formats.
+</ParamField>
+
+**What it enables**:
+- Generate PDF portfolio reports
+- Export item data to CSV
+- Create print-friendly views
+- Download images and documents
+
+**Audit note**:
+All exports are logged with:
+- User who exported
+- Timestamp
+- Export format
+- What data was included
+
+**Typical use cases**:
+- Insurance documentation
+- Tax reporting
+- Legal proceedings
+- Compliance reporting
+
+<Note>
+  Clients receive notifications when their data is exported. The audit log shows all export activity.
+</Note>
+
+---
+
+### Manage Collections
+
+<ParamField path="manage_collections" type="boolean">
+  Allows creating, editing, and deleting collections.
+</ParamField>
+
+**What it enables**:
+- Create new collections
+- Rename collections
+- Delete collections
+- Add items to collections
+- Remove items from collections
+- Reorder collections
+
+**What it does NOT enable**:
+- Creating or editing items (requires `edit_items`)
+
+**Typical use cases**:
+- Portfolio organization
+- Insurance grouping
+- Category-based management
+
+---
+
+### Manage Locations
+
+<ParamField path="manage_locations" type="boolean">
+  Allows creating, editing, and deleting storage locations.
+</ParamField>
+
+**What it enables**:
+- Create new locations
+- Edit location details
+- Delete locations
+- Assign items to locations
+- Change item locations
+
+**Typical use cases**:
+- Storage documentation
+- Security planning
+- Insurance requirements
+- Inventory auditing
+
+---
+
+### Manage Alerts
+
+<ParamField path="manage_alerts" type="boolean">
+  Allows creating and managing price alerts on the client's behalf.
+</ParamField>
+
+**What it enables**:
+- Create price alerts for precious metals
+- Edit alert thresholds
+- Delete alerts
+- Configure alert notifications
+
+**Typical use cases**:
+- Active portfolio monitoring
+- Investment advisory services
+- Market-aware management
+
+---
+
+### Manage Shares
+
+<ParamField path="manage_shares" type="boolean">
+  Allows creating and managing share links on the client's behalf.
+</ParamField>
+
+**What it enables**:
+- Create share links
+- Configure share link settings
+- Revoke share links
+- View existing share links
+
+**Typical use cases**:
+- Coordinating with third parties (appraisers, etc.)
+- Insurance agent access
+- Multi-party estate planning
+
+<Warning>
+  This permission allows the firm to create share links that grant access to others. Grant only when the firm needs to coordinate with third parties.
+</Warning>
+
+---
+
+### View Heirs
+
+<ParamField path="view_heirs" type="boolean">
+  Allows viewing the client's heir access designations.
+</ParamField>
+
+**What it enables**:
+- See designated heirs
+- View heir access settings
+- See waiting period configurations
+
+**What it does NOT enable**:
+- Modifying heir designations (requires `manage_heirs`)
+
+**Typical use cases**:
+- Estate planning review
+- Succession planning
+- Legal document preparation
+
+---
+
+### Manage Heirs
+
+<ParamField path="manage_heirs" type="boolean">
+  Allows modifying heir designations on the client's behalf.
+</ParamField>
+
+**What it enables**:
+- Add new heir designations
+- Remove heir designations
+- Modify heir access settings
+- Change waiting periods
+
+**Requirements**:
+- Requires legal verification before this permission can be granted
+- Additional confirmation steps for changes
+- Enhanced audit logging
+
+**Typical use cases**:
+- Estate attorneys acting as legal representatives
+- Court-appointed executors
+- Power of attorney situations
+
+<Warning>
+  This is the most sensitive permission. It should only be granted to verified legal representatives. Granting this permission requires additional legal verification through Storehouses.
+</Warning>
+
+## Permission Presets
+
+Presets are predefined permission combinations for common use cases.
+
+### View Only
+
+**Best for**: Initial reviews, read-only access, preliminary consultations
+
+| Permission | Granted |
+|------------|---------|
+| View Items | Yes |
+| View Valuations | No |
+| Edit Items | No |
+| Export Data | No |
+| Manage Collections | No |
+| Manage Locations | No |
+| Manage Alerts | No |
+| Manage Shares | No |
+| View Heirs | No |
+| Manage Heirs | No |
+
+---
+
+### Reporting Only
+
+**Best for**: Insurance documentation, tax reporting, compliance needs
+
+| Permission | Granted |
+|------------|---------|
+| View Items | Yes |
+| View Valuations | Yes |
+| Edit Items | No |
+| Export Data | Yes |
+| Manage Collections | No |
+| Manage Locations | No |
+| Manage Alerts | No |
+| Manage Shares | No |
+| View Heirs | No |
+| Manage Heirs | No |
+
+---
+
+### Standard Management
+
+**Best for**: Most advisory relationships, ongoing portfolio management
+
+| Permission | Granted |
+|------------|---------|
+| View Items | Yes |
+| View Valuations | Yes |
+| Edit Items | Yes |
+| Export Data | Yes |
+| Manage Collections | Yes |
+| Manage Locations | Yes |
+| Manage Alerts | No |
+| Manage Shares | No |
+| View Heirs | No |
+| Manage Heirs | No |
+
+<Note>
+  This is the default preset for new firm relationships.
+</Note>
+
+---
+
+### Full Management
+
+**Best for**: Comprehensive portfolio management, family offices
+
+| Permission | Granted |
+|------------|---------|
+| View Items | Yes |
+| View Valuations | Yes |
+| Edit Items | Yes |
+| Export Data | Yes |
+| Manage Collections | Yes |
+| Manage Locations | Yes |
+| Manage Alerts | Yes |
+| Manage Shares | Yes |
+| View Heirs | Yes |
+| Manage Heirs | No |
+
+---
+
+### Legal Representative
+
+**Best for**: Estate attorneys, executors, legal guardians
+
+| Permission | Granted |
+|------------|---------|
+| View Items | Yes |
+| View Valuations | Yes |
+| Edit Items | Yes |
+| Export Data | Yes |
+| Manage Collections | Yes |
+| Manage Locations | Yes |
+| Manage Alerts | Yes |
+| Manage Shares | Yes |
+| View Heirs | Yes |
+| Manage Heirs | Yes |
+
+<Warning>
+  This preset requires legal verification. You will be asked to provide documentation confirming the firm's legal authority before this preset can be applied.
+</Warning>
+
+---
+
+### Custom
+
+**Best for**: Unique situations requiring specific permission combinations
+
+When none of the presets fit your needs, you can toggle individual permissions to create a custom configuration.
+
+## Role-Based Access Control
+
+While permissions define what actions are allowed, roles determine who can access which clients within a firm.
+
+### Firm Roles
+
+| Role | Client Access | Portal Capabilities |
+|------|---------------|---------------------|
+| **Owner** | All clients | Full control: billing, settings, team management, delete firm |
+| **Admin** | All clients | Team management, client assignments, all client operations |
+| **Manager** | Assigned only | Full operations on assigned clients only |
+| **Viewer** | Assigned only | Read-only on assigned clients only |
+
+### Permission + Role Matrix
+
+A firm user can only perform an action if:
+1. The firm-client relationship has the required permission
+2. The user has access to that client (based on role or assignment)
+3. The user's role allows the action type
+
+<Tabs>
+  <Tab title="Owner/Admin">
+    **Access**: All clients automatically
+
+    **Can perform**:
+    - All actions permitted by relationship permissions
+    - Team management
+    - Client assignments (Admin only)
+    - Billing and settings (Owner only)
+  </Tab>
+  <Tab title="Manager">
+    **Access**: Assigned clients only
+
+    **Can perform**:
+    - All actions permitted by relationship permissions
+    - Add firm notes
+    - Export data (if permitted)
+
+    **Cannot perform**:
+    - Team management
+    - Client assignments
+    - Access unassigned clients
+  </Tab>
+  <Tab title="Viewer">
+    **Access**: Assigned clients only
+
+    **Can perform**:
+    - View operations only (View Items, View Valuations, View Heirs)
+
+    **Cannot perform**:
+    - Any modifications (Edit Items, Manage permissions)
+    - Export data
+    - Add firm notes
+    - Access unassigned clients
+  </Tab>
+</Tabs>
+
+## Permission Inheritance
+
+**Example scenario**: A firm-client relationship has these permissions:
+- View Items: Granted
+- Edit Items: Granted
+- Export Data: Not granted
+
+Here's what each role can actually do:
+
+| Permission | Relationship | Admin | Manager (assigned) | Viewer (assigned) |
+|------------|:------------:|:-----:|:------------------:|:-----------------:|
+| View Items | Granted | Yes | Yes | Yes |
+| Edit Items | Granted | Yes | Yes | No (role restriction) |
+| Export Data | Not granted | No | No | No |
+
+<Note>
+  The relationship permissions set the maximum allowed actions. A user's role may further restrict what they can do (e.g., Viewers cannot edit even if the relationship allows editing).
+</Note>
+
+## Changing Permissions
+
+### Client-Initiated Changes
+
+Clients can modify permissions at any time:
+
+1. Go to **Account Settings → Estate Managers**
+2. Find the firm and click **Edit Permissions**
+3. Select a new preset or toggle individual permissions
+4. Save changes
+
+Changes take effect immediately. The firm is notified of permission changes.
+
+### Requesting Additional Permissions
+
+If a firm needs more permissions:
+
+1. Firm contacts client directly
+2. Client modifies permissions through their settings
+3. New permissions become active immediately
+
+<Note>
+  Firms cannot request permission changes through the portal. All permission changes must be initiated by the client.
+</Note>
+
+## Audit Logging
+
+Every action is logged with:
+
+| Field | Description |
+|-------|-------------|
+| **timestamp** | Exact date and time (UTC) |
+| **firm_id** | Which firm performed the action |
+| **user_id** | Which specific user within the firm |
+| **action** | The type of action (view, edit, export, etc.) |
+| **resource** | What was accessed (item, collection, etc.) |
+| **details** | Additional context (changes made, export format, etc.) |
+| **hash** | Cryptographic hash linking to previous entry |
+
+<Note>
+  Audit logs are tamper-resistant and hash-chained. This means each entry contains a hash of the previous entry, making it impossible to modify or delete entries without detection.
+</Note>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="For Clients" icon="user">
+    - **Start restrictive**: Begin with View Only or Reporting Only, expand as needed
+    - **Review regularly**: Check audit logs and adjust permissions if activity doesn't match expectations
+    - **Use presets**: Presets are designed for common scenarios and tested for appropriate access
+    - **Be cautious with manage_heirs**: Only grant to verified legal representatives
+  </Accordion>
+
+  <Accordion title="For Firms" icon="building">
+    - **Request minimum necessary**: Only ask for permissions you actually need
+    - **Explain your needs**: Help clients understand why you need specific permissions
+    - **Respect boundaries**: Don't attempt actions outside your permitted scope
+    - **Document access**: Use firm notes to record why you accessed or modified data
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="For Firms" icon="building" href="/enterprise/for-firms">
+    Guide for using the portal
+  </Card>
+  <Card title="For Clients" icon="user" href="/enterprise/for-clients">
+    Guide for granting access
+  </Card>
+  <Card title="Security" icon="shield-halved" href="/enterprise/security">
+    Security and compliance features
+  </Card>
+  <Card title="Portal Overview" icon="building-columns" href="/enterprise/overview">
+    Estate Manager Portal overview
+  </Card>
+</CardGroup>
