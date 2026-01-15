@@ -84,6 +84,12 @@
               "enterprise/permissions",
               "enterprise/security"
             ]
+          },
+          {
+            "group": "Partners",
+            "pages": [
+              "partners/partner-program"
+            ]
           }
         ]
       }
