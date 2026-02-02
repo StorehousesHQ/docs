@@ -1,0 +1,314 @@
+---
+title: "Other Collectibles"
+description: "Complete guide to tracking any valuable collectibles that don't fit other categories in Storehouses"
+---
+
+## Overview
+
+The "Other Collectibles" category provides flexible tracking for valuable items that don't fit into the specialized categories. Use this for antiques, memorabilia, musical instruments, toys, and any other collectibles you want to track.
+
+<Card title="Other Collectibles Features" icon="box">
+  - Flexible fields for any item type
+  - Custom descriptions and details
+  - Photo documentation
+  - Location tracking
+  - Market value tracking
+  - Collection organization
+</Card>
+
+## Adding Other Collectibles
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Other Collectibles">
+    Choose "Other Collectibles" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in title, description, and relevant details
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos and any supporting documentation
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Common Fields
+
+### Basic Information
+
+<ParamField path="title" type="string" required>
+  Descriptive name for the item
+
+  **Examples:**
+  - "1959 Gibson Les Paul Standard"
+  - "Antique Tiffany Table Lamp"
+  - "Mickey Mantle Signed Baseball"
+  - "18th Century French Armoire"
+</ParamField>
+
+<ParamField path="description" type="textarea">
+  Detailed description of the item
+
+  **Include:**
+  - Physical characteristics
+  - Maker/manufacturer
+  - Age/era
+  - Materials
+  - Distinguishing features
+  - Condition notes
+  - Provenance
+</ParamField>
+
+### Valuation
+
+<ParamField path="purchase_price" type="currency">
+  What you paid for the item
+</ParamField>
+
+<ParamField path="market_value" type="currency">
+  Current estimated market value
+</ParamField>
+
+<ParamField path="insurance_value" type="currency">
+  Value for insurance purposes (often higher than market value)
+</ParamField>
+
+### Organization
+
+<ParamField path="location" type="string">
+  Where the item is stored
+</ParamField>
+
+<ParamField path="collection" type="select">
+  Which collection this item belongs to
+</ParamField>
+
+## What to Track as Other Collectibles
+
+<CardGroup cols={2}>
+  <Card title="Musical Instruments" icon="guitar">
+    - Vintage guitars
+    - Pianos
+    - Brass and woodwinds
+    - String instruments
+    - Amplifiers
+    - Recording equipment
+  </Card>
+
+  <Card title="Antique Furniture" icon="couch">
+    - Period furniture
+    - Designer pieces
+    - Decorative arts
+    - Clocks
+    - Mirrors
+    - Lighting
+  </Card>
+
+  <Card title="Memorabilia" icon="star">
+    - Sports memorabilia
+    - Music memorabilia
+    - Movie props
+    - Historical items
+    - Celebrity items
+    - Autographs
+  </Card>
+
+  <Card title="Toys & Games" icon="gamepad">
+    - Vintage toys
+    - Action figures
+    - Dolls
+    - Board games
+    - Model trains
+    - Die-cast vehicles
+  </Card>
+
+  <Card title="Textiles" icon="shirt">
+    - Vintage clothing
+    - Quilts and textiles
+    - Tapestries
+    - Rugs
+    - Designer fashion
+    - Costume jewelry
+  </Card>
+
+  <Card title="Decorative Objects" icon="vase">
+    - Porcelain
+    - Glass
+    - Silver
+    - Ceramics
+    - Bronzes
+    - Folk art
+  </Card>
+</CardGroup>
+
+## Tracking Examples
+
+### Example 1: Vintage Guitar
+
+<ParamField path="title" type="string">
+  1959 Gibson Les Paul Standard "Sunburst"
+</ParamField>
+
+<ParamField path="description" type="textarea">
+  Original 1959 Gibson Les Paul Standard with cherry sunburst finish. All original parts including PAF pickups, kluson tuners, and ABR-1 bridge. Serial number confirms September 1959 production. Original brown hardshell case included. Neck profile is typical '59 with slight wear on frets 1-5. Small finish checking throughout consistent with age. Weight: 9.2 lbs.
+</ParamField>
+
+<ParamField path="purchase_price" type="currency">
+  $150,000
+</ParamField>
+
+<ParamField path="market_value" type="currency">
+  $350,000
+</ParamField>
+
+---
+
+### Example 2: Sports Memorabilia
+
+<ParamField path="title" type="string">
+  Mickey Mantle Signed Baseball - PSA/DNA Certified
+</ParamField>
+
+<ParamField path="description" type="textarea">
+  Official American League baseball signed by Mickey Mantle in blue ballpoint pen on the sweet spot. PSA/DNA certified authentic, grade 8. Ball itself in excellent condition. Includes original LOA and protective display case.
+</ParamField>
+
+<ParamField path="purchase_price" type="currency">
+  $800
+</ParamField>
+
+<ParamField path="market_value" type="currency">
+  $1,500
+</ParamField>
+
+---
+
+### Example 3: Antique Furniture
+
+<ParamField path="title" type="string">
+  Louis XV Style Marquetry Commode
+</ParamField>
+
+<ParamField path="description" type="textarea">
+  French Louis XV style commode with kingwood and tulipwood marquetry. Marble top (possibly replacement). Bronze ormolu mounts. Three drawers with working locks (no keys). Attributed to late 19th century, Paris. Dimensions: 34"H × 52"W × 24"D. Minor veneer repairs on right side. Provenance: acquired from estate sale, Greenwich CT, 2018.
+</ParamField>
+
+<ParamField path="purchase_price" type="currency">
+  $4,500
+</ParamField>
+
+<ParamField path="market_value" type="currency">
+  $8,000
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Thoroughly" icon="file-text">
+    For any collectible, record:
+    - Complete physical description
+    - Maker/manufacturer
+    - Age/era/date
+    - Materials
+    - Dimensions
+    - Condition
+    - Provenance
+    - Any markings or labels
+
+    <Tip>
+      The more detail you record, the more useful your inventory becomes
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Photograph Everything" icon="camera">
+    Take photos showing:
+    - Overall item (multiple angles)
+    - Details and markings
+    - Condition issues
+    - Labels and signatures
+    - Scale reference
+    - Any accessories or documentation
+
+    <Note>
+      Good photos are essential for insurance claims
+    </Note>
+  </Accordion>
+
+  <Accordion title="Research Values" icon="search">
+    For accurate valuations:
+    - Check auction results
+    - Consult price guides
+    - Research comparable sales
+    - Get professional appraisals for high-value items
+    - Update values periodically
+  </Accordion>
+
+  <Accordion title="Organize by Collection" icon="folder">
+    Create logical collections:
+    - By category (guitars, memorabilia, etc.)
+    - By location
+    - By value tier
+    - By acquisition source
+    - By intended purpose
+  </Accordion>
+
+  <Accordion title="Track Provenance" icon="link">
+    Document ownership history:
+    - Where acquired
+    - Previous owners if known
+    - Any certificates or documentation
+    - Auction records
+    - Expert opinions
+  </Accordion>
+</AccordionGroup>
+
+## When to Use Other Categories Instead
+
+<Warning>
+  Before using "Other Collectibles," check if your item fits a specialized category:
+
+  - **Precious Metals** → Gold, silver, platinum bullion
+  - **Coins & Currency** → Numismatic coins, paper money
+  - **Luxury Watches** → Timepieces and watches
+  - **Fine Jewelry** → Jewelry and designer pieces
+  - **Gemstones** → Loose gems
+  - **Wine** → Wine collections
+  - **Spirits** → Whiskey, cognac, premium spirits
+  - **Fine Art** → Paintings, sculptures, prints
+  - **Arms & Armor** → Weapons and armor
+  - **Trading Cards** → Sports and gaming cards
+  - **Vintage Automobiles** → Classic cars
+  - **Manuscripts** → Rare books and documents
+  - **Artifacts** → Historical and cultural objects
+  - **Stamps** → Philatelic items
+
+  Specialized categories have tailored fields for better tracking.
+</Warning>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Items" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your items
+  </Card>
+
+  <Card title="Create Collections" icon="folder" href="/features/collections">
+    Organize your collectibles
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate inventory reports
+  </Card>
+</CardGroup>

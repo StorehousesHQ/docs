@@ -1,0 +1,438 @@
+---
+title: "Fine Art"
+description: "Complete guide to tracking paintings, sculptures, prints, and art collections in Storehouses"
+---
+
+## Overview
+
+Track your fine art collection with detailed fields for artist, medium, dimensions, provenance, and authentication. Perfect for collectors, galleries, and enthusiasts managing paintings, sculptures, prints, and mixed media works.
+
+<Card title="Fine Art Features" icon="palette">
+  - Artist attribution and signature tracking
+  - Medium and technique documentation
+  - Dimensions and framing details
+  - Certificate of authenticity
+  - Provenance history
+  - Exhibition and publication records
+  - Market value tracking
+</Card>
+
+## Adding Fine Art
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Fine Art">
+    Choose "Fine Art" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in artist, medium, year created, dimensions, and authentication
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos, certificates of authenticity, and provenance documents
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Fine Art Fields
+
+### Artist Information
+
+<ParamField path="artist" type="string">
+  Name of the artist or creator
+
+  **Examples:**
+  - Pablo Picasso
+  - Claude Monet
+  - Andy Warhol
+  - Unknown (19th Century French School)
+  - After Rembrandt
+
+  <Tip>
+    Use standard art historical naming conventions
+  </Tip>
+</ParamField>
+
+### Work Details
+
+<ParamField path="medium" type="string">
+  Materials and technique used
+
+  **Examples:**
+  - Oil on canvas
+  - Acrylic on board
+  - Bronze sculpture
+  - Watercolor on paper
+  - Mixed media on canvas
+  - Lithograph
+  - Giclée print
+  - Charcoal on paper
+
+  <Note>
+    Be specific about both the medium and the support
+  </Note>
+</ParamField>
+
+<ParamField path="year_created" type="number">
+  Year the work was created
+
+  **Examples:**
+  - 1889 (exact year)
+  - c. 1920 (circa)
+  - 1960s (decade)
+  - 19th century (period)
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  Physical dimensions of the work
+
+  **Format:** Height × Width (× Depth for sculpture)
+
+  **Examples:**
+  - "24 × 36 inches"
+  - "60 × 80 cm"
+  - "12 × 15 × 8 inches (sculpture)"
+  - "Sight: 20 × 28 inches; Frame: 28 × 36 inches"
+
+  <Tip>
+    Include both image and frame dimensions when relevant
+  </Tip>
+</ParamField>
+
+### Authentication
+
+<ParamField path="signature" type="string">
+  Signature details
+
+  **Examples:**
+  - "Signed lower right"
+  - "Signed and dated 'Monet 1889' lower left"
+  - "Unsigned"
+  - "Estate stamp on reverse"
+  - "Monogrammed"
+</ParamField>
+
+<ParamField path="certificate_of_authenticity" type="boolean">
+  Whether a certificate of authenticity exists
+
+  **Documentation to track:**
+  - Certificate from artist or estate
+  - Gallery certificate
+  - Catalogue raisonné inclusion
+  - Expert authentication letter
+  - Provenance documentation
+</ParamField>
+
+### Provenance
+
+<ParamField path="provenance" type="textarea">
+  Ownership history of the work
+
+  **Include:**
+  - Previous owners with dates
+  - Gallery or auction sales
+  - Exhibition history
+  - Literature references
+  - Catalogue raisonné numbers
+
+  **Example:**
+  ```
+  Artist's studio
+  Galerie Bernheim-Jeune, Paris, 1920
+  Private collection, New York, 1920-1985
+  Christie's New York, May 1985, lot 45
+  Private collection, acquired 1985
+  ```
+
+  <Warning>
+    Provenance is critical for authentication and value. Document thoroughly.
+  </Warning>
+</ParamField>
+
+## Types of Fine Art
+
+<CardGroup cols={2}>
+  <Card title="Paintings" icon="paintbrush">
+    - Oil paintings
+    - Acrylics
+    - Watercolors
+    - Gouache
+    - Tempera
+    - Encaustic
+  </Card>
+
+  <Card title="Sculpture" icon="monument">
+    - Bronze
+    - Marble
+    - Wood
+    - Mixed media
+    - Kinetic
+    - Installation
+  </Card>
+
+  <Card title="Works on Paper" icon="scroll">
+    - Drawings
+    - Prints (lithographs, etchings, screenprints)
+    - Watercolors
+    - Pastels
+    - Photographs
+  </Card>
+
+  <Card title="Prints & Editions" icon="copy">
+    - Original prints
+    - Limited editions
+    - Artist proofs (A/P)
+    - Giclées
+    - Posters
+  </Card>
+
+  <Card title="Photography" icon="camera">
+    - Vintage prints
+    - Modern prints
+    - Limited editions
+    - Chromogenic prints
+    - Platinum prints
+  </Card>
+
+  <Card title="Contemporary & Mixed Media" icon="shapes">
+    - Installations
+    - Video art
+    - Digital art
+    - NFT-linked works
+    - Assemblage
+  </Card>
+</CardGroup>
+
+## Tracking Examples
+
+### Example 1: Oil Painting
+
+<ParamField path="title" type="string">
+  Landscape with Figures - 19th Century
+</ParamField>
+
+<ParamField path="artist" type="string">
+  Attributed to Camille Corot
+</ParamField>
+
+<ParamField path="medium" type="string">
+  Oil on canvas
+</ParamField>
+
+<ParamField path="year_created" type="number">
+  c. 1860
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  24 × 32 inches
+</ParamField>
+
+<ParamField path="signature" type="string">
+  Signed lower left "Corot"
+</ParamField>
+
+<ParamField path="certificate_of_authenticity" type="boolean">
+  Yes - Comité Corot certificate
+</ParamField>
+
+---
+
+### Example 2: Limited Edition Print
+
+<ParamField path="title" type="string">
+  Andy Warhol - Marilyn Monroe (Marilyn)
+</ParamField>
+
+<ParamField path="artist" type="string">
+  Andy Warhol
+</ParamField>
+
+<ParamField path="medium" type="string">
+  Screenprint on paper
+</ParamField>
+
+<ParamField path="year_created" type="number">
+  1967
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  36 × 36 inches
+</ParamField>
+
+<ParamField path="edition" type="string">
+  From the edition of 250, this: 125/250
+</ParamField>
+
+<ParamField path="signature" type="string">
+  Signed and numbered in pencil lower right
+</ParamField>
+
+---
+
+### Example 3: Bronze Sculpture
+
+<ParamField path="title" type="string">
+  Henry Moore - Reclining Figure
+</ParamField>
+
+<ParamField path="artist" type="string">
+  Henry Moore
+</ParamField>
+
+<ParamField path="medium" type="string">
+  Bronze with brown patina
+</ParamField>
+
+<ParamField path="year_created" type="number">
+  1969
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  12 × 24 × 10 inches
+</ParamField>
+
+<ParamField path="edition" type="string">
+  Edition of 9, this: 5/9
+</ParamField>
+
+<ParamField path="signature" type="string">
+  Inscribed with foundry mark and edition number
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Provenance" icon="link">
+    Maintain ownership history:
+    - All previous owners
+    - Dates of acquisition/sale
+    - Gallery and auction records
+    - Exhibition history
+    - Publication references
+    - Catalogue raisonné numbers
+
+    **Why:** Provenance establishes authenticity and affects value
+  </Accordion>
+
+  <Accordion title="Photograph Thoroughly" icon="camera">
+    Capture detailed images:
+    - Full work (front)
+    - Signature close-up
+    - Reverse/back
+    - Frame (if applicable)
+    - Condition issues
+    - Labels and stamps
+    - Certificate of authenticity
+
+    <Tip>
+      Professional photography is recommended for high-value works
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your art:
+    - Climate control (65-70°F, 45-55% humidity)
+    - Avoid direct sunlight
+    - Use UV-filtering glass for framed works
+    - Proper hanging hardware
+    - Archival storage materials
+    - Professional packing for transport
+
+    <Warning>
+      Poor storage conditions can significantly damage art and reduce value
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Maintain Authentication" icon="certificate">
+    Keep authentication documents:
+    - Certificates of authenticity
+    - Expert letters
+    - Catalogue raisonné inclusion
+    - Gallery certificates
+    - Purchase receipts
+    - Condition reports
+
+    <Note>
+      Store copies in Storehouses Secure Storage
+    </Note>
+  </Accordion>
+
+  <Accordion title="Insurance Considerations" icon="shield-check">
+    For valuable art:
+    - Get professional appraisals
+    - Specialized fine art insurance
+    - Update valuations regularly
+    - Document condition thoroughly
+    - Consider all-risk coverage
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I value my art?" icon="dollar-sign">
+    **Valuation methods:**
+    - Professional appraisals
+    - Auction comparables
+    - Gallery pricing
+    - Online databases (Artnet, Artprice)
+    - Insurance valuations
+
+    **Factors affecting value:**
+    - Artist reputation
+    - Provenance
+    - Condition
+    - Size and medium
+    - Subject matter
+    - Market trends
+  </Accordion>
+
+  <Accordion title="How often should I get appraisals?" icon="calendar">
+    **Recommended frequency:**
+    - High-value works: Every 3-5 years
+    - Insurance purposes: Every 3 years
+    - For estate planning: Update as needed
+    - After significant market changes
+
+    <Tip>
+      Track market trends for artists in your collection
+    </Tip>
+  </Accordion>
+
+  <Accordion title="What makes provenance important?" icon="scroll">
+    **Provenance matters because:**
+    - Establishes authenticity
+    - Traces ownership history
+    - Can add value (famous collections)
+    - Required for some auction sales
+    - Important for legal title
+    - Helps with authentication disputes
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Art" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your artworks
+  </Card>
+
+  <Card title="Organize Gallery" icon="folder" href="/features/collections">
+    Create art collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate art reports
+  </Card>
+</CardGroup>

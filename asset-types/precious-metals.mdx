@@ -1,19 +1,21 @@
 ---
-title: "Precious Metals"
-description: "Complete guide to tracking gold, silver, platinum, palladium, and rhodium in your Storehouses portfolio"
+title: "Metals & Bullion"
+description: "Complete guide to tracking precious and industrial metals including gold, silver, copper, and more in your Storehouses portfolio"
 ---
 
 ## Overview
 
-Precious metals are one of the most popular asset categories in Storehouses, offering automatic spot price valuation and real-time portfolio tracking for your bullion investments.
+Metals & Bullion is one of the most popular asset categories in Storehouses, offering automatic spot price valuation and real-time portfolio tracking for both precious metals and industrial metals.
 
 <Tip>
-  Precious metals automatically calculate their value based on weight, purity, and current spot prices. Values update daily as market prices change.
+  All metals automatically calculate their value based on weight, purity, and current spot prices. Values update daily as market prices change.
 </Tip>
 
 ## Supported Metals
 
-Storehouses tracks five precious metals with automatic spot pricing:
+Storehouses tracks both precious metals and industrial metals with automatic spot pricing.
+
+### Precious Metals
 
 <CardGroup cols={2}>
   <Card title="Gold (Au)" icon="coins">
@@ -36,6 +38,34 @@ Storehouses tracks five precious metals with automatic spot pricing:
     Rarest and often most valuable precious metal. Real-time pricing.
   </Card>
 </CardGroup>
+
+### Industrial Metals
+
+<CardGroup cols={2}>
+  <Card title="Copper (Cu)" icon="industry">
+    Essential industrial metal used in construction, electronics, and infrastructure. Tracked with live spot pricing.
+  </Card>
+
+  <Card title="Aluminum (Al)" icon="industry">
+    Lightweight metal used in aerospace, packaging, and construction. Real-time market pricing.
+  </Card>
+
+  <Card title="Nickel (Ni)" icon="industry">
+    Key metal for stainless steel and EV batteries. Automatic spot price valuation.
+  </Card>
+
+  <Card title="Zinc (Zn)" icon="industry">
+    Essential for galvanizing steel and die-casting. Live spot pricing.
+  </Card>
+
+  <Card title="Tin (Sn)" icon="industry">
+    Used in solder, coatings, and alloys. Real-time market pricing.
+  </Card>
+</CardGroup>
+
+<Note>
+  **Price Unit Difference**: Precious metals are priced per troy ounce, while industrial metals are priced per regular ounce. Storehouses automatically handles the conversion - all weights are stored in troy ounces for consistency. 1 troy oz = 1.09714 regular oz.
+</Note>
 
 ## How Automatic Valuation Works
 
@@ -63,19 +93,19 @@ Total Value = $1,833.40 + $50 = $1,883.40
   Spot prices are updated automatically from reliable market data providers. Your portfolio value updates in real-time as prices change.
 </Note>
 
-## Adding Precious Metals
+## Adding Metals
 
 <Steps>
   <Step title="Navigate to Add Item">
     Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
   </Step>
 
-  <Step title="Select Precious Metals">
-    Choose "Precious Metals" as the category
+  <Step title="Select Metals & Bullion">
+    Choose "Metals & Bullion" as the category
   </Step>
 
   <Step title="Fill in Required Fields">
-    Complete the precious metals-specific fields (see below)
+    Complete the metals-specific fields (see below)
   </Step>
 
   <Step title="Add Optional Details">
@@ -87,19 +117,26 @@ Total Value = $1,833.40 + $50 = $1,883.40
   </Step>
 </Steps>
 
-## Precious Metals Fields
+## Metals Fields
 
 ### Required Fields
 
 <ParamField path="metal_type" type="select" required>
-  Type of precious metal
+  Type of metal
 
-  **Options:**
+  **Precious Metals:**
   - Gold
   - Silver
   - Platinum
   - Palladium
   - Rhodium
+
+  **Industrial Metals:**
+  - Copper
+  - Aluminum
+  - Nickel
+  - Zinc
+  - Tin
 </ParamField>
 
 <ParamField path="weight" type="number" required>
@@ -267,6 +304,68 @@ Total Value = $1,833.40 + $50 = $1,883.40
     <Warning>
       Rhodium is extremely rare and volatile. Prices can fluctuate dramatically.
     </Warning>
+  </Accordion>
+</AccordionGroup>
+
+### Industrial Metals
+
+<AccordionGroup>
+  <Accordion title="Copper" icon="industry">
+    **Common forms:**
+    - Copper bars (1 oz, 10 oz, 1 lb, 1 kilo)
+    - Copper rounds (1 oz most common)
+    - Copper bullion coins
+    - Copper ingots
+
+    **Purity:** Usually .999 or .9999 fine
+
+    **Use cases:**
+    - Diversification from precious metals
+    - Industrial exposure
+    - Lower price point entry to metals investing
+  </Accordion>
+
+  <Accordion title="Aluminum" icon="industry">
+    **Common forms:**
+    - Aluminum bars
+    - Aluminum ingots
+    - Industrial-grade bullion
+
+    **Purity:** Various grades available
+
+    **Note:** Less common in retail bullion market than copper
+  </Accordion>
+
+  <Accordion title="Nickel" icon="industry">
+    **Common forms:**
+    - Nickel bars
+    - Nickel rounds
+    - Industrial ingots
+
+    **Purity:** Usually .999 fine
+
+    **Market drivers:** EV battery demand, stainless steel production
+  </Accordion>
+
+  <Accordion title="Zinc" icon="industry">
+    **Common forms:**
+    - Zinc bars
+    - Zinc ingots
+    - Industrial-grade bullion
+
+    **Purity:** Various grades (usually 99%+)
+
+    **Use:** Galvanizing, die-casting, brass production
+  </Accordion>
+
+  <Accordion title="Tin" icon="industry">
+    **Common forms:**
+    - Tin bars
+    - Tin ingots
+
+    **Purity:** Usually 99.9%+
+
+    **Use:** Solder, tin plating, alloys
   </Accordion>
 </AccordionGroup>
 
@@ -607,7 +706,7 @@ Consider using Storehouses' Heir Access feature (Pro) to provide:
 ## Next Steps
 
 <CardGroup cols={2}>
-  <Card title="Add Precious Metals" icon="plus" href="https://storehouses.app/add">
+  <Card title="Add Metals" icon="plus" href="https://storehouses.app/add">
     Start tracking your bullion
   </Card>
 

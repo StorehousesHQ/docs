@@ -1,0 +1,327 @@
+---
+title: "Trading Cards"
+description: "Complete guide to tracking sports cards, TCG collectibles, and graded cards in Storehouses"
+---
+
+## Overview
+
+Track your trading card collection with detailed fields for sport/game, player, card set, grade, and grading service. Perfect for sports card collectors, TCG enthusiasts, and investors managing graded cards and vintage collections.
+
+<Card title="Trading Card Features" icon="cards">
+  - Sport/game classification
+  - Player or character tracking
+  - Card set and year
+  - Grade and grading service (PSA, BGS, CGC)
+  - Population reports
+  - Market value tracking
+</Card>
+
+## Adding a Trading Card
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Trading Cards">
+    Choose "Trading Cards" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in sport/game, player, card set, grade, and grading service
+  </Step>
+
+  <Step title="Add Images">
+    Upload photos of front, back, and grading slab (if applicable)
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Card Fields
+
+### Identification
+
+<ParamField path="sport_game" type="string">
+  Sport or game category
+
+  **Sports:**
+  - Baseball
+  - Basketball
+  - Football
+  - Hockey
+  - Soccer
+  - Golf
+  - Boxing/MMA
+
+  **Trading Card Games:**
+  - Pokemon
+  - Magic: The Gathering
+  - Yu-Gi-Oh!
+  - Sports cards
+  - Non-sport (entertainment)
+</ParamField>
+
+<ParamField path="player_character" type="string">
+  Player name or character featured
+
+  **Examples:**
+  - Michael Jordan
+  - Mickey Mantle
+  - Charizard
+  - Black Lotus
+  - LeBron James
+</ParamField>
+
+<ParamField path="card_set" type="string">
+  Card set or product name
+
+  **Examples:**
+  - 1952 Topps
+  - 1986-87 Fleer
+  - Base Set Unlimited
+  - Prizm Silver
+  - National Treasures
+</ParamField>
+
+<ParamField path="year" type="number">
+  Year the card was produced
+
+  **Examples:**
+  - 1952 (Topps Mickey Mantle)
+  - 1986 (Fleer Michael Jordan RC)
+  - 1999 (Base Set Charizard)
+</ParamField>
+
+<ParamField path="card_number" type="string">
+  Card number within the set
+
+  **Examples:**
+  - #311 (1952 Topps Mantle)
+  - #57 (1986 Fleer Jordan)
+  - #4/102 (Base Set Charizard)
+</ParamField>
+
+### Grading
+
+<ParamField path="grade" type="string">
+  Numeric grade
+
+  **PSA Scale (1-10):**
+  - **PSA 10** - Gem Mint
+  - **PSA 9** - Mint
+  - **PSA 8** - Near Mint-Mint
+  - **PSA 7** - Near Mint
+  - **PSA 6** - Excellent-Mint
+  - **PSA 5** - Excellent
+  - **PSA 4** - Very Good-Excellent
+  - **PSA 3** - Very Good
+  - **PSA 2** - Good
+  - **PSA 1** - Poor
+
+  **BGS uses subgrades:** Centering, Corners, Edges, Surface
+</ParamField>
+
+<ParamField path="grading_service" type="string">
+  Third-party grading service
+
+  **Major Services:**
+  - **PSA** - Professional Sports Authenticator (most popular)
+  - **BGS** - Beckett Grading Services
+  - **SGC** - Sportscard Guaranty Corporation
+  - **CGC** - Certified Guaranty Company (TCG focus)
+
+  <Tip>
+    PSA 10s and BGS 10s (Black Label) command the highest premiums
+  </Tip>
+</ParamField>
+
+<ParamField path="certification_number" type="string">
+  Grading service certification number
+
+  **Use:** Allows verification and population lookup
+</ParamField>
+
+### Special Designations
+
+<ParamField path="parallel" type="string">
+  Parallel or variation type
+
+  **Examples:**
+  - Base
+  - Silver Prizm
+  - Gold /10
+  - 1st Edition
+  - Holo
+  - Refractor
+  - Shadowless
+</ParamField>
+
+<ParamField path="auto_patch" type="string">
+  Autograph and patch details
+
+  **Examples:**
+  - On-card Auto
+  - Patch Auto /25
+  - Rookie Patch Auto (RPA)
+  - Sticker Auto
+</ParamField>
+
+## Types of Trading Cards
+
+<CardGroup cols={2}>
+  <Card title="Vintage Sports" icon="baseball">
+    - Pre-war cards (1900s-1940s)
+    - Topps/Bowman classics (1950s-1970s)
+    - T206, Goudey, Play Ball
+    - Tobacco cards
+  </Card>
+
+  <Card title="Modern Sports" icon="basketball">
+    - Rookie cards
+    - Prizm, Select, Optic
+    - National Treasures
+    - Autograph/Patch cards
+  </Card>
+
+  <Card title="Pokemon" icon="gamepad">
+    - Base Set classics
+    - Modern chase cards
+    - Japanese exclusives
+    - Graded slabs
+  </Card>
+
+  <Card title="Magic: The Gathering" icon="hat-wizard">
+    - Power Nine
+    - Reserved List
+    - Alpha/Beta
+    - Modern staples
+  </Card>
+
+  <Card title="Yu-Gi-Oh!" icon="cards">
+    - 1st Edition LOB
+    - Ghost Rares
+    - Tournament cards
+    - Vintage holos
+  </Card>
+
+  <Card title="Non-Sport" icon="film">
+    - Entertainment cards
+    - Garbage Pail Kids
+    - Star Wars
+    - Marvel/DC
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Get Cards Graded" icon="certificate">
+    For valuable cards ($50+ raw):
+    - PSA is most popular for sports
+    - BGS for premium look and subgrades
+    - CGC gaining for Pokemon/TCG
+    - Grading protects and authenticates
+
+    <Warning>
+      Grading wait times can be long - factor this into your planning
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your collection:
+    - Penny sleeves + top loaders for raw cards
+    - Keep graded cards in cases/boxes
+    - Control temperature and humidity
+    - Avoid direct sunlight
+    - Never bend or touch card surface
+  </Accordion>
+
+  <Accordion title="Research Values" icon="search">
+    Stay informed on market:
+    - Check eBay sold listings
+    - PSA/BGS pop reports
+    - 130point.com for sales data
+    - Card Ladder for price trends
+    - Market Movers for Pokemon
+  </Accordion>
+
+  <Accordion title="Document Everything" icon="file-text">
+    Record for each card:
+    - Full card description
+    - Grade and cert number
+    - Purchase price and date
+    - Front/back photos
+    - Any special variations
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="PSA vs BGS - which is better?" icon="scale-balanced">
+    **PSA:**
+    - Most recognized and liquid
+    - Simple 1-10 scale
+    - Higher premiums for PSA 10s
+    - Best for most sports cards
+
+    **BGS:**
+    - Subgrades add detail
+    - Black Label 10s very prestigious
+    - Popular for modern high-end
+    - Tuxedo cases look premium
+
+    **Choose based on:** What you collect and target market
+  </Accordion>
+
+  <Accordion title="Is this card worth grading?" icon="certificate">
+    **Consider grading if:**
+    - Raw value is $50+
+    - Card appears high grade (8+)
+    - You plan to sell eventually
+    - It's a key rookie or chase card
+
+    **Skip grading if:**
+    - Low value or common card
+    - Obvious condition issues
+    - Grading cost exceeds value increase
+  </Accordion>
+
+  <Accordion title="How do I spot fakes?" icon="triangle-exclamation">
+    **Red flags:**
+    - Price too good to be true
+    - Seller with no history
+    - Wrong card stock or finish
+    - Font or printing issues
+    - No certification verification
+
+    **Protection:**
+    - Buy graded when possible
+    - Verify cert numbers online
+    - Purchase from reputable sellers
+    - Know the authentic characteristics
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Cards" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your cards
+  </Card>
+
+  <Card title="Organize Sets" icon="folder" href="/features/collections">
+    Create card collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate card reports
+  </Card>
+</CardGroup>

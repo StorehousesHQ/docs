@@ -37,13 +37,19 @@
             "pages": [
               "asset-types/overview",
               "asset-types/precious-metals",
+              "asset-types/coins-currency",
               "asset-types/watches",
-              "asset-types/gems",
               "asset-types/jewelry",
+              "asset-types/gems",
               "asset-types/wine",
               "asset-types/spirits",
               "asset-types/fine-art",
               "asset-types/arms-armor",
+              "asset-types/trading-cards",
+              "asset-types/vintage-automobiles",
+              "asset-types/manuscripts",
+              "asset-types/artifacts",
+              "asset-types/stamps",
               "asset-types/other-collectibles"
             ]
           },
@@ -63,6 +69,7 @@
               "advanced/price-alerts",
               "advanced/sharing",
               "advanced/heir-access",
+              "advanced/secure-storage",
               "advanced/offline-mode"
             ]
           },

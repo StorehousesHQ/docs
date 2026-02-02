@@ -1,0 +1,327 @@
+---
+title: "Coins & Currency"
+description: "Complete guide to tracking numismatic coins, paper currency, and graded collectible currency in Storehouses"
+---
+
+## Overview
+
+Track your numismatic collection with detailed fields for country, denomination, year, mint mark, grade, and grading service. Perfect for coin collectors, numismatists, and investors managing rare coins, ancient coinage, and collectible paper currency.
+
+<Card title="Coin Tracking Features" icon="money-bill">
+  - Country and denomination
+  - Year minted and mint mark
+  - Grade and grading service (PCGS, NGC, etc.)
+  - Mintage numbers
+  - Certification details
+  - Market value tracking
+</Card>
+
+## Adding a Coin
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Coins & Currency">
+    Choose "Coins & Currency" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in country, denomination, year, mint mark, grade, and grading service
+  </Step>
+
+  <Step title="Add Images">
+    Upload photos of obverse, reverse, and certification slab (if applicable)
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Coin Fields
+
+### Identification
+
+<ParamField path="country" type="string">
+  Issuing country or authority
+
+  **Examples:**
+  - United States
+  - Great Britain
+  - Roman Empire
+  - Ancient Greece
+  - China (specify dynasty)
+  - Germany (specify period)
+
+  <Tip>
+    For ancient coins, use the issuing authority or empire
+  </Tip>
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  Face value or coin type
+
+  **Examples:**
+  - Half Dollar
+  - 1 Dollar
+  - Denarius
+  - Sovereign
+  - Double Eagle ($20)
+  - Morgan Dollar
+
+  <Note>
+    Include the full denomination name for clarity
+  </Note>
+</ParamField>
+
+<ParamField path="year_minted" type="number">
+  Year the coin was struck
+
+  **Examples:**
+  - 1893 (Morgan Dollar key date)
+  - 1909-S (VDB Lincoln Cent)
+  - 44 BCE (Julius Caesar denarius)
+  - 2024 (modern issue)
+</ParamField>
+
+<ParamField path="mint_mark" type="string">
+  Mint of origin identifier
+
+  **US Mint Marks:**
+  - **P** - Philadelphia (often no mark)
+  - **D** - Denver
+  - **S** - San Francisco
+  - **W** - West Point
+  - **O** - New Orleans (historical)
+  - **CC** - Carson City (historical)
+
+  **Other countries:** Varies by nation and era
+</ParamField>
+
+### Grading
+
+<ParamField path="grade" type="string">
+  Numeric or descriptive grade
+
+  **Sheldon Scale (1-70):**
+  - **MS-70** - Perfect uncirculated
+  - **MS-65** - Gem uncirculated
+  - **MS-60** - Uncirculated
+  - **AU-58** - Choice About Uncirculated
+  - **AU-50** - About Uncirculated
+  - **EF/XF-40** - Extremely Fine
+  - **VF-30** - Very Fine
+  - **F-12** - Fine
+  - **VG-8** - Very Good
+  - **G-4** - Good
+  - **AG-3** - About Good
+  - **FR-2** - Fair
+  - **PO-1** - Poor
+
+  **Proof grades:** PF-60 to PF-70
+</ParamField>
+
+<ParamField path="grading_service" type="string">
+  Third-party grading service
+
+  **Major Services:**
+  - **PCGS** - Professional Coin Grading Service
+  - **NGC** - Numismatic Guaranty Corporation
+  - **ANACS** - American Numismatic Assoc. Certification Service
+  - **ICG** - Independent Coin Graders
+  - **CAC** - Certified Acceptance Corporation (sticker)
+
+  <Tip>
+    PCGS and NGC certified coins typically command premium prices
+  </Tip>
+</ParamField>
+
+<ParamField path="certification_number" type="string">
+  Grading service certification number
+
+  **Use:** Allows verification on grading service website
+</ParamField>
+
+### Additional Details
+
+<ParamField path="mintage" type="number">
+  Number of coins minted
+
+  **Why it matters:** Lower mintage often means higher value
+
+  **Examples:**
+  - 1,000 (limited edition proof)
+  - 100,000 (key date)
+  - 10,000,000 (common circulation coin)
+</ParamField>
+
+<ParamField path="variety" type="string">
+  Die variety or special designation
+
+  **Examples:**
+  - 1955 DDO (Doubled Die Obverse)
+  - VAM-4 (Morgan Dollar variety)
+  - Full Steps (Jefferson Nickel)
+  - Full Bands (Mercury Dime)
+  - Deep Cameo (proof)
+</ParamField>
+
+## Types of Numismatic Items
+
+<CardGroup cols={2}>
+  <Card title="US Type Coins" icon="coins">
+    - Morgan/Peace Dollars
+    - Walking Liberty Half Dollars
+    - Buffalo Nickels
+    - Mercury Dimes
+    - Indian Head Cents
+    - Gold Eagles
+  </Card>
+
+  <Card title="World Coins" icon="globe">
+    - British Sovereigns
+    - Canadian Maple Leafs
+    - Mexican Pesos
+    - European Crowns
+    - Asian coinage
+  </Card>
+
+  <Card title="Ancient Coins" icon="landmark">
+    - Roman Denarii
+    - Greek Drachmas
+    - Byzantine Solidi
+    - Medieval coinage
+  </Card>
+
+  <Card title="Paper Currency" icon="money-bill">
+    - Federal Reserve Notes
+    - Large Size Notes
+    - Fractional Currency
+    - Confederate Currency
+    - World Banknotes
+  </Card>
+
+  <Card title="Commemoratives" icon="star">
+    - US Commemorative coins
+    - Olympic coins
+    - Special issues
+    - Mint sets
+  </Card>
+
+  <Card title="Error Coins" icon="triangle-exclamation">
+    - Doubled dies
+    - Off-center strikes
+    - Wrong planchet errors
+    - Mint mistakes
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Get Coins Graded" icon="certificate">
+    For valuable coins ($100+):
+    - Use PCGS or NGC for best resale value
+    - Certification protects authenticity
+    - Graded coins are easier to sell
+    - Slabs protect from damage
+
+    <Tip>
+      Record certification numbers in Storehouses for easy verification
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your collection:
+    - Use coin holders or capsules
+    - Keep graded coins in original slabs
+    - Control temperature and humidity
+    - Never clean your coins
+    - Handle by edges only
+
+    <Warning>
+      Cleaning coins destroys value - never clean your coins
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Research Before Buying" icon="search">
+    Know what you're buying:
+    - Check PCGS/NGC price guides
+    - Verify certification numbers online
+    - Research mintage figures
+    - Understand key dates and varieties
+    - Compare to recent auction results
+  </Accordion>
+
+  <Accordion title="Document Thoroughly" icon="file-text">
+    Record for each coin:
+    - Full description and specifications
+    - Grade and certification details
+    - Purchase price and source
+    - Photos of both sides
+    - Any special designations (CAC, variety)
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="Should I get my coins graded?" icon="certificate">
+    **Consider grading if:**
+    - Coin is worth $100+ raw
+    - You plan to sell eventually
+    - Authenticity is important
+    - You want protection from damage
+
+    **Skip grading if:**
+    - Common, low-value coins
+    - Personal collection not for sale
+    - Grading cost exceeds coin value
+  </Accordion>
+
+  <Accordion title="How do I value my coins?" icon="dollar-sign">
+    **Valuation resources:**
+    - PCGS/NGC Price Guides
+    - Heritage Auctions archives
+    - Red Book (Guide Book of US Coins)
+    - eBay completed sales
+    - Dealer price lists
+
+    <Note>
+      Graded coin values differ significantly from raw coin estimates
+    </Note>
+  </Accordion>
+
+  <Accordion title="PCGS vs NGC - which is better?" icon="scale-balanced">
+    **Both are excellent:**
+    - PCGS often preferred for US coins
+    - NGC strong for world coins
+    - Both widely accepted
+    - Both have online verification
+    - Both offer similar protection
+
+    **Choose based on:** What you collect and personal preference
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Coins" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your coins
+  </Card>
+
+  <Card title="Organize Albums" icon="folder" href="/features/collections">
+    Create coin collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate coin reports
+  </Card>
+</CardGroup>

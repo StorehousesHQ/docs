@@ -1,0 +1,294 @@
+---
+title: "Vintage Automobiles"
+description: "Complete guide to tracking classic cars, collector vehicles, and vintage automobiles in Storehouses"
+---
+
+## Overview
+
+Track your vintage automobile collection with detailed fields for make, model, year, VIN, and condition. Perfect for classic car collectors, automotive enthusiasts, and investors managing collector vehicles.
+
+<Card title="Vintage Auto Features" icon="car">
+  - Make, model, and year
+  - VIN tracking
+  - Condition assessment
+  - Restoration documentation
+  - Mileage and service history
+  - Market value tracking
+</Card>
+
+## Adding a Vehicle
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Vintage Automobiles">
+    Choose "Vintage Automobiles" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in make, model, year, VIN, and condition
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos and documentation (title, service records, appraisals)
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Vehicle Fields
+
+### Identification
+
+<ParamField path="make" type="string">
+  Vehicle manufacturer
+
+  **Examples:**
+  - Ferrari
+  - Porsche
+  - Ford
+  - Chevrolet
+  - Mercedes-Benz
+  - Jaguar
+  - Aston Martin
+</ParamField>
+
+<ParamField path="model" type="string">
+  Specific model name
+
+  **Examples:**
+  - 250 GTO
+  - 911 Carrera
+  - Mustang Shelby GT500
+  - Corvette Stingray
+  - 300SL Gullwing
+  - E-Type
+</ParamField>
+
+<ParamField path="year" type="number">
+  Model year
+
+  **Examples:**
+  - 1963 (Split-window Corvette)
+  - 1967 (Shelby GT500)
+  - 1969 (Boss 429)
+  - 1973 (Carrera RS)
+</ParamField>
+
+<ParamField path="vin" type="string">
+  Vehicle Identification Number
+
+  **Importance:**
+  - Verifies authenticity
+  - Tracks ownership history
+  - Essential for insurance
+  - Required for registration
+
+  <Warning>
+    Store VIN securely - it's sensitive information
+  </Warning>
+</ParamField>
+
+### Condition
+
+<ParamField path="condition" type="select">
+  Overall vehicle condition
+
+  **Standard classifications:**
+  - **Concours** - Show-quality, flawless
+  - **Excellent** - Near perfect, minimal wear
+  - **Very Good** - Well maintained, minor imperfections
+  - **Good** - Presentable, some wear
+  - **Fair** - Running but needs work
+  - **Project** - Requires significant restoration
+</ParamField>
+
+<ParamField path="mileage" type="string">
+  Current odometer reading
+
+  **Examples:**
+  - "45,000 original miles"
+  - "12,500 miles since restoration"
+  - "Unknown - odometer replaced"
+</ParamField>
+
+### History
+
+<ParamField path="provenance" type="textarea">
+  Ownership and vehicle history
+
+  **Include:**
+  - Number of previous owners
+  - Notable previous owners
+  - Racing history
+  - Accident history
+  - Geographic history
+</ParamField>
+
+<ParamField path="restoration" type="textarea">
+  Restoration details
+
+  **Document:**
+  - Restoration date and shop
+  - Work performed
+  - Parts replaced vs. original
+  - Documentation and photos
+  - Cost of restoration
+</ParamField>
+
+## Types of Collector Vehicles
+
+<CardGroup cols={2}>
+  <Card title="European Sports Cars" icon="flag">
+    - Ferrari (250 GTO, Testarossa)
+    - Porsche (911, 356)
+    - Jaguar (E-Type, XK)
+    - Aston Martin (DB5)
+    - Mercedes (300SL)
+  </Card>
+
+  <Card title="American Muscle" icon="flag-usa">
+    - Ford Mustang/Shelby
+    - Chevrolet Corvette/Camaro
+    - Dodge Challenger/Charger
+    - Pontiac GTO
+    - Plymouth Barracuda
+  </Card>
+
+  <Card title="Vintage Classics" icon="clock">
+    - Pre-war automobiles
+    - 1950s American classics
+    - British sports cars
+    - German engineering
+  </Card>
+
+  <Card title="Modern Classics" icon="car-side">
+    - 1980s-1990s sports cars
+    - Japanese performance
+    - Limited editions
+    - Supercars
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Thoroughly" icon="file-text">
+    Maintain complete records:
+    - Title and registration
+    - Service history
+    - Restoration receipts
+    - Appraisals (annual update)
+    - Photos (interior, exterior, engine, undercarriage)
+    - Original documentation (window sticker, manuals)
+
+    <Tip>
+      Store documentation copies in Storehouses Secure Storage
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="warehouse">
+    Protect your investment:
+    - Climate-controlled storage
+    - Battery tender when not in use
+    - Proper car cover
+    - Regular maintenance even when stored
+    - Rodent prevention
+    - Fuel stabilizer for long-term storage
+  </Accordion>
+
+  <Accordion title="Insurance Considerations" icon="shield-check">
+    Specialized coverage needed:
+    - Agreed value coverage (not actual cash value)
+    - Collector car insurance specialists
+    - Document values with appraisals
+    - Review coverage annually
+    - Consider usage restrictions
+
+    **Specialist insurers:**
+    - Hagerty
+    - Grundy
+    - American Collectors
+  </Accordion>
+
+  <Accordion title="Maintain Authenticity" icon="certificate">
+    Preserve value:
+    - Keep original parts when possible
+    - Document any modifications
+    - Matching numbers add value
+    - Period-correct restorations preferred
+    - Maintain original documentation
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I value my classic car?" icon="dollar-sign">
+    **Valuation resources:**
+    - Hagerty Valuation Tools
+    - Sports Car Market
+    - Bring a Trailer results
+    - RM Sotheby's/Gooding auction results
+    - Professional appraisals
+
+    **Factors affecting value:**
+    - Condition and originality
+    - Matching numbers
+    - Provenance
+    - Rarity
+    - Color combination
+    - Documentation completeness
+  </Accordion>
+
+  <Accordion title="Restored vs. original - which is worth more?" icon="wrench">
+    **It depends on the car:**
+    - **Survivor cars** with original paint/interior can command premiums
+    - **Concours restorations** valuable for show cars
+    - **Driver-quality** cars have strong market
+    - **Matching numbers** always important
+
+    <Note>
+      Market preferences vary by marque and era
+    </Note>
+  </Accordion>
+
+  <Accordion title="How often should I drive it?" icon="road">
+    **General guidance:**
+    - Regular use is good (prevents mechanical issues)
+    - Avoid harsh conditions
+    - Warm up properly before driving
+    - Keep fuel fresh
+    - Document mileage
+
+    **Storage periods:**
+    - Run engine periodically
+    - Use battery tender
+    - Rotate tires
+    - Check fluids
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Vehicles" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your vehicles
+  </Card>
+
+  <Card title="Organize Garage" icon="folder" href="/features/collections">
+    Create vehicle collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate vehicle reports
+  </Card>
+</CardGroup>

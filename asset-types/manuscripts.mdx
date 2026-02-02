@@ -1,0 +1,534 @@
+---
+title: "Rare Books & Manuscripts"
+description: "Complete guide to tracking rare books, historical documents, first editions, and manuscript collections in Storehouses"
+---
+
+## Overview
+
+Track your rare book and manuscript collection with detailed fields for author, publication year, edition, binding type, and condition. Perfect for bibliophiles, collectors, and institutions managing valuable printed and handwritten works.
+
+<Card title="Manuscript Tracking Features" icon="book">
+  - Author and publication details
+  - Edition and printing information
+  - Binding type and condition
+  - Signed/inscribed status
+  - Publisher and provenance
+  - Market value tracking
+</Card>
+
+## Adding a Manuscript or Rare Book
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Rare Books & Manuscripts">
+    Choose "Rare Books & Manuscripts" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in author, title, publication year, edition, and condition
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos of cover, title page, signature, and any notable features
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Manuscript Fields
+
+### Author Information
+
+<ParamField path="author" type="string">
+  Author or creator of the work
+
+  **Examples:**
+  - Charles Darwin
+  - Jane Austen
+  - William Shakespeare
+  - Mark Twain
+  - Ernest Hemingway
+
+  <Tip>
+    Use the author's most commonly recognized name for consistency
+  </Tip>
+</ParamField>
+
+### Publication Details
+
+<ParamField path="publication_year" type="number">
+  Year the work was published or created
+
+  **Examples:**
+  - 1859 (Origin of Species first edition)
+  - 1813 (Pride and Prejudice first edition)
+  - 1611 (King James Bible)
+  - 1623 (Shakespeare First Folio)
+
+  **Use:** Critical for:
+  - First edition identification
+  - Dating historical documents
+  - Market value research
+</ParamField>
+
+<ParamField path="publisher" type="string">
+  Publishing house or printer
+
+  **Examples:**
+  - John Murray (London)
+  - Scribner's
+  - Penguin Books
+  - Private press (specify)
+  - Self-published
+
+  <Note>
+    For historical documents, note the printer or scribe if known
+  </Note>
+</ParamField>
+
+<ParamField path="edition" type="string">
+  Edition and printing information
+
+  **Common entries:**
+  - First Edition, First Printing
+  - First American Edition
+  - Limited Edition (1/500)
+  - Second Edition
+  - First UK Edition
+  - Advance Reading Copy (ARC)
+  - Proof Copy
+
+  **First edition identification:**
+  - Look for edition statements on copyright page
+  - Check for number lines (1 2 3 4 5...)
+  - Research publisher-specific indicators
+
+  <Warning>
+    First editions vary significantly in value. Verify authenticity through bibliographic research or expert appraisal.
+  </Warning>
+</ParamField>
+
+### Physical Details
+
+<ParamField path="binding_type" type="string">
+  Type of book binding
+
+  **Common types:**
+  - **Hardcover** - Cloth or leather over boards
+  - **Leather** - Full or partial leather binding
+  - **Cloth** - Original publisher's cloth
+  - **Paperback/Softcover** - Paper covers
+  - **Vellum** - Calfskin binding
+  - **Half-leather** - Leather spine with cloth sides
+  - **Morocco** - Goatskin leather
+  - **Calf** - Calfskin leather
+  - **Publisher's boards** - Original boards
+  - **Custom binding** - Rebinding by binder
+
+  **For manuscripts:**
+  - Unbound
+  - Portfolio
+  - Archival folder
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Overall condition of the item
+
+  **Standard grading:**
+  - **Fine (F)** - Nearly perfect, minimal wear
+  - **Near Fine (NF)** - Almost fine, very minor flaws
+  - **Very Good (VG)** - Shows some wear but intact
+  - **Good (G)** - Average used condition
+  - **Fair** - Heavy wear but complete
+  - **Poor** - Major defects, reading copy only
+
+  **Condition factors:**
+  - Binding tightness
+  - Page condition (foxing, browning)
+  - Dust jacket condition (if applicable)
+  - Spine condition
+  - Cover wear
+  - Any repairs or restoration
+
+  <Note>
+    Condition significantly impacts value. Be honest and detailed in assessment.
+  </Note>
+</ParamField>
+
+### Special Features
+
+<ParamField path="signed" type="boolean">
+  Whether the work is signed or inscribed
+
+  **Types of signatures:**
+  - **Signed** - Author's signature only
+  - **Inscribed** - Signed with personal dedication
+  - **Presentation copy** - Gifted by author
+  - **Association copy** - Owned by notable person
+
+  <Tip>
+    Signed first editions are typically more valuable than unsigned copies
+  </Tip>
+</ParamField>
+
+<ParamField path="dust_jacket" type="string">
+  Dust jacket presence and condition
+
+  **Examples:**
+  - "Present, Near Fine"
+  - "Present with minor chips"
+  - "Absent"
+  - "Facsimile jacket"
+  - "Price-clipped"
+
+  <Warning>
+    For 20th-century books, dust jacket condition can account for 80%+ of value
+  </Warning>
+</ParamField>
+
+## Types of Items to Track
+
+### Printed Books
+
+<CardGroup cols={2}>
+  <Card title="First Editions" icon="1">
+    - First printing of first edition
+    - Limited editions
+    - Advance copies
+    - Proofs and galleys
+  </Card>
+
+  <Card title="Signed Books" icon="signature">
+    - Author signatures
+    - Inscribed copies
+    - Presentation copies
+    - Association copies
+  </Card>
+
+  <Card title="Illustrated Books" icon="image">
+    - Artist-illustrated editions
+    - Limited art editions
+    - Hand-colored plates
+    - Fine press books
+  </Card>
+
+  <Card title="Antiquarian Books" icon="scroll">
+    - Pre-1900 publications
+    - Incunabula (pre-1501)
+    - Early printed books
+    - Historical texts
+  </Card>
+</CardGroup>
+
+### Manuscripts and Documents
+
+<CardGroup cols={2}>
+  <Card title="Historical Documents" icon="file-alt">
+    - Letters and correspondence
+    - Legal documents
+    - Government records
+    - Contracts and deeds
+  </Card>
+
+  <Card title="Literary Manuscripts" icon="pen-fancy">
+    - Author drafts
+    - Original manuscripts
+    - Typescripts
+    - Galley proofs with corrections
+  </Card>
+
+  <Card title="Personal Papers" icon="envelope">
+    - Diaries and journals
+    - Family correspondence
+    - Personal notes
+    - Scrapbooks
+  </Card>
+
+  <Card title="Archival Materials" icon="archive">
+    - Photographs
+    - Maps and charts
+    - Ephemera
+    - Broadsides
+  </Card>
+</CardGroup>
+
+## Tracking Examples
+
+### Example 1: First Edition Novel
+
+<ParamField path="title" type="string">
+  The Great Gatsby - First Edition
+</ParamField>
+
+<ParamField path="author" type="string">
+  F. Scott Fitzgerald
+</ParamField>
+
+<ParamField path="publication_year" type="number">
+  1925
+</ParamField>
+
+<ParamField path="publisher" type="string">
+  Charles Scribner's Sons
+</ParamField>
+
+<ParamField path="edition" type="string">
+  First Edition, First Printing
+</ParamField>
+
+<ParamField path="binding_type" type="string">
+  Publisher's cloth
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Very Good
+</ParamField>
+
+<ParamField path="dust_jacket" type="string">
+  Present, Good condition with chips at spine
+</ParamField>
+
+<ParamField path="signed" type="boolean">
+  No
+</ParamField>
+
+---
+
+### Example 2: Signed Modern First
+
+<ParamField path="title" type="string">
+  Harry Potter and the Philosopher's Stone - Signed First Edition
+</ParamField>
+
+<ParamField path="author" type="string">
+  J.K. Rowling
+</ParamField>
+
+<ParamField path="publication_year" type="number">
+  1997
+</ParamField>
+
+<ParamField path="publisher" type="string">
+  Bloomsbury
+</ParamField>
+
+<ParamField path="edition" type="string">
+  First Edition, First Printing (1/500 hardcover)
+</ParamField>
+
+<ParamField path="binding_type" type="string">
+  Publisher's boards
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Fine
+</ParamField>
+
+<ParamField path="signed" type="boolean">
+  Yes - signed on title page
+</ParamField>
+
+---
+
+### Example 3: Historical Letter
+
+<ParamField path="title" type="string">
+  Abraham Lincoln Letter to General Grant, 1864
+</ParamField>
+
+<ParamField path="author" type="string">
+  Abraham Lincoln
+</ParamField>
+
+<ParamField path="publication_year" type="number">
+  1864
+</ParamField>
+
+<ParamField path="edition" type="string">
+  Manuscript - Autograph Letter Signed (ALS)
+</ParamField>
+
+<ParamField path="binding_type" type="string">
+  Unbound, archival folder
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Very Good
+</ParamField>
+
+<ParamField path="signed" type="boolean">
+  Yes - fully signed
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Thoroughly" icon="file-text">
+    Create complete records including:
+    - Full bibliographic details
+    - Publication points (first edition identifiers)
+    - Condition notes (be specific about flaws)
+    - Provenance information
+    - Any accompanying documentation
+    - Professional appraisals
+
+    **Why:** Essential for insurance, resale, and authentication
+  </Accordion>
+
+  <Accordion title="Photograph Key Features" icon="camera">
+    Capture detailed photos of:
+    - Front cover and spine
+    - Title page
+    - Copyright page
+    - Any signatures or inscriptions
+    - Dust jacket (all sides)
+    - Condition issues (foxing, tears, etc.)
+    - Binding details
+    - Any unique features
+
+    <Tip>
+      Good photos can help with remote authentication and insurance claims
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Verify Editions" icon="search">
+    Research before purchasing:
+    - Check bibliographies for edition points
+    - Consult dealer catalogs
+    - Verify signatures with authentication services
+    - Compare with known copies
+    - Consider professional authentication for high-value items
+
+    **Resources:**
+    - McBride's Points of Issue
+    - Collected Books: The Guide to Values
+    - Dealer and auction records
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your collection:
+    - Store upright (not leaning)
+    - Avoid direct sunlight
+    - Control temperature and humidity
+    - Use acid-free materials
+    - Handle with clean hands
+    - Consider archival boxes for valuable items
+    - Dust jackets in mylar covers
+
+    <Warning>
+      Poor storage can significantly damage value
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Track Provenance" icon="link">
+    Document ownership history:
+    - Previous owners
+    - Bookplates and stamps
+    - Acquisition source
+    - Auction records
+    - Dealer receipts
+    - Letters of authenticity
+
+    **Why:** Provenance can add significant value, especially for association copies
+  </Accordion>
+
+  <Accordion title="Insurance Considerations" icon="shield-check">
+    For valuable books:
+    - Get professional appraisals
+    - Specialized collectibles insurance
+    - Document with photos and descriptions
+    - Update values periodically
+    - Keep records off-site
+
+    <Tip>
+      Export your book inventory from Storehouses for insurance documentation
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I identify a first edition?" icon="search">
+    **First edition identification varies by publisher:**
+    - **Number line:** Look for "1" in the number line (1 2 3 4 5...)
+    - **Edition statement:** "First Edition" or "First Printing"
+    - **Date matching:** Copyright date matches title page date
+    - **Publisher indicators:** Each publisher has specific markers
+
+    **Research resources:**
+    - Publisher-specific guides
+    - Bibliographic references
+    - Collector forums and communities
+    - Professional book dealers
+  </Accordion>
+
+  <Accordion title="Should I clean or repair old books?" icon="spray-can">
+    **Generally, no:**
+    - Amateur repairs can decrease value
+    - Cleaning can damage delicate materials
+    - Original condition is preferred by collectors
+    - Professional restoration for valuable items only
+
+    **Exception:** Basic dusting with soft brush is acceptable
+
+    <Warning>
+      Never use household cleaners on books
+    </Warning>
+  </Accordion>
+
+  <Accordion title="How do I value my rare books?" icon="dollar-sign">
+    **Research market value:**
+    1. Check recent auction results (Heritage, Christie's, Sotheby's)
+    2. Search dealer catalogs (AbeBooks, Biblio)
+    3. Consult price guides
+    4. Get professional appraisal for high-value items
+
+    **Factors affecting value:**
+    - Edition and printing
+    - Condition
+    - Dust jacket presence
+    - Signatures or inscriptions
+    - Provenance
+    - Rarity
+  </Accordion>
+
+  <Accordion title="What makes a signature valuable?" icon="signature">
+    **Signature value factors:**
+    - Authenticity (authenticated signatures worth more)
+    - Author's rarity of signing
+    - Location in book (title page preferred)
+    - Inscription content
+    - Date of signature
+    - Condition of signature
+
+    <Tip>
+      Consider third-party authentication (PSA, JSA, Beckett) for high-value signatures
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Books" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your library
+  </Card>
+
+  <Card title="Organize Books" icon="folder" href="/features/collections">
+    Create book collections
+  </Card>
+
+  <Card title="Export Catalog" icon="file-export" href="/portfolio/export-reporting">
+    Generate book reports
+  </Card>
+</CardGroup>

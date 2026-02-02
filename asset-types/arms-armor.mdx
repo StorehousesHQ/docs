@@ -1,0 +1,434 @@
+---
+title: "Arms & Armor"
+description: "Complete guide to tracking historical weapons, military antiques, and armor collections in Storehouses"
+---
+
+## Overview
+
+Track your arms and armor collection with detailed fields for item type, era, maker, material, and condition. Perfect for collectors of historical weapons, military antiques, edged weapons, and armor.
+
+<Card title="Arms & Armor Features" icon="shield">
+  - Item type classification
+  - Era and period dating
+  - Maker/manufacturer identification
+  - Material and construction
+  - Condition assessment
+  - Provenance and history
+  - Market value tracking
+</Card>
+
+## Adding Arms & Armor
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Arms & Armor">
+    Choose "Arms & Armor" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in item type, era, maker, material, and condition
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos and provenance documentation
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Arms & Armor Fields
+
+### Identification
+
+<ParamField path="item_type" type="string">
+  Type or classification of the item
+
+  **Edged Weapons:**
+  - Sword (longsword, rapier, saber, katana)
+  - Dagger
+  - Knife
+  - Bayonet
+  - Polearm (halberd, pike, lance)
+
+  **Firearms:**
+  - Pistol
+  - Rifle
+  - Musket
+  - Revolver
+  - Shotgun
+
+  **Armor:**
+  - Helmet
+  - Breastplate
+  - Gauntlets
+  - Full suit of armor
+  - Shield
+  - Chainmail
+
+  **Other:**
+  - Military equipment
+  - Accessories
+  - Insignia
+</ParamField>
+
+<ParamField path="era" type="string">
+  Time period or era of the item
+
+  **Examples:**
+  - Medieval (500-1500 CE)
+  - Renaissance (1400-1600)
+  - 17th Century
+  - American Civil War (1861-1865)
+  - World War I (1914-1918)
+  - World War II (1939-1945)
+  - Edo Period Japan (1603-1868)
+</ParamField>
+
+<ParamField path="maker" type="string">
+  Maker, manufacturer, or armorer
+
+  **Examples:**
+  - Wilkinson Sword
+  - Samuel Colt
+  - Springfield Armory
+  - Unknown German maker
+  - Attributed to Augsburg workshops
+  - Imperial Japanese Arsenal
+</ParamField>
+
+### Physical Details
+
+<ParamField path="material" type="string">
+  Primary materials of construction
+
+  **Examples:**
+  - Steel blade with brass guard
+  - Blued steel and walnut
+  - Damascus steel
+  - Iron with leather fittings
+  - Bronze and steel
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Overall condition of the item
+
+  **Grading:**
+  - **Excellent** - Exceptional, minimal wear
+  - **Very Good** - Light wear, well preserved
+  - **Good** - Some wear, structurally sound
+  - **Fair** - Notable wear or damage
+  - **Poor** - Significant damage or deterioration
+
+  **Condition notes should include:**
+  - Blade/barrel condition
+  - Surface patina
+  - Any repairs or restorations
+  - Functionality (if applicable)
+  - Missing parts
+</ParamField>
+
+<ParamField path="provenance" type="textarea">
+  History and previous ownership
+
+  **Include:**
+  - Military unit or officer (if known)
+  - Previous collectors
+  - Auction history
+  - Documentation or certificates
+  - Historical significance
+</ParamField>
+
+## Types of Arms & Armor
+
+<CardGroup cols={2}>
+  <Card title="Edged Weapons" icon="sword">
+    - Swords and sabers
+    - Daggers and dirks
+    - Bayonets
+    - Knives
+    - Polearms
+    - Japanese blades
+  </Card>
+
+  <Card title="Firearms" icon="crosshairs">
+    - Antique pistols
+    - Military rifles
+    - Muskets
+    - Revolvers
+    - Flintlocks
+    - Percussion arms
+  </Card>
+
+  <Card title="Armor" icon="shield">
+    - Helmets
+    - Breastplates
+    - Gauntlets
+    - Full armor suits
+    - Chainmail
+    - Shields
+  </Card>
+
+  <Card title="Military Antiques" icon="medal">
+    - Uniforms
+    - Medals and decorations
+    - Equipment
+    - Documents
+    - Insignia
+  </Card>
+
+  <Card title="Asian Arms" icon="yin-yang">
+    - Katana and wakizashi
+    - Chinese swords
+    - Samurai armor
+    - Asian polearms
+  </Card>
+
+  <Card title="Ethnographic Arms" icon="globe">
+    - African weapons
+    - Tribal arms
+    - Colonial era pieces
+    - Indigenous weapons
+  </Card>
+</CardGroup>
+
+## Tracking Examples
+
+### Example 1: Civil War Sword
+
+<ParamField path="title" type="string">
+  Model 1860 Light Cavalry Saber
+</ParamField>
+
+<ParamField path="item_type" type="string">
+  Cavalry saber
+</ParamField>
+
+<ParamField path="era" type="string">
+  American Civil War (1861-1865)
+</ParamField>
+
+<ParamField path="maker" type="string">
+  Ames Manufacturing Company
+</ParamField>
+
+<ParamField path="material" type="string">
+  Steel blade, brass guard, leather-wrapped grip
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Very Good
+</ParamField>
+
+<ParamField path="provenance" type="textarea">
+  Attributed to 3rd Ohio Volunteer Cavalry
+  Found in estate sale, 2015
+</ParamField>
+
+---
+
+### Example 2: Japanese Katana
+
+<ParamField path="title" type="string">
+  Edo Period Katana - Signed Blade
+</ParamField>
+
+<ParamField path="item_type" type="string">
+  Katana (long sword)
+</ParamField>
+
+<ParamField path="era" type="string">
+  Edo Period (c. 1750)
+</ParamField>
+
+<ParamField path="maker" type="string">
+  Signed: Bishu Osafune Sukesada
+</ParamField>
+
+<ParamField path="material" type="string">
+  Folded steel blade, iron tsuba, silk wrap
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Excellent
+</ParamField>
+
+<ParamField path="notes" type="textarea">
+  NBTHK certified, Hozon papers
+  Original koshirae (mountings)
+  Blade length: 70.5 cm
+</ParamField>
+
+---
+
+### Example 3: Medieval Armor Piece
+
+<ParamField path="title" type="string">
+  German Gothic Sallet Helmet
+</ParamField>
+
+<ParamField path="item_type" type="string">
+  Sallet (helmet)
+</ParamField>
+
+<ParamField path="era" type="string">
+  Late 15th Century (c. 1480)
+</ParamField>
+
+<ParamField path="maker" type="string">
+  Attributed to Augsburg workshops
+</ParamField>
+
+<ParamField path="material" type="string">
+  Steel with traces of original patina
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Good
+</ParamField>
+
+<ParamField path="provenance" type="textarea">
+  Ex-collection of Baron von H., Germany
+  Sotheby's London, 1995
+  Current owner since 1995
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Thoroughly" icon="file-text">
+    Create complete records:
+    - Measurements and specifications
+    - Maker's marks and stamps
+    - Serial numbers (if applicable)
+    - Historical attributions
+    - Previous owners and provenance
+    - Expert opinions or certificates
+
+    <Tip>
+      Detailed documentation helps with authentication and insurance
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Photograph Completely" icon="camera">
+    Capture detailed photos:
+    - Overall views (multiple angles)
+    - Maker's marks and signatures
+    - Blade/barrel details
+    - Condition issues
+    - Scale reference
+    - Any accessories
+
+    <Note>
+      Good photography is essential for insurance and potential sales
+    </Note>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your collection:
+    - Climate-controlled storage
+    - Avoid humidity extremes
+    - Proper supports and stands
+    - Light oiling for steel (careful with antiques)
+    - Secure storage for firearms
+
+    <Warning>
+      Never clean antiques without expert advice - original patina is valuable
+    </Warning>
+  </Accordion>
+
+  <Accordion title="Legal Compliance" icon="gavel">
+    Be aware of regulations:
+    - Antique firearm laws (vary by jurisdiction)
+    - Import/export restrictions
+    - Registration requirements
+    - Transportation rules
+    - Display regulations
+
+    <Note>
+      Consult local laws for firearms and edged weapons in your area
+    </Note>
+  </Accordion>
+
+  <Accordion title="Seek Expert Authentication" icon="certificate">
+    For valuable pieces:
+    - Consult specialists
+    - Obtain written opinions
+    - Check for known fakes in the category
+    - Verify provenance claims
+    - Consider professional appraisal
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I value arms & armor?" icon="dollar-sign">
+    **Valuation resources:**
+    - Specialist auction results (Bonhams, Rock Island)
+    - Dealer pricing
+    - Price guides and references
+    - Professional appraisals
+    - Collector community knowledge
+
+    **Factors affecting value:**
+    - Rarity and historical significance
+    - Maker attribution
+    - Condition
+    - Provenance
+    - Completeness (original parts)
+    - Documentation
+  </Accordion>
+
+  <Accordion title="Should I restore or clean antiques?" icon="spray-can">
+    **Generally, no:**
+    - Original patina is valuable
+    - Amateur restoration destroys value
+    - Cleaning can be irreversible
+    - Consult conservators for any work
+
+    **Safe maintenance:**
+    - Light dusting only
+    - Careful handling
+    - Climate control
+    - Professional conservation when needed
+  </Accordion>
+
+  <Accordion title="How do I authenticate Japanese swords?" icon="certificate">
+    **Authentication resources:**
+    - NBTHK (Japanese certification)
+    - NTHK (alternative certification)
+    - Specialist dealers
+    - Published references
+    - Expert opinions
+
+    **Papers to look for:**
+    - Hozon (worthy of preservation)
+    - Tokubetsu Hozon (especially worthy)
+    - Juyo (important)
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Items" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your armory
+  </Card>
+
+  <Card title="Organize Collection" icon="folder" href="/features/collections">
+    Create collections by type
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate collection reports
+  </Card>
+</CardGroup>

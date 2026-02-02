@@ -1,0 +1,579 @@
+---
+title: "Historical & Cultural Artifacts"
+description: "Complete guide to tracking historical artifacts, antiquities, archaeological items, and cultural objects in Storehouses"
+---
+
+## Overview
+
+Track your historical and cultural artifact collection with detailed fields for origin culture, period, material, and provenance. Perfect for collectors, institutions, and enthusiasts managing archaeological items, antiquities, and cultural objects.
+
+<Card title="Artifact Tracking Features" icon="landmark">
+  - Origin culture and period/era tracking
+  - Material and artifact type classification
+  - Condition assessment
+  - Provenance documentation
+  - Legal compliance notes
+  - Market value tracking
+</Card>
+
+## Adding an Artifact
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Historical & Cultural Artifacts">
+    Choose "Historical & Cultural Artifacts" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in origin culture, period, artifact type, material, and condition
+  </Step>
+
+  <Step title="Add Documentation">
+    Upload photos, provenance documents, and export/import paperwork
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Artifact Fields
+
+### Origin Information
+
+<ParamField path="origin_culture" type="string">
+  The culture, civilization, or region of origin
+
+  **Examples:**
+  - Ancient Egyptian
+  - Roman Empire
+  - Ming Dynasty Chinese
+  - Pre-Columbian Maya
+  - Ancient Greek
+  - Byzantine
+  - Mesopotamian
+  - Native American
+  - African (specify tribe/region)
+  - Medieval European
+
+  <Tip>
+    Be as specific as possible about the cultural origin
+  </Tip>
+</ParamField>
+
+<ParamField path="period_era" type="string">
+  Time period or era of the artifact
+
+  **Examples:**
+  - New Kingdom (1550-1070 BCE)
+  - 1st Century CE
+  - Tang Dynasty (618-907 CE)
+  - Medieval (500-1500 CE)
+  - Iron Age
+  - Bronze Age
+  - Classical Period
+  - Hellenistic Period
+  - Renaissance
+
+  **Include:**
+  - Approximate date range when known
+  - Archaeological period designations
+  - Dynasty or reign when applicable
+</ParamField>
+
+### Physical Description
+
+<ParamField path="artifact_type" type="string">
+  Classification of the artifact
+
+  **Categories:**
+
+  **Pottery & Ceramics**
+  - Vessels (amphorae, urns, vases)
+  - Figurines
+  - Tiles
+  - Architectural elements
+
+  **Stone & Sculpture**
+  - Statuary
+  - Relief carvings
+  - Tools
+  - Architectural fragments
+
+  **Metalwork**
+  - Jewelry
+  - Weapons
+  - Tools
+  - Coins
+  - Vessels
+
+  **Textiles**
+  - Garments
+  - Tapestries
+  - Fragments
+  - Burial textiles
+
+  **Other**
+  - Glassware
+  - Bone/Ivory
+  - Wood
+  - Papyrus/Documents
+</ParamField>
+
+<ParamField path="material" type="string">
+  Primary material(s) of the artifact
+
+  **Examples:**
+  - Terracotta
+  - Bronze
+  - Marble
+  - Gold
+  - Limestone
+  - Jade
+  - Faience
+  - Iron
+  - Obsidian
+  - Ivory
+  - Linen
+  - Papyrus
+
+  <Note>
+    List multiple materials if the artifact is composite (e.g., "Bronze with gold inlay")
+  </Note>
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Overall condition of the artifact
+
+  **Standard grading:**
+  - **Excellent** - Minimal wear, original surface intact
+  - **Very Good** - Minor wear, no significant damage
+  - **Good** - Some wear or damage, structurally sound
+  - **Fair** - Notable damage or restoration
+  - **Poor** - Significant damage, fragmentary
+
+  **Condition notes should include:**
+  - Original vs. restored elements
+  - Surface condition
+  - Any repairs or conservation
+  - Missing elements
+  - Structural integrity
+</ParamField>
+
+### Dimensions
+
+<ParamField path="dimensions" type="string">
+  Physical measurements
+
+  **Format examples:**
+  - "Height: 15 cm, Width: 8 cm"
+  - "12 x 8 x 4 inches"
+  - "Diameter: 25 cm"
+  - "Length: 45 cm, fragmentary"
+
+  <Tip>
+    Use consistent units (metric preferred for antiquities)
+  </Tip>
+</ParamField>
+
+### Provenance
+
+<ParamField path="provenance" type="textarea">
+  Documented ownership history
+
+  **Include:**
+  - Previous owners with dates
+  - Auction or dealer sales
+  - Exhibition history
+  - Publication references
+  - Import/export documentation
+  - Archaeological find information (if known)
+
+  **Example:**
+  ```
+  Ex-collection Baron von Schmidt, Munich (acquired 1920s)
+  Christie's London, June 1985, lot 234
+  Private collection, New York, 1985-2020
+  Acquired from XYZ Gallery, 2020
+  ```
+
+  <Warning>
+    Provenance is critical for legal compliance and authenticity. Document thoroughly.
+  </Warning>
+</ParamField>
+
+## Types of Artifacts
+
+<CardGroup cols={2}>
+  <Card title="Ancient Pottery" icon="vase">
+    - Greek amphorae and vases
+    - Roman pottery
+    - Chinese ceramics
+    - Pre-Columbian vessels
+    - Egyptian faience
+  </Card>
+
+  <Card title="Sculpture & Statuary" icon="monument">
+    - Marble sculptures
+    - Bronze statues
+    - Stone reliefs
+    - Terracotta figures
+    - Wood carvings
+  </Card>
+
+  <Card title="Ancient Jewelry" icon="ring">
+    - Gold ornaments
+    - Beaded necklaces
+    - Scarabs
+    - Fibulae (brooches)
+    - Seal rings
+  </Card>
+
+  <Card title="Weapons & Tools" icon="gavel">
+    - Bronze Age weapons
+    - Stone tools
+    - Iron implements
+    - Ceremonial objects
+  </Card>
+
+  <Card title="Architectural Elements" icon="building-columns">
+    - Column capitals
+    - Relief panels
+    - Mosaic fragments
+    - Decorative tiles
+    - Friezes
+  </Card>
+
+  <Card title="Everyday Objects" icon="utensils">
+    - Oil lamps
+    - Glass vessels
+    - Mirrors
+    - Weights and measures
+    - Gaming pieces
+  </Card>
+</CardGroup>
+
+## Legal Considerations
+
+<Warning>
+  **Important Legal Notice**: The antiquities market is heavily regulated. Always ensure your artifacts have legal provenance and comply with cultural property laws.
+</Warning>
+
+### Documentation Requirements
+
+<AccordionGroup>
+  <Accordion title="Provenance Documentation" icon="file-contract">
+    Maintain records showing:
+    - Ownership history (ideally pre-1970)
+    - Import/export documentation
+    - Customs declarations
+    - Purchase receipts and invoices
+    - Auction catalogs and records
+    - Previous owner correspondence
+
+    **Why 1970 matters:** The 1970 UNESCO Convention is the standard cutoff for establishing legal provenance
+  </Accordion>
+
+  <Accordion title="Export/Import Papers" icon="passport">
+    Required documentation may include:
+    - Export license from country of origin
+    - Import declaration
+    - Customs paperwork
+    - CITES permits (for ivory, etc.)
+    - Cultural property certificates
+
+    <Tip>
+      Keep all customs and import paperwork with your records
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Authentication" icon="certificate">
+    Consider obtaining:
+    - Thermoluminescence (TL) dating for ceramics
+    - Scientific analysis reports
+    - Expert authentication letters
+    - Comparative scholarly references
+    - Museum or academic opinions
+  </Accordion>
+</AccordionGroup>
+
+## Tracking Examples
+
+### Example 1: Egyptian Ushabti
+
+<ParamField path="title" type="string">
+  Egyptian Faience Ushabti - Late Period
+</ParamField>
+
+<ParamField path="origin_culture" type="string">
+  Ancient Egyptian
+</ParamField>
+
+<ParamField path="period_era" type="string">
+  Late Period, 26th Dynasty (664-525 BCE)
+</ParamField>
+
+<ParamField path="artifact_type" type="string">
+  Funerary figure (Ushabti)
+</ParamField>
+
+<ParamField path="material" type="string">
+  Blue-green faience
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Very Good
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  Height: 12 cm
+</ParamField>
+
+<ParamField path="provenance" type="textarea">
+  Ex-collection Robert Smith, acquired 1950s
+  Bonhams London, 2015
+  Current owner since 2015
+</ParamField>
+
+---
+
+### Example 2: Roman Bronze
+
+<ParamField path="title" type="string">
+  Roman Bronze Statuette of Mercury
+</ParamField>
+
+<ParamField path="origin_culture" type="string">
+  Roman Empire
+</ParamField>
+
+<ParamField path="period_era" type="string">
+  2nd Century CE
+</ParamField>
+
+<ParamField path="artifact_type" type="string">
+  Bronze statuette
+</ParamField>
+
+<ParamField path="material" type="string">
+  Cast bronze with dark patina
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Good
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  Height: 18 cm, Base: 5 x 5 cm
+</ParamField>
+
+---
+
+### Example 3: Pre-Columbian Vessel
+
+<ParamField path="title" type="string">
+  Moche Portrait Vessel
+</ParamField>
+
+<ParamField path="origin_culture" type="string">
+  Moche Culture, Peru
+</ParamField>
+
+<ParamField path="period_era" type="string">
+  Middle Moche Period (300-600 CE)
+</ParamField>
+
+<ParamField path="artifact_type" type="string">
+  Ceramic stirrup-spout vessel
+</ParamField>
+
+<ParamField path="material" type="string">
+  Terracotta with polychrome paint
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Excellent
+</ParamField>
+
+<ParamField path="dimensions" type="string">
+  Height: 22 cm, Diameter: 14 cm
+</ParamField>
+
+<ParamField path="provenance" type="textarea">
+  Ex-collection Dr. Jane Doe, Lima (formed 1940-1960)
+  Published in "Ancient Peru" exhibition catalog, 1975
+  Sotheby's New York, 2010
+  Current owner since 2010, with TL test certificate
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Document Provenance Thoroughly" icon="link">
+    The most critical aspect of artifact collecting:
+    - Document every ownership transfer
+    - Keep all receipts and invoices
+    - Photograph items with dated newspapers
+    - Maintain export/import paperwork
+    - Record publication and exhibition history
+
+    **Why:** Provenance establishes legality and authenticity, affecting both value and ability to sell
+  </Accordion>
+
+  <Accordion title="Photograph Comprehensively" icon="camera">
+    Capture detailed photos of:
+    - Multiple angles (front, back, sides, top, bottom)
+    - Surface details and patina
+    - Any inscriptions or markings
+    - Damage or repairs
+    - Scale reference (ruler in photo)
+    - Any associated documentation
+
+    <Tip>
+      Good documentation photos help with insurance claims and authentication
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your artifacts:
+    - Control temperature and humidity
+    - Avoid direct sunlight
+    - Use acid-free materials
+    - Support fragile items properly
+    - Secure storage for valuables
+    - Handle with clean cotton gloves
+
+    **Climate recommendations:**
+    - Temperature: 65-70°F (18-21°C)
+    - Humidity: 45-55% relative humidity
+    - Stable conditions (avoid fluctuations)
+  </Accordion>
+
+  <Accordion title="Get Expert Opinions" icon="user-graduate">
+    For valuable or significant pieces:
+    - Consult specialists in the culture/period
+    - Obtain authentication letters
+    - Consider scientific testing
+    - Compare with museum examples
+    - Research published parallels
+
+    <Note>
+      Expert documentation adds value and confidence
+    </Note>
+  </Accordion>
+
+  <Accordion title="Insurance Considerations" icon="shield-check">
+    For valuable artifacts:
+    - Get specialized fine art insurance
+    - Obtain professional appraisals
+    - Document thoroughly with photos
+    - Update values periodically
+    - Consider scheduled coverage for high-value items
+
+    <Tip>
+      Export your artifact inventory from Storehouses for insurance documentation
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Stay Informed on Laws" icon="gavel">
+    Cultural property laws change:
+    - Follow AAMD guidelines
+    - Monitor bilateral agreements
+    - Understand UNESCO conventions
+    - Know your country's import laws
+    - Consult legal counsel for major purchases
+  </Accordion>
+</AccordionGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I verify authenticity?" icon="search">
+    **Authentication methods:**
+    - Expert examination by specialists
+    - Scientific testing (TL, C14, XRF analysis)
+    - Stylistic comparison with known examples
+    - Provenance research
+    - Museum or academic consultation
+
+    <Warning>
+      Be cautious of artifacts with no provenance history - forgeries are common
+    </Warning>
+  </Accordion>
+
+  <Accordion title="What is the 1970 rule?" icon="calendar">
+    **The 1970 UNESCO Convention:**
+    - Establishes international standards for cultural property
+    - Many institutions and dealers require provenance before 1970
+    - Artifacts with documented pre-1970 provenance are more desirable
+    - Some countries have earlier cutoff dates
+
+    **Best practice:** Seek artifacts with documented ownership history prior to 1970
+  </Accordion>
+
+  <Accordion title="How do I value artifacts?" icon="dollar-sign">
+    **Valuation factors:**
+    - Provenance quality and documentation
+    - Rarity and artistic quality
+    - Condition
+    - Cultural and historical significance
+    - Market demand
+    - Authentication documentation
+
+    **Valuation resources:**
+    - Auction results (Christie's, Sotheby's, Bonhams)
+    - Specialist dealer pricing
+    - Professional appraisals
+    - Insurance valuations
+  </Accordion>
+
+  <Accordion title="Can I sell artifacts internationally?" icon="globe">
+    **Depends on:**
+    - Country of origin export laws
+    - Your country's import/export regulations
+    - UNESCO agreements
+    - Specific artifact type (some materials restricted)
+    - Documentation quality
+
+    **Always:**
+    - Consult with legal counsel
+    - Obtain necessary permits
+    - Document provenance thoroughly
+    - Work with reputable auction houses or dealers
+  </Accordion>
+
+  <Accordion title="Should I clean or restore artifacts?" icon="spray-can">
+    **Generally, no:**
+    - Original patina is valuable
+    - Amateur cleaning can damage items
+    - Restoration affects value
+    - Conservation should be done by professionals only
+
+    <Tip>
+      Dust carefully with soft brush only. For anything more, consult a conservator.
+    </Tip>
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Artifacts" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your artifacts
+  </Card>
+
+  <Card title="Organize Collection" icon="folder" href="/features/collections">
+    Create artifact collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate artifact reports
+  </Card>
+</CardGroup>

@@ -1,0 +1,619 @@
+---
+title: "Stamps & Philately"
+description: "Complete guide to tracking rare stamps, philatelic collections, and postal history in Storehouses"
+---
+
+## Overview
+
+Track your stamp collection with detailed fields for country, year, denomination, catalog numbers, and condition grades. Perfect for philatelists managing rare stamps, first day covers, postal history, and complete sets.
+
+<Card title="Stamp Tracking Features" icon="stamp">
+  - Country and year issued
+  - Scott/Michel/Stanley Gibbons catalog numbers
+  - Condition grading (mint, used, etc.)
+  - Centering and gum condition
+  - Denomination and variety tracking
+  - Market value tracking
+</Card>
+
+## Adding a Stamp
+
+<Steps>
+  <Step title="Navigate to Add Item">
+    Click "Add Item" from your dashboard or go to [storehouses.app/add](https://storehouses.app/add)
+  </Step>
+
+  <Step title="Select Stamps & Philately">
+    Choose "Stamps & Philately" as the category
+  </Step>
+
+  <Step title="Enter Details">
+    Fill in country, year, denomination, catalog number, and condition
+  </Step>
+
+  <Step title="Add Images">
+    Upload high-resolution scans of front and back
+  </Step>
+
+  <Step title="Save">
+    Click "Save Item" to add to your collection
+  </Step>
+</Steps>
+
+## Stamp Fields
+
+### Identification
+
+<ParamField path="country" type="string">
+  Issuing country or postal authority
+
+  **Examples:**
+  - United States
+  - Great Britain
+  - German Empire
+  - Confederate States
+  - French Colonies
+  - China (specify period: Imperial, Republic, PRC)
+
+  <Tip>
+    Use standard philatelic country names for consistency
+  </Tip>
+</ParamField>
+
+<ParamField path="year_issued" type="number">
+  Year the stamp was issued
+
+  **Examples:**
+  - 1840 (Penny Black)
+  - 1893 (Columbian Exposition)
+  - 1918 (Inverted Jenny)
+  - 2024 (modern commemorative)
+
+  **Use:** Critical for:
+  - Identification
+  - Catalog reference
+  - Era classification
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  Face value of the stamp
+
+  **Examples:**
+  - 1 penny
+  - 5 cents
+  - 2 marks
+  - $1.00
+  - Non-denominated (Forever stamp)
+
+  <Note>
+    Include the currency unit for clarity
+  </Note>
+</ParamField>
+
+### Catalog References
+
+<ParamField path="scott_number" type="string">
+  Scott Catalog number (primary reference for US and worldwide)
+
+  **Examples:**
+  - US: 1 (1847 5-cent Franklin)
+  - US: C3a (Inverted Jenny)
+  - GB: 1 (Penny Black)
+  - Germany: 1 (1872 small shield)
+
+  <Tip>
+    Scott numbers are the standard reference in North America
+  </Tip>
+</ParamField>
+
+<ParamField path="other_catalog" type="string">
+  Alternative catalog numbers
+
+  **Common catalogs:**
+  - **Stanley Gibbons (SG)** - British Commonwealth standard
+  - **Michel** - German and European standard
+  - **Yvert et Tellier** - French standard
+  - **Zumstein** - Swiss specialist
+  - **Sakura** - Japanese specialist
+
+  **Example entries:**
+  - "SG 1" (Penny Black)
+  - "Michel 1" (German Empire)
+</ParamField>
+
+### Condition
+
+<ParamField path="condition" type="select">
+  Overall condition grade
+
+  **Standard grades:**
+  - **Superb (S)** - Exceptional, nearly perfect
+  - **Extremely Fine (XF)** - Outstanding quality
+  - **Very Fine (VF)** - Above average, well-centered
+  - **Fine-Very Fine (F-VF)** - Nice example
+  - **Fine (F)** - Average or better
+  - **Very Good (VG)** - Below average
+  - **Good (G)** - Presentable space filler
+  - **Average** - Poor centering or condition
+
+  <Note>
+    Condition significantly impacts value. Be honest in your assessment.
+  </Note>
+</ParamField>
+
+<ParamField path="mint_used" type="select">
+  Whether the stamp is mint (unused) or used (cancelled)
+
+  **Options:**
+  - **Mint Never Hinged (MNH)** - Unused, full original gum, never hinged
+  - **Mint Hinged (MH)** - Unused with hinge mark
+  - **Mint No Gum (MNG)** - Unused, gum removed or never applied
+  - **Used** - Postally used with cancellation
+  - **Used CTO** - Cancelled to Order (not postally used)
+  - **On Cover** - Still on original envelope
+  - **On Piece** - On partial envelope
+
+  <Tip>
+    For modern stamps, MNH commands the highest premiums
+  </Tip>
+</ParamField>
+
+### Physical Attributes
+
+<ParamField path="centering" type="string">
+  How well centered the design is within the perforations
+
+  **Examples:**
+  - "Perfectly centered"
+  - "Well centered, slight shift right"
+  - "Off-center, design touches left"
+  - "Jumbo margins"
+
+  **Why it matters:** Centering is a primary factor in grading and value
+</ParamField>
+
+<ParamField path="gum" type="string">
+  Condition of the adhesive (mint stamps only)
+
+  **Examples:**
+  - "Original gum, never hinged"
+  - "Original gum, light hinge remnant"
+  - "Disturbed gum"
+  - "Regummed"
+  - "No gum"
+
+  <Warning>
+    Regummed stamps should be noted - they have lower value than original gum
+  </Warning>
+</ParamField>
+
+<ParamField path="perforations" type="string">
+  Perforation gauge and condition
+
+  **Examples:**
+  - "Perf 12" (standard gauge)
+  - "Perf 11 x 10.5" (different horizontal and vertical)
+  - "Imperforate"
+  - "Straight edge at left"
+  - "Short perfs at bottom"
+</ParamField>
+
+## Types of Philatelic Items
+
+<CardGroup cols={2}>
+  <Card title="Single Stamps" icon="stamp">
+    - Mint singles
+    - Used singles
+    - Varieties and errors
+    - Plate number singles
+  </Card>
+
+  <Card title="Blocks & Multiples" icon="grip">
+    - Plate blocks
+    - Corner blocks
+    - Strips
+    - Full sheets
+    - Booklet panes
+  </Card>
+
+  <Card title="Covers & Postal History" icon="envelope">
+    - First Day Covers (FDCs)
+    - Commercial covers
+    - Flight covers
+    - Naval covers
+    - Postal stationery
+  </Card>
+
+  <Card title="Collections & Sets" icon="folder">
+    - Complete sets
+    - Year sets
+    - Topical collections
+    - Country collections
+  </Card>
+
+  <Card title="Errors & Varieties" icon="triangle-exclamation">
+    - Color errors
+    - Inverts
+    - Missing perforations
+    - Double prints
+    - Plate flaws
+  </Card>
+
+  <Card title="Revenue & Back-of-Book" icon="file-invoice-dollar">
+    - Revenue stamps
+    - Telegraph stamps
+    - Locals and carriers
+    - Officials
+    - Semi-postals
+  </Card>
+</CardGroup>
+
+## Tracking Examples
+
+### Example 1: Classic US Stamp
+
+<ParamField path="title" type="string">
+  1869 15-cent Landing of Columbus
+</ParamField>
+
+<ParamField path="country" type="string">
+  United States
+</ParamField>
+
+<ParamField path="year_issued" type="number">
+  1869
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  15 cents
+</ParamField>
+
+<ParamField path="scott_number" type="string">
+  118
+</ParamField>
+
+<ParamField path="mint_used" type="select">
+  Used
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Very Fine
+</ParamField>
+
+<ParamField path="centering" type="string">
+  Well centered with neat cancel
+</ParamField>
+
+---
+
+### Example 2: British Classic
+
+<ParamField path="title" type="string">
+  1840 Penny Black - Plate 6
+</ParamField>
+
+<ParamField path="country" type="string">
+  Great Britain
+</ParamField>
+
+<ParamField path="year_issued" type="number">
+  1840
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  1 penny
+</ParamField>
+
+<ParamField path="scott_number" type="string">
+  1
+</ParamField>
+
+<ParamField path="other_catalog" type="string">
+  SG 2, Plate 6
+</ParamField>
+
+<ParamField path="mint_used" type="select">
+  Used
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Fine-Very Fine
+</ParamField>
+
+<ParamField path="centering" type="string">
+  Four margins, red Maltese Cross cancel
+</ParamField>
+
+---
+
+### Example 3: Modern Mint Block
+
+<ParamField path="title" type="string">
+  1969 Moon Landing Plate Block of 4
+</ParamField>
+
+<ParamField path="country" type="string">
+  United States
+</ParamField>
+
+<ParamField path="year_issued" type="number">
+  1969
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  10 cents
+</ParamField>
+
+<ParamField path="scott_number" type="string">
+  C76
+</ParamField>
+
+<ParamField path="mint_used" type="select">
+  Mint Never Hinged
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Superb
+</ParamField>
+
+<ParamField path="gum" type="string">
+  Original gum, never hinged
+</ParamField>
+
+<ParamField path="centering" type="string">
+  Perfectly centered, plate block of 4
+</ParamField>
+
+---
+
+### Example 4: Error Stamp
+
+<ParamField path="title" type="string">
+  1918 Inverted Jenny (C3a)
+</ParamField>
+
+<ParamField path="country" type="string">
+  United States
+</ParamField>
+
+<ParamField path="year_issued" type="number">
+  1918
+</ParamField>
+
+<ParamField path="denomination" type="string">
+  24 cents
+</ParamField>
+
+<ParamField path="scott_number" type="string">
+  C3a
+</ParamField>
+
+<ParamField path="mint_used" type="select">
+  Mint Hinged
+</ParamField>
+
+<ParamField path="condition" type="select">
+  Fine
+</ParamField>
+
+<ParamField path="notes" type="textarea">
+  Position 57 from the original sheet of 100
+  PSE certified, certificate #12345
+  Ex-collection John Smith
+</ParamField>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use Catalog References" icon="book">
+    Always record catalog numbers:
+    - **Scott** - North American standard
+    - **Stanley Gibbons** - British Commonwealth
+    - **Michel** - European standard
+    - **Specialized catalogs** - For specific countries
+
+    **Why:** Catalog numbers are essential for identification, valuation, and communication with other collectors
+  </Accordion>
+
+  <Accordion title="Grade Accurately" icon="scale-balanced">
+    Be honest about condition:
+    - Use standard grading terminology
+    - Note any faults (thins, tears, creases)
+    - Describe centering accurately
+    - Note gum condition for mint stamps
+    - Consider third-party certification for valuable stamps
+
+    <Note>
+      Overgrading damages your credibility and can affect insurance claims
+    </Note>
+  </Accordion>
+
+  <Accordion title="Store Properly" icon="shield">
+    Protect your collection:
+    - Use acid-free mounts and albums
+    - Control temperature and humidity
+    - Avoid direct sunlight
+    - Handle with stamp tongs (never fingers)
+    - Use glassine envelopes for storage
+    - Store vertically to prevent damage
+
+    **Optimal conditions:**
+    - Temperature: 65-70°F (18-21°C)
+    - Humidity: 45-55% RH
+  </Accordion>
+
+  <Accordion title="Image Documentation" icon="camera">
+    Create high-quality scans:
+    - Scan at 300-600 DPI minimum
+    - Include both front and back
+    - Show perforations clearly
+    - Capture any varieties or flaws
+    - Use consistent lighting
+
+    <Tip>
+      Good images are essential for insurance, sales, and authentication
+    </Tip>
+  </Accordion>
+
+  <Accordion title="Consider Certification" icon="certificate">
+    For valuable stamps, consider:
+    - **PSE (Philatelic Stamp Expertise)** - Grading and authentication
+    - **PF (Philatelic Foundation)** - Expert opinions
+    - **APS (American Philatelic Society)** - Expert service
+    - **BPA (British Philatelic Association)** - UK expert committee
+
+    **When to certify:**
+    - Valuable stamps ($500+)
+    - Errors and varieties
+    - Controversial items
+    - Items for sale
+  </Accordion>
+
+  <Accordion title="Track Provenance" icon="link">
+    Document ownership history:
+    - Auction records
+    - Dealer purchases
+    - Previous owners if known
+    - Exhibition history
+    - Published references
+
+    **Why:** Provenance can add value, especially for famous rarities
+  </Accordion>
+
+  <Accordion title="Organize Collections" icon="folder">
+    Use Storehouses collections to organize:
+    - **By country**: "United States", "Great Britain"
+    - **By era**: "Classic US (1847-1893)", "Modern Commemoratives"
+    - **By topic**: "Space Exploration", "Wildlife"
+    - **By format**: "Plate Blocks", "First Day Covers"
+    - **By value**: "Key Pieces", "Investment Grade"
+  </Accordion>
+</AccordionGroup>
+
+## Valuation Resources
+
+<CardGroup cols={2}>
+  <Card title="Scott Catalog" icon="book">
+    Standard US and worldwide reference
+    - Annual price updates
+    - Identification guide
+    - Variety listings
+  </Card>
+
+  <Card title="Stanley Gibbons" icon="book">
+    British Commonwealth standard
+    - Commonwealth specialist
+    - Detailed listings
+    - Price guides
+  </Card>
+
+  <Card title="Auction Results" icon="gavel">
+    Track actual sales:
+    - Siegel Auction Galleries
+    - Robert A. Siegel
+    - Daniel F. Kelleher
+    - Spink
+    - David Feldman
+  </Card>
+
+  <Card title="Online Resources" icon="globe">
+    - Stamp World History
+    - Colnect
+    - Delcampe
+    - HipStamp
+  </Card>
+</CardGroup>
+
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I identify my stamps?" icon="search">
+    **Identification steps:**
+    1. Determine the country (look for inscriptions)
+    2. Find the denomination
+    3. Note the design/subject
+    4. Check the perforations
+    5. Look up in Scott or appropriate catalog
+
+    **Helpful resources:**
+    - Scott Standard Postage Stamp Catalogue
+    - Online identification forums
+    - Dealer expertise
+    - Collector clubs
+  </Accordion>
+
+  <Accordion title="Mint vs. Used - which is more valuable?" icon="scale-balanced">
+    **It depends:**
+    - **Modern stamps (post-1930):** MNH almost always more valuable
+    - **Classic stamps (pre-1900):** Used examples may be more affordable, some useds are scarcer
+    - **Rare stamps:** Either condition can be valuable
+    - **Errors:** Mint typically preferred, but used examples of rare errors still valuable
+
+    <Tip>
+      Collect what you enjoy - both mint and used have their appeal
+    </Tip>
+  </Accordion>
+
+  <Accordion title="How do I spot fakes and forgeries?" icon="triangle-exclamation">
+    **Warning signs:**
+    - Price too good to be true
+    - Poor quality paper or printing
+    - Incorrect perforations
+    - Suspicious gum
+    - Missing or incorrect watermark
+    - No provenance for rarities
+
+    **Protection:**
+    - Buy from reputable dealers
+    - Get certificates for expensive stamps
+    - Study genuine examples
+    - Join collector organizations
+    - Consult experts when in doubt
+  </Accordion>
+
+  <Accordion title="Should I clean my stamps?" icon="spray-can">
+    **Generally, no:**
+    - Amateur cleaning can damage stamps
+    - Removing cancels destroys value
+    - Improper soaking damages gum
+    - Leave restoration to professionals
+
+    **Safe practices:**
+    - Light dusting with soft brush only
+    - Professional conservation for valuable items
+  </Accordion>
+
+  <Accordion title="How do I value my collection?" icon="dollar-sign">
+    **Valuation methods:**
+    1. **Catalog value:** Reference point, not market price
+    2. **Auction results:** Actual realized prices
+    3. **Dealer prices:** Retail and wholesale
+    4. **Online sales:** eBay, HipStamp, Delcampe
+
+    **Important notes:**
+    - Catalog value ≠ market value
+    - Condition dramatically affects price
+    - Common stamps sell below catalog
+    - Key stamps may exceed catalog
+  </Accordion>
+</AccordionGroup>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Add Your Stamps" icon="plus" href="https://storehouses.app/add">
+    Start cataloging your collection
+  </Card>
+
+  <Card title="View Collection" icon="eye" href="/portfolio/viewing-items">
+    Browse your stamps
+  </Card>
+
+  <Card title="Organize Albums" icon="folder" href="/features/collections">
+    Create stamp collections
+  </Card>
+
+  <Card title="Export Inventory" icon="file-export" href="/portfolio/export-reporting">
+    Generate stamp reports
+  </Card>
+</CardGroup>

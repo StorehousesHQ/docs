@@ -1,0 +1,449 @@
+---
+title: "Secure Storage"
+description: "Account-level document vault for storing important files like wills, insurance policies, and appraisals"
+---
+
+import Pro from '/snippets/pro.mdx';
+
+<Pro />
+
+## Overview
+
+Secure Storage is a document vault for Pro users to store important files separately from item-level attachments. Use it for wills, insurance policies, appraisals, certificates of authenticity, and other critical documents that apply to your overall collection or estate planning.
+
+<Warning>
+  **Pro Subscription Required**: Secure Storage is available exclusively to Pro and Lifetime subscribers.
+</Warning>
+
+## Why Secure Storage?
+
+<CardGroup cols={2}>
+  <Card title="Centralized Documents" icon="folder-tree">
+    Keep important files in one secure location, separate from individual items
+  </Card>
+
+  <Card title="Estate Planning" icon="file-contract">
+    Store wills, trusts, and estate documents for heirs to access
+  </Card>
+
+  <Card title="Insurance Management" icon="shield-halved">
+    Organize policies, riders, and coverage documents with expiry tracking
+  </Card>
+
+  <Card title="Heir Access" icon="users">
+    Share documents with approved heirs automatically
+  </Card>
+
+  <Card title="Audit Trail" icon="list-check">
+    Full logging of document access for security and compliance
+  </Card>
+
+  <Card title="File Integrity" icon="fingerprint">
+    SHA-256 checksums verify document integrity
+  </Card>
+</CardGroup>
+
+## Accessing Secure Storage
+
+Navigate to [storehouses.app/secure-storage](https://storehouses.app/secure-storage) or:
+
+1. Go to Dashboard
+2. Click "Secure Storage" in the sidebar (below Heir Access)
+3. Browse your document vault
+
+## Folder Organization
+
+Secure Storage uses a folder-based organization system with both system folders and custom folders.
+
+### System Folders
+
+Five default folders are automatically created for each user:
+
+| Folder | Purpose | Suggested Contents |
+|--------|---------|-------------------|
+| **Legal & Estate** | Estate planning documents | Wills, trusts, power of attorney, beneficiary designations |
+| **Insurance** | Coverage documentation | Policies, riders, coverage schedules, claims |
+| **Appraisals** | Valuation records | Professional appraisals, certificates of authenticity |
+| **Personal** | Personal documents | ID copies, passports, important contacts |
+| **Other** | Miscellaneous | Any documents that don't fit other categories |
+
+<Note>
+  System folders cannot be deleted or renamed, ensuring you always have a basic organizational structure.
+</Note>
+
+### Custom Folders
+
+Create additional folders to match your organization style:
+
+<Steps>
+  <Step title="Click 'New Folder'">
+    Click the "New Folder" button at the top of the page
+  </Step>
+
+  <Step title="Enter Folder Name">
+    Provide a descriptive name for the folder
+  </Step>
+
+  <Step title="Add Description (Optional)">
+    Add notes about what belongs in this folder
+  </Step>
+
+  <Step title="Create Folder">
+    Click "Create" to add the folder to your vault
+  </Step>
+</Steps>
+
+**Custom folder ideas**:
+- Specific collections (e.g., "Wine Collection Documents")
+- Time periods (e.g., "2026 Tax Year")
+- Advisors (e.g., "Morgan Stanley Correspondence")
+- Acquisitions (e.g., "Christie's Purchases")
+
+## Uploading Documents
+
+<Steps>
+  <Step title="Click 'Upload'">
+    Click the "Upload" button at the top of the page
+  </Step>
+
+  <Step title="Select File">
+    Choose a file from your device (drag and drop also supported)
+  </Step>
+
+  <Step title="Enter Document Details">
+    Fill in the document information:
+
+    <ParamField path="Title" type="string" required>
+      A descriptive name for the document
+    </ParamField>
+
+    <ParamField path="Description" type="string">
+      Optional notes about the document's contents or purpose
+    </ParamField>
+
+    <ParamField path="Folder" type="select" required>
+      Choose which folder to store the document in
+    </ParamField>
+
+    <ParamField path="Tags" type="array">
+      Add searchable tags (e.g., "insurance", "gold", "2026")
+    </ParamField>
+
+    <ParamField path="Document Date" type="date">
+      The date of the document (e.g., appraisal date, policy effective date)
+    </ParamField>
+
+    <ParamField path="Expiry Date" type="date">
+      When the document expires (useful for insurance policies, certifications)
+    </ParamField>
+
+    <ParamField path="Share with Heirs" type="boolean">
+      Toggle on to make this document visible to approved heirs
+    </ParamField>
+  </Step>
+
+  <Step title="Upload">
+    Click "Upload Document" to save to your vault
+  </Step>
+</Steps>
+
+### Supported File Types
+
+| Type | Extensions | Max Size |
+|------|------------|----------|
+| PDF | .pdf | 10 MB |
+| Images | .jpg, .jpeg, .png, .gif, .webp | 10 MB |
+| Word Documents | .doc, .docx | 10 MB |
+
+<Warning>
+  Files larger than 10 MB cannot be uploaded. Consider compressing large PDFs or splitting multi-page documents.
+</Warning>
+
+## Managing Documents
+
+### Viewing Document Details
+
+Click any document to view its full details:
+
+- File preview (for supported formats)
+- Title and description
+- Folder location
+- File size and upload date
+- Document date and expiry date
+- Tags
+- Sharing status (whether shared with heirs)
+- Notes
+
+### Document Actions
+
+Each document has a dropdown menu (⋮) with the following actions:
+
+<AccordionGroup>
+  <Accordion title="View Details" icon="eye">
+    Open the document details modal to see all metadata and preview the file
+  </Accordion>
+
+  <Accordion title="Download" icon="download">
+    Download the document to your device. Uses signed URLs for secure access.
+  </Accordion>
+
+  <Accordion title="Move to Folder" icon="folder-arrow-right">
+    Move the document to a different folder:
+    1. Click "Move to Folder"
+    2. Select the destination folder
+    3. Confirm the move
+  </Accordion>
+
+  <Accordion title="Delete" icon="trash">
+    Delete the document:
+    1. Click "Delete"
+    2. Confirm deletion in the modal
+    3. Document is soft-deleted (recoverable for 30 days)
+  </Accordion>
+</AccordionGroup>
+
+### Search and Filter
+
+Find documents quickly:
+
+**Search**: Use the search bar to find documents by:
+- Title
+- Description
+- Tags
+
+**Filter by Folder**: Click a folder in the sidebar to show only documents in that folder
+
+**Filter by Tag**: Click a tag in the sidebar to show only documents with that tag
+
+## Linking Documents to Items
+
+Documents can be linked to specific items in your portfolio for easy reference:
+
+<Steps>
+  <Step title="Open Document Details">
+    Click on a document to open its details
+  </Step>
+
+  <Step title="Add Item Link">
+    In the "Linked Items" section, click "Link to Item"
+  </Step>
+
+  <Step title="Search for Item">
+    Search for and select the item(s) to link
+  </Step>
+
+  <Step title="Save Link">
+    The document now appears when viewing that item
+  </Step>
+</Steps>
+
+**Use cases**:
+- Link an appraisal to the appraised item
+- Link a certificate of authenticity to the artwork
+- Link an insurance rider to the covered items
+- Link purchase receipts to acquired items
+
+## Sharing with Heirs
+
+Documents marked "Share with heirs" are automatically visible to heirs who have approved access to your portfolio.
+
+### How It Works
+
+1. **Upload or edit** a document
+2. **Toggle on** "Share with heirs"
+3. Document becomes visible to heirs with **approved access**
+4. Heirs see the document in their view of your portfolio
+
+### What Heirs Can Do
+
+Heirs with access can:
+- View shared documents
+- Download shared documents
+- See document metadata
+
+Heirs **cannot**:
+- Upload new documents
+- Edit or delete documents
+- Change sharing settings
+- See documents not marked "Share with heirs"
+
+### Best Practices for Heir Sharing
+
+<AccordionGroup>
+  <Accordion title="Share Estate Documents" icon="file-contract">
+    Always share:
+    - Wills and trusts
+    - Power of attorney documents
+    - Beneficiary designations
+    - Estate inventory lists
+  </Accordion>
+
+  <Accordion title="Share Insurance Information" icon="shield-halved">
+    Consider sharing:
+    - Current insurance policies
+    - Agent contact information
+    - Coverage schedules
+    - Claim procedures
+  </Accordion>
+
+  <Accordion title="Share Appraisals" icon="magnifying-glass">
+    Share recent:
+    - Professional appraisals
+    - Certificates of authenticity
+    - Provenance documentation
+    - Valuation reports
+  </Accordion>
+
+  <Accordion title="Keep Some Private" icon="lock">
+    You may want to keep private:
+    - Tax returns
+    - Personal financial statements
+    - Sensitive correspondence
+    - Draft documents
+  </Accordion>
+</AccordionGroup>
+
+## Security Features
+
+<Card title="Enterprise-Grade Security" icon="shield-check">
+  Secure Storage is built with security as a priority:
+
+  - **Encrypted Storage**: Documents stored in encrypted cloud storage
+  - **Signed URLs**: Download links expire after a short period
+  - **Row-Level Security**: Database policies ensure you only access your own documents
+  - **SHA-256 Checksums**: File integrity verification on upload
+  - **Audit Logging**: All access and actions are logged
+  - **Soft Delete**: 30-day recovery window for deleted documents
+</Card>
+
+### Audit Trail
+
+Every action on documents is logged:
+
+- Document uploads
+- Document views/downloads
+- Document edits
+- Document deletions
+- Folder changes
+
+<Note>
+  The audit log helps you track who accessed which documents and when, providing accountability for shared documents.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Upload Failed" icon="circle-xmark">
+    **Common causes**:
+    - File exceeds 10 MB limit → Compress or split the file
+    - Unsupported file type → Convert to PDF
+    - Network interruption → Retry the upload
+    - Storage quota reached → Contact support
+
+    **Solution**: Check file size and type, then retry
+  </Accordion>
+
+  <Accordion title="Can't Find Document" icon="magnifying-glass">
+    **Try these steps**:
+    - Clear folder filter (click "All Documents")
+    - Search by different keywords
+    - Check if document was moved to another folder
+    - Verify document wasn't deleted
+
+    **Solution**: Use search with partial title matches
+  </Accordion>
+
+  <Accordion title="Heir Can't See Document" icon="user-slash">
+    **Verify**:
+    - Heir has approved access (not just designated)
+    - "Share with heirs" is toggled on for the document
+    - Both users have active Pro subscriptions
+    - Access hasn't expired (180-day limit)
+
+    **Solution**: Check document sharing settings and heir access status
+  </Accordion>
+
+  <Accordion title="Download Not Working" icon="download">
+    **Try**:
+    - Refresh the page and try again
+    - Check browser download settings
+    - Try a different browser
+    - Verify file wasn't deleted
+
+    **Solution**: Signed URLs expire quickly; refresh and retry
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Organize Consistently" icon="folder-tree">
+    - Use system folders for standard document types
+    - Create custom folders for specific collections or purposes
+    - Add descriptive tags for easy searching
+    - Keep folder structure simple and intuitive
+  </Accordion>
+
+  <Accordion title="Add Metadata" icon="tag">
+    - Always add a clear, descriptive title
+    - Set document dates for appraisals and policies
+    - Add expiry dates for time-sensitive documents
+    - Use tags consistently across documents
+  </Accordion>
+
+  <Accordion title="Track Expirations" icon="calendar-xmark">
+    - Set expiry dates on insurance policies
+    - Review expiring documents regularly
+    - Update expired documents with current versions
+    - Consider setting calendar reminders for renewals
+  </Accordion>
+
+  <Accordion title="Link to Items" icon="link">
+    - Link appraisals to appraised items
+    - Link certificates of authenticity to artworks
+    - Link purchase receipts to acquired items
+    - Makes documentation easy to find when viewing items
+  </Accordion>
+
+  <Accordion title="Plan for Heirs" icon="users">
+    - Share estate-critical documents with heirs
+    - Review what's shared periodically
+    - Include a document explaining your organization system
+    - Keep contact information documents updated
+  </Accordion>
+</AccordionGroup>
+
+## Comparison with Item Attachments
+
+| Feature | Secure Storage | Item Attachments |
+|---------|---------------|------------------|
+| **Scope** | Account-level vault | Per-item files |
+| **Organization** | Folders and tags | Attached to specific item |
+| **Sharing** | Share with heirs toggle | Shared with item |
+| **Best For** | Wills, policies, appraisals | Photos, receipts, certificates |
+| **Audit Log** | Full access logging | Basic tracking |
+| **File Types** | PDF, images, Word | Images and documents |
+
+<Tip>
+  Use **Secure Storage** for documents that apply to multiple items or your overall estate. Use **Item Attachments** for photos and documents specific to a single item.
+</Tip>
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card title="Open Secure Storage" icon="vault" href="https://storehouses.app/secure-storage">
+    Start organizing your documents
+  </Card>
+
+  <Card title="Set Up Heirs" icon="users" href="/advanced/heir-access">
+    Configure heir access for document sharing
+  </Card>
+
+  <Card title="Add Items" icon="plus" href="/features/adding-items">
+    Build your portfolio to link documents
+  </Card>
+
+  <Card title="Export Reports" icon="file-export" href="/portfolio/export-reporting">
+    Generate portfolio documentation
+  </Card>
+</CardGroup>
