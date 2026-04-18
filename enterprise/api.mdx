@@ -1,0 +1,244 @@
+---
+title: "Storehouses API"
+description: "Manage API keys and partner grants to access client portfolio data programmatically"
+---
+
+## Overview
+
+The Storehouses API lets estate management firms access client portfolio data programmatically. From the portal, you can generate API keys, manage scoped access grants, and integrate Storehouses data into your existing systems.
+
+<Note>
+  API management is available to firms with an active Enterprise plan. Navigate to **API & Integrations → Storehouses API** in your portal sidebar.
+</Note>
+
+## API Key Management
+
+### Generating a Key
+
+<Steps>
+  <Step title="Go to Storehouses API">
+    Navigate to **API & Integrations → Storehouses API** in your portal sidebar.
+  </Step>
+  <Step title="Click 'Create API Key'">
+    Enter a name for the key (e.g., "Production - Portfolio Sync").
+  </Step>
+  <Step title="Select Environment">
+    Choose **Sandbox** for testing or **Production** for live data.
+  </Step>
+  <Step title="Choose Scopes">
+    Select which data the key can access (see [Scopes](#scopes) below).
+  </Step>
+  <Step title="Copy Your Key">
+    Your API key is shown once — copy and store it securely. The key starts with `sk_live_` (production) or `sk_test_` (sandbox).
+  </Step>
+</Steps>
+
+<Warning>
+  API keys are shown only once at creation time. Store them securely — we cannot retrieve a key after it's created.
+</Warning>
+
+### Revoking a Key
+
+1. Find the key in your API keys list
+2. Click **Revoke**
+3. Confirm revocation — the key stops working immediately
+
+Revoked keys cannot be restored. Create a new key if needed.
+
+## Scopes
+
+Scopes control what data an API key can access. Each scope unlocks a progressively deeper level of client data:
+
+| Scope | Data Accessible |
+|-------|----------------|
+| **registry** | Item IDs, titles, categories, registry IDs, timestamps, quantities |
+| **valuation** | Market values, purchase prices, insurance values, valuation history |
+| **detail** | Descriptions, notes, seller, storage location, collection membership |
+| **category_detail** | Category-specific fields (metal purity, watch brand, gem certification, etc.) |
+| **documentation** | Document metadata (types, dates, issuers) — never file contents |
+| **estate** | Heir designations, share links, estate readiness data |
+| **verification** | Verification status, scan history, risk scores, tamper states |
+
+<Note>
+  Scopes interact with [privacy tiers](/enterprise/permissions). Even with broad scopes, P0 (private) fields like internal notes and file paths are never exposed through the API.
+</Note>
+
+## Partner Grants
+
+A **partner grant** authorizes your API key to access a specific client's data. Each grant defines:
+
+- **Which client** — The user whose data you can access
+- **Which scopes** — What data fields are visible
+- **Which assets** — All items, specific categories, specific items, or a collection
+- **Expiration** — Optional time limit on access
+
+### Grant Types
+
+| Filter Type | Description |
+|-------------|-------------|
+| **All** | Access all of the client's items |
+| **Category** | Access only items in specific categories (e.g., precious metals, watches) |
+| **Items** | Access only specific items by ID |
+| **Collection** | Access only items in a specific collection |
+
+Clients manage their grants from **Account Settings → Access → Connected Apps**.
+
+## API Endpoints
+
+### List Assets
+
+```
+GET /api/v1/assets?client_id={userId}
+```
+
+Returns paginated list of client's items, filtered by grant scopes and asset filter.
+
+**Query parameters:**
+- `client_id` (required) — Client's user ID
+- `category` — Filter by asset category
+- `min_value` / `max_value` — Value range filter
+- `updated_since` — ISO 8601 timestamp for delta sync
+- `include` — Sideload related data: `valuations`, `documents`
+- `page` / `page_size` — Pagination (default 25, max 100)
+
+### Get Asset
+
+```
+GET /api/v1/assets/{registry_id}?client_id={userId}
+```
+
+Returns a single asset by its registry ID.
+
+### List Valuations
+
+```
+GET /api/v1/assets/{registry_id}/valuations?client_id={userId}
+```
+
+Returns valuation history for an asset. Requires `valuation` scope.
+
+**Query parameters:**
+- `source` — Filter by valuation source (spot_price, appraisal, user_estimate, etc.)
+- `since` — Only valuations after this timestamp
+- `page` / `page_size` — Pagination
+
+### List Documents
+
+```
+GET /api/v1/assets/{registry_id}/documents?client_id={userId}
+```
+
+Returns document metadata for an asset. Requires `documentation` scope. File contents are never served — only metadata (type, title, issuer, dates, file size).
+
+Response includes a **completeness score** showing what percentage of recommended documentation is present.
+
+### Portfolio Summary
+
+```
+GET /api/v1/portfolio/summary?client_id={userId}
+```
+
+Returns aggregated portfolio view with total value (if `valuation` scope granted), category breakdown, and documentation completeness (if `documentation` scope granted).
+
+## Authentication
+
+All API requests use Bearer token authentication:
+
+```bash
+curl -H "Authorization: Bearer sk_live_your_key_here" \
+     -H "X-Storehouses-Version: 2026-03-01" \
+     https://api.storehouses.com/v1/assets?client_id=USER_ID
+```
+
+### Required Headers
+
+| Header | Description |
+|--------|-------------|
+| `Authorization` | `Bearer {api_key}` |
+| `X-Storehouses-Version` | API version date (e.g., `2026-03-01`) |
+
+### Rate Limits
+
+| Tier | Requests/Minute |
+|------|-----------------|
+| Sandbox | 100 |
+| Standard | 1,000 |
+| Elevated | 5,000 |
+| Enterprise | 20,000 |
+
+Rate limit headers are included in every response:
+- `X-RateLimit-Limit` — Your tier's limit
+- `X-RateLimit-Remaining` — Requests remaining in window
+- `X-RateLimit-Reset` — When the window resets
+
+## Delta Sync
+
+Use the `updated_since` parameter to efficiently sync only changed data:
+
+```
+GET /api/v1/assets?client_id={userId}&updated_since=2026-03-15T10:00:00Z
+```
+
+This returns only items modified after the specified timestamp, enabling incremental sync without re-fetching the entire portfolio.
+
+## Error Handling
+
+All errors follow a consistent format:
+
+```json
+{
+  "error": {
+    "type": "authentication_error",
+    "code": "invalid_api_key",
+    "message": "The provided API key is invalid or has been revoked.",
+    "request_id": "req_abc123"
+  }
+}
+```
+
+| HTTP Status | Type | Common Causes |
+|-------------|------|---------------|
+| 401 | `authentication_error` | Invalid, revoked, or expired API key |
+| 403 | `authorization_error` | No active grant, insufficient scope, asset not in grant |
+| 404 | `not_found` | Asset not found or not accessible |
+| 429 | `rate_limit_error` | Rate limit exceeded |
+
+## Registry IDs
+
+Every item in Storehouses has a globally unique **Registry ID** in the format:
+
+```
+SH-{CATEGORY}-{ULID}
+```
+
+For example: `SH-PM-01JD5K8X2MFGHJ4N7PQRST0VWX`
+
+- `SH` — Storehouses platform prefix
+- `PM` — Category code (PM = Precious Metals, WT = Watches, etc.)
+- `ULID` — 26-character unique, time-sortable identifier
+
+Registry IDs are stable, never change, and are safe to use as external references in your systems.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use the Minimum Required Scopes">
+    Request only the scopes you need. This follows the principle of least privilege and makes it easier for clients to approve your access.
+  </Accordion>
+
+  <Accordion title="Implement Delta Sync">
+    Use `updated_since` to fetch only changed data instead of re-pulling the entire portfolio on every sync cycle.
+  </Accordion>
+
+  <Accordion title="Handle Rate Limits Gracefully">
+    Check `X-RateLimit-Remaining` headers and back off when approaching limits. Implement exponential backoff on 429 responses.
+  </Accordion>
+
+  <Accordion title="Store Registry IDs as References">
+    Use Registry IDs as stable keys in your systems. They never change, even if the item's title or category is updated.
+  </Accordion>
+
+  <Accordion title="Use Sandbox for Development">
+    Create sandbox API keys for testing. Switch to production keys only when your integration is ready.
+  </Accordion>
+</AccordionGroup>

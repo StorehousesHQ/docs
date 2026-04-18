@@ -69,6 +69,9 @@
               "advanced/price-alerts",
               "advanced/sharing",
               "advanced/heir-access",
+              "advanced/estate-allocation",
+              "advanced/store-tags",
+              "advanced/encryption",
               "advanced/secure-storage",
               "advanced/offline-mode"
             ]
@@ -89,11 +92,13 @@
               "enterprise/for-firms",
               "enterprise/for-clients",
               "enterprise/permissions",
-              "enterprise/security"
+              "enterprise/security",
+              "enterprise/api",
+              "enterprise/integrations"
             ]
           },
           {
-            "group": "Partners",
+            "group": "Affiliates",
             "pages": [
               "partners/partner-program"
             ]

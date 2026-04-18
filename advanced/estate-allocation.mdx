@@ -1,0 +1,278 @@
+---
+title: "Estate Allocation"
+description: "Plan how your assets and collections will be distributed among your heirs"
+---
+
+import Pro from '/snippets/pro.mdx';
+
+<Pro />
+
+## Overview
+
+Estate Allocation lets you create a plan for how your assets and collections should be distributed among your designated heirs. The allocation engine automatically assigns items based on value targets, while letting you lock specific items to particular heirs.
+
+<Warning>
+  **Pro Subscription Required**: Estate Allocation is available exclusively to Pro and Lifetime subscribers. You must have at least one [heir designated](/advanced/heir-access) to use this feature.
+</Warning>
+
+<Note>
+  Estate Allocation is currently in beta. While fully functional, we recommend reviewing your allocation plan with your estate planning attorney before relying on it for legal purposes.
+</Note>
+
+## Why Estate Allocation?
+
+<CardGroup cols={2}>
+  <Card title="Automated Distribution" icon="wand-magic-sparkles">
+    The allocation engine automatically distributes items to meet your value targets
+  </Card>
+
+  <Card title="Lock Important Items" icon="lock">
+    Pin specific items or collections to particular heirs — the engine respects your choices
+  </Card>
+
+  <Card title="Keep Collections Together" icon="layer-group">
+    Collections are allocated as a unit — a watch collection won't be split across heirs
+  </Card>
+
+  <Card title="Track Drift" icon="chart-line">
+    When portfolio values change, see how far your allocation has drifted and rebalance
+  </Card>
+
+  <Card title="Formal Workflow" icon="clipboard-check">
+    Move plans through Draft → Proposed → Finalized with full version history
+  </Card>
+
+  <Card title="Heir Visibility" icon="eye">
+    Share proposed or finalized plans with heirs so they can see their allocations
+  </Card>
+</CardGroup>
+
+## Getting Started
+
+<Steps>
+  <Step title="Designate Heirs">
+    You need at least one heir set up in [Heir Access](/advanced/heir-access) before creating an allocation plan.
+  </Step>
+  <Step title="Go to Estate Allocation">
+    Navigate to [storehouses.app/estate-allocation](https://storehouses.app/estate-allocation)
+  </Step>
+  <Step title="Create a Plan">
+    Click "Create Allocation Plan" and choose your distribution mode.
+  </Step>
+  <Step title="Set Targets">
+    Define how much each heir should receive (equal shares, custom percentages, or fixed values).
+  </Step>
+  <Step title="Allocate Items">
+    Use auto-allocate for automatic distribution, or manually assign items and collections.
+  </Step>
+</Steps>
+
+## Distribution Modes
+
+Choose how to divide your portfolio value among heirs:
+
+### Equal
+
+Each heir receives an equal share of the total portfolio value. If you have 3 heirs, each gets approximately 33.3%.
+
+### Percentage
+
+Assign custom percentages to each heir. Percentages must add up to 100%. For example:
+- Heir A: 50%
+- Heir B: 30%
+- Heir C: 20%
+
+### Custom
+
+Assign specific dollar amounts to each heir. There's no requirement for amounts to total 100% — useful for unequal distributions or when some assets are handled outside Storehouses.
+
+## How Auto-Allocate Works
+
+The allocation engine uses a **greedy bin-packing algorithm** to distribute items:
+
+1. Calculates each heir's target value based on your distribution mode
+2. Subtracts the value of any locked assignments from each heir's remaining capacity
+3. Sorts unassigned items and collections by value (highest first)
+4. Assigns each item to the heir with the most remaining capacity
+5. Distributes any zero-value items evenly among heirs
+
+<Note>
+  **Collections stay together.** When a collection is allocated, all items in it go to the same heir. The engine treats collections as indivisible units.
+</Note>
+
+## Working with Allocations
+
+### Manual Assignment
+
+From the allocation page, you can:
+- Browse unassigned items and collections in the **unassigned pool**
+- Search and filter by title or category
+- Click an item to assign it to a specific heir
+- Drag items between heirs (if supported by your browser)
+
+### Locking Assignments
+
+Lock an assignment to prevent it from being changed during auto-allocate or rebalance:
+
+1. Find the item in a heir's allocation list
+2. Click the **lock icon** to lock it
+3. Locked items show a lock badge and are excluded from automatic redistribution
+
+This is useful when a specific item has sentimental value or has been promised to a particular heir.
+
+<Note>
+  You can only lock and unlock assignments while the plan is in **Draft** status.
+</Note>
+
+### Variance Tracking
+
+The allocation page shows variance for each heir — the difference between their target value and their actual assigned value:
+
+- **Positive variance**: Heir has more than their target
+- **Negative variance**: Heir has less than their target
+- **Zero variance**: Heir is exactly on target
+
+Use variance information to identify under- or over-allocated heirs and adjust accordingly.
+
+## Rebalancing
+
+When your portfolio value changes (items added, removed, or values updated), your allocation may drift from its targets.
+
+### Drift Detection
+
+The system automatically detects when your portfolio has drifted more than **5%** from the allocation's computed total. When drift is detected, you see a notification suggesting a rebalance.
+
+### How Rebalance Works
+
+1. All **locked** assignments are preserved exactly as-is
+2. All **unlocked** assignments are removed
+3. The allocation engine runs again with updated values
+4. New assignments are created to meet targets with current portfolio values
+5. A snapshot of the previous allocation is saved to history
+
+## Plan Workflow
+
+Allocation plans follow a formal state machine:
+
+```
+Draft → Proposed → Finalized
+  ↑                    |
+  └────── Amend ───────┘
+```
+
+### Draft
+
+- Full editing capabilities
+- Add, remove, lock, and unlock assignments
+- Run auto-allocate and rebalance
+- Change distribution mode and targets
+
+### Proposed
+
+- Plan is shared with heirs for review
+- Heirs with approved access can view their allocations
+- No editing allowed — retract to Draft to make changes
+
+### Finalized
+
+- Plan is locked
+- Heirs can view their final allocations
+- To make changes, amend the plan (reverts to Draft with a new version number)
+
+### Transitioning Between States
+
+| Action | From | To | What Happens |
+|--------|------|-----|-------------|
+| **Share** | Draft | Proposed | Plan becomes visible to heirs |
+| **Retract** | Proposed | Draft | Plan hidden from heirs, editing re-enabled |
+| **Finalize** | Proposed | Finalized | Plan locked, heirs see final allocations |
+| **Amend** | Finalized | Draft | Previous version archived, new version created |
+
+## Heir View
+
+When your plan is **Proposed** or **Finalized**, heirs with approved access can see:
+
+- Their assigned items and collections
+- The total value allocated to them
+- The allocation status (proposed or finalized)
+- The distribution mode
+
+Heirs see **only their own allocations** — they cannot see what other heirs receive or the overall plan details. Heirs cannot modify any assignments.
+
+## Estate Readiness Integration
+
+Estate Allocation contributes **20%** to your overall [Estate Readiness](/advanced/heir-access) score:
+
+| Condition | Impact |
+|-----------|--------|
+| No allocation plan exists | Medium severity issue |
+| Plan exists but incomplete | Score based on percentage of value allocated |
+| Plan in draft status | 80% of allocation score (20% penalty) |
+| Plan in proposed status | 90% of allocation score (10% penalty) |
+| Plan finalized | Full allocation score |
+
+## Version History
+
+Every significant change is archived:
+
+- **Amending** a finalized plan archives the current version
+- **Rebalancing** archives the pre-rebalance state
+- **Deleting** a plan archives it before removal
+
+View your allocation history from the **History** section to see previous versions with timestamps and reasons for changes.
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Start with Auto-Allocate, Then Refine">
+    Let the engine do the initial distribution, then lock specific items to particular heirs and rebalance.
+  </Accordion>
+
+  <Accordion title="Use Collections Strategically">
+    Group items that should stay together (e.g., a complete watch collection, a wine cellar) into collections before allocating. The engine keeps collections intact.
+  </Accordion>
+
+  <Accordion title="Lock Sentimental Items First">
+    If specific items are promised to specific heirs, lock those assignments before running auto-allocate.
+  </Accordion>
+
+  <Accordion title="Review After Value Changes">
+    When you add items, receive appraisals, or market values shift significantly, check for drift and rebalance if needed.
+  </Accordion>
+
+  <Accordion title="Finalize When Ready">
+    Move through Draft → Proposed → Finalized. Share with heirs for review before finalizing. Use amend if changes are needed later.
+  </Accordion>
+
+  <Accordion title="Coordinate with Your Attorney">
+    Estate Allocation in Storehouses is a planning tool. Work with your estate attorney to ensure your legal documents reflect your allocation plan.
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can I have multiple allocation plans?">
+    No, each account has one active allocation plan at a time. You can amend and create new versions as needed.
+  </Accordion>
+
+  <Accordion title="What happens if I add new items after finalizing?">
+    New items are unassigned. You'll see drift detected, and can amend the plan to rebalance and include the new items.
+  </Accordion>
+
+  <Accordion title="Can heirs see each other's allocations?">
+    No. Each heir can only see the items and collections assigned to them.
+  </Accordion>
+
+  <Accordion title="Does allocation transfer legal ownership?">
+    No. Estate Allocation is a planning tool within Storehouses. Legal ownership transfer requires proper legal documents. Use your allocation plan as a reference for your estate attorney.
+  </Accordion>
+
+  <Accordion title="What if I remove a heir?">
+    Items assigned to a removed heir become unassigned. You should rebalance after removing a heir to redistribute their items.
+  </Accordion>
+
+  <Accordion title="Are encrypted items supported?">
+    Yes. If you have end-to-end encryption enabled, item titles are decrypted in the allocation view for your convenience. Heirs with encryption access can also view decrypted titles.
+  </Accordion>
+</AccordionGroup>

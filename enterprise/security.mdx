@@ -168,6 +168,24 @@ Some permissions require additional verification:
 
 ## Compliance Features
 
+### SOC 2 Compliance Infrastructure
+
+Storehouses maintains a dedicated compliance events system for SOC 2 audit readiness:
+
+- **Append-only compliance log** — Separate from product audit logs, specifically for compliance evidence
+- **Event categories** — Key access, provisioning, verification, anomaly detection, access control
+- **Evidence export** — Admin endpoint exports compliance events by date range and category (JSON or CSV)
+- **Actor tracking** — Every event records who performed the action (user, system, partner, or admin)
+
+The compliance dashboard in the portal shows your firm's current status across key controls:
+- Access logging enabled
+- Role-based access control active
+- Export tracking in place
+- Audit log integrity verified
+- E2EE status
+- MFA enforcement
+- Data processing agreement signed
+
 ### For Estate Planning Compliance
 
 <Card title="Complete Audit Trail" icon="clipboard-check">
@@ -215,10 +233,11 @@ Some permissions require additional verification:
   </Accordion>
 
   <Accordion title="Operational Security" icon="shield">
-    - Use strong, unique passwords
-    - Enable two-factor authentication if available
+    - Use strong, unique passwords (minimum 12 characters with special characters)
+    - Enable two-factor authentication (MFA) for all team members
     - Don't share login credentials
     - Log out when finished
+    - Review login activity for new device alerts
   </Accordion>
 </AccordionGroup>
 
@@ -288,11 +307,13 @@ All data is protected with industry-standard encryption:
 
 | What | Protection |
 |------|------------|
-| Data sent over the internet | Encrypted in transit (same security as online banking) |
-| Data stored in our database | Encrypted at rest |
-| Passwords | Securely hashed (we never store actual passwords) |
+| Data sent over the internet | TLS 1.3 encryption in transit (same security as online banking) |
+| Data stored in our database | AES-256 encrypted at rest |
+| Passwords | Argon2id hashed (we never store actual passwords) |
 | Login sessions | Cryptographically signed tokens |
-| Audit logs | Tamper-evident cryptographic chain |
+| Audit logs | Tamper-evident cryptographic hash chain |
+| Client data (with E2EE) | AES-256-GCM client-side encryption — zero-knowledge, server never sees plaintext |
+| Integration credentials | AES-256-GCM encrypted before storage |
 
 ## Questions
 

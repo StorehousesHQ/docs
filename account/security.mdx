@@ -19,11 +19,11 @@ Your password is the first line of defense for your account.
 
 <Card title="Password Requirements" icon="key">
   Storehouses requires passwords that meet these minimum standards:
-  - At least 8 characters
+  - At least 12 characters
   - One uppercase letter
   - One lowercase letter
   - One number
-  - Special characters recommended
+  - One special character (required)
 </Card>
 
 **Best practices for passwords:**
@@ -262,34 +262,81 @@ See where you're logged in:
   If you see unfamiliar sessions, sign out of all devices immediately, change your password, and contact support.
 </Tip>
 
-## Data Encryption
+## Two-Factor Authentication (MFA)
 
-### Client-Side Encryption (Beta)
+Pro and Lifetime users can enable two-factor authentication for an extra layer of account security.
 
-<Card title="Pro & Lifetime Feature" icon="lock">
-  Storehouses is developing client-side encryption for Pro and Lifetime users, adding an extra layer of security where your data is encrypted on your device before being sent to servers.
-</Card>
-
-**How client-side encryption works:**
+### Setting Up MFA
 
 <Steps>
-  <Step title="Data Encrypted on Device">
-    Your portfolio data is encrypted on your device using your encryption key
+  <Step title="Go to Account Settings">
+    Navigate to [storehouses.app/account](https://storehouses.app/account) and click the **Security** tab.
   </Step>
-  <Step title="Encrypted Data Sent to Server">
-    Only encrypted data is transmitted and stored on Storehouses servers
+  <Step title="Enable Two-Factor Authentication">
+    Click "Enable MFA" in the security section.
   </Step>
-  <Step title="Decrypted on Access">
-    Data is decrypted on your device when you access it
+  <Step title="Scan QR Code">
+    Use an authenticator app (Google Authenticator, Authy, 1Password, etc.) to scan the QR code.
   </Step>
-  <Step title="Zero-Knowledge">
-    Storehouses servers never have access to your unencrypted data
+  <Step title="Enter Verification Code">
+    Enter the 6-digit code from your authenticator app to confirm setup.
   </Step>
 </Steps>
 
+Once enabled, you'll need to enter a code from your authenticator app each time you log in.
+
 <Note>
-  Client-side encryption is currently in beta testing for Pro and Lifetime users. General availability coming soon.
+  If your estate manager's firm enforces MFA, you have a 7-day grace period to enable it after connecting with them.
 </Note>
+
+### Disabling MFA
+
+To disable MFA, go to **Account Settings → Security** and click "Disable MFA." You'll need to enter a current verification code to confirm.
+
+## Login Activity
+
+Storehouses tracks all login activity for your account. View your login history from the **Security** tab in Account Settings.
+
+Each entry shows:
+- **Timestamp** — When the login occurred
+- **Device & browser** — What was used to log in
+- **IP address** — Partially masked for privacy
+- **New device indicator** — Flags logins from devices you haven't used before
+
+Login events tracked include: successful logins, failed attempts, logouts, MFA challenges, and password resets.
+
+## Data Encryption
+
+### End-to-End Encryption
+
+<Card title="Pro & Lifetime Feature" icon="lock">
+  Storehouses offers client-side end-to-end encryption (E2EE) for Pro and Lifetime users. Your data is encrypted on your device using AES-256-GCM before being sent to our servers — we never see your unencrypted data.
+</Card>
+
+**How it works:**
+
+<Steps>
+  <Step title="Data Encrypted on Device">
+    Your portfolio data is encrypted in your browser using a key derived from your password
+  </Step>
+  <Step title="Encrypted Data Sent to Server">
+    Only encrypted blobs are transmitted and stored — our servers never see plaintext
+  </Step>
+  <Step title="Decrypted on Access">
+    Data is decrypted in your browser when you access it
+  </Step>
+  <Step title="Zero-Knowledge">
+    Storehouses servers have no way to decrypt your data, even if compelled
+  </Step>
+</Steps>
+
+Key features:
+- **Recovery key** — A backup key shown at setup for account recovery if you forget your password
+- **Heir access** — Securely share decryption access with designated heirs via asymmetric key exchange
+- **Firm access** — Grant estate managers decryption access without sharing your password
+- **Key rotation** — Rotate your encryption key at any time for additional security
+
+[Learn more about End-to-End Encryption →](/advanced/encryption)
 
 ### Transport Encryption
 
@@ -582,7 +629,7 @@ Storehouses uses Supabase for database and authentication:
 
 <AccordionGroup>
   <Accordion title="Does Storehouses offer two-factor authentication (2FA)?" icon="shield">
-    Currently, Storehouses doesn't offer native 2FA, but we recommend enabling 2FA on your email account as it's used for authentication. Native 2FA is on our roadmap for future implementation.
+    Yes. Pro and Lifetime users can enable TOTP-based two-factor authentication from **Account Settings → Security**. Use any authenticator app (Google Authenticator, Authy, 1Password, etc.) to set it up. We also recommend enabling 2FA on your email account for additional security.
   </Accordion>
 
   <Accordion title="How secure is my portfolio data?" icon="lock">
@@ -590,7 +637,7 @@ Storehouses uses Supabase for database and authentication:
   </Accordion>
 
   <Accordion title="Can Storehouses employees see my portfolio?" icon="eye">
-    Storehouses employees can only access your data when necessary for support requests or system maintenance. All access is logged and audited. With client-side encryption (coming soon), even this access will be impossible.
+    Storehouses employees can only access your data when necessary for support requests or system maintenance. All access is logged and audited. With [end-to-end encryption](/advanced/encryption) enabled, even Storehouses staff cannot read your encrypted data.
   </Accordion>
 
   <Accordion title="What happens to my data if Storehouses shuts down?" icon="server">

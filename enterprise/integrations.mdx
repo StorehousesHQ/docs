@@ -1,0 +1,191 @@
+---
+title: "CRM Integrations"
+description: "Connect your Storehouses portal to Salesforce, Redtail, Wealthbox, Addepar, and other CRM platforms"
+---
+
+## Overview
+
+The Storehouses Estate Manager Portal integrates with popular CRM and wealth management platforms to keep client data in sync. Connected integrations automatically push portfolio summaries, asset breakdowns, and activity notes to your CRM contacts.
+
+<Note>
+  CRM integrations are available to firms with an active Enterprise plan. Navigate to **API & Integrations → Third-Party Integrations** in your portal sidebar.
+</Note>
+
+## Supported Integrations
+
+<CardGroup cols={2}>
+  <Card title="Salesforce" icon="cloud">
+    OAuth 2.0 authentication with contact sync, custom objects, and activity logging
+  </Card>
+
+  <Card title="Redtail CRM" icon="address-book">
+    API key authentication with contact sync and portfolio note posting
+  </Card>
+
+  <Card title="Wealthbox" icon="briefcase">
+    OAuth 2.0 authentication with configurable sync features, custom fields, and task creation
+  </Card>
+
+  <Card title="Addepar" icon="chart-pie">
+    API key authentication with entity sync, position tracking, and custom attribute mapping
+  </Card>
+</CardGroup>
+
+## Connecting an Integration
+
+### OAuth Integrations (Salesforce, Wealthbox)
+
+<Steps>
+  <Step title="Navigate to Integrations">
+    Go to **API & Integrations → Third-Party Integrations** in your portal sidebar.
+  </Step>
+  <Step title="Click Connect">
+    Click the **Connect** button next to the integration you want to set up.
+  </Step>
+  <Step title="Authorize Access">
+    You're redirected to the CRM's login page. Sign in and authorize Storehouses to access your account.
+  </Step>
+  <Step title="Configure Sync">
+    After authorization, configure which data to sync and how often.
+  </Step>
+</Steps>
+
+### API Key Integrations (Redtail, Addepar)
+
+<Steps>
+  <Step title="Navigate to Integrations">
+    Go to **API & Integrations → Third-Party Integrations** in your portal sidebar.
+  </Step>
+  <Step title="Enter Credentials">
+    Enter your API key (and additional credentials if required, such as a firm subdomain for Addepar).
+  </Step>
+  <Step title="Validate Connection">
+    Storehouses tests the connection to confirm your credentials work.
+  </Step>
+  <Step title="Configure Sync">
+    Choose sync options and save.
+  </Step>
+</Steps>
+
+<Note>
+  All integration credentials are encrypted with AES-256-GCM before storage. Storehouses never stores credentials in plaintext.
+</Note>
+
+## What Gets Synced
+
+Each sync cycle processes all active client relationships for your firm:
+
+| Data | Salesforce | Redtail | Wealthbox | Addepar |
+|------|-----------|---------|-----------|---------|
+| **Contact matching** | By email | By email | By email | By email |
+| **Create missing contacts** | Yes | Yes | Configurable | Configurable |
+| **Portfolio value** | Custom object | Note | Custom fields | Custom attributes |
+| **Asset breakdown** | Custom object | Note | Custom fields | Custom attributes |
+| **Category totals** | Custom object | Note | Custom fields | Custom attributes |
+| **Activity notes** | Task | Note | Note + Task | — |
+| **Position tracking** | — | — | — | Yes |
+
+## Integration Details
+
+### Salesforce
+
+**Authentication**: OAuth 2.0 with refresh token grant
+
+**What syncs**:
+- Contacts matched or created by email
+- **Tasks** with formatted portfolio summary (total value, category breakdown)
+- **Custom object** `SH_Portfolio__c` with total value, item count, breakdown, and sync date (if deployed in your Salesforce org)
+
+**Token management**: Access tokens refresh automatically during sync. If a token expires mid-sync, Storehouses refreshes it and retries once.
+
+### Redtail CRM
+
+**Authentication**: API key with per-firm user token
+
+**What syncs**:
+- Contacts matched or created by email
+- **Portfolio notes** posted to each contact with formatted breakdown including total value, item count, and category-by-category summary
+
+**Note format**: Each note includes a divider, timestamp, and source attribution.
+
+### Wealthbox
+
+**Authentication**: OAuth 2.0 with refresh token grant
+
+**What syncs** (each configurable):
+- **Custom fields**: Total value, total items, asset breakdown, last sync date
+- **Financial fields**: Assets and non-liquid assets values
+- **Notes**: Formatted portfolio update
+- **Tasks**: With configurable due date, priority, and team member assignment
+
+**Configuration**: Go to the Wealthbox config page to map custom fields, enable/disable features, and set task assignment preferences.
+
+### Addepar
+
+**Authentication**: HTTP Basic Auth (API key + secret) with firm header
+
+**What syncs**:
+- Entities matched or created by email (PERSON_NODE type)
+- **Custom attributes**: Total value, total items, asset breakdown, last sync date
+- **Positions**: Creates or updates a "Storehouses" position linked to each client entity
+
+**Requirements**: Your Addepar firm subdomain and API credentials with entity read/write permissions.
+
+## Sync Schedule
+
+Integrations sync automatically via a scheduled job. You can also trigger a manual sync at any time:
+
+1. Go to **Third-Party Integrations**
+2. Click the **Sync Now** button next to the connected integration
+3. Wait for the sync to complete — results show success/error counts
+
+During sync, the integration status shows as **Syncing**. If errors occur, the status changes to **Error** with details available in the sync summary.
+
+## Managing Integrations
+
+### Viewing Sync Status
+
+Each connected integration shows:
+- **Connection status**: Connected, Syncing, Error, or Disconnected
+- **Last sync time**: When the most recent sync completed
+- **Sync summary**: Counts of synced, created, skipped, and errored contacts
+
+### Disconnecting
+
+To disconnect an integration:
+
+1. Click the integration card
+2. Click **Disconnect**
+3. Confirm the disconnection
+
+Disconnecting removes stored credentials and stops all sync activity. Data already synced to your CRM remains there.
+
+## Permissions
+
+Only firm **Owners** and **Admins** can manage integrations. Team members with Manager or Viewer roles can see integration status but cannot connect, configure, or disconnect integrations.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection validation fails">
+    - Verify your API key or credentials are correct
+    - For Addepar, confirm your firm subdomain is correct
+    - Check that your CRM account has the required API permissions
+    - For OAuth integrations, try disconnecting and reconnecting
+  </Accordion>
+
+  <Accordion title="Contacts not being matched">
+    Contacts are matched by email address. Ensure your clients' email addresses in Storehouses match their emails in your CRM.
+  </Accordion>
+
+  <Accordion title="Sync shows errors">
+    Check the sync summary for specific error messages. Common causes:
+    - CRM rate limits exceeded (Storehouses includes built-in delays but very large client lists may hit limits)
+    - Individual contact permissions in your CRM blocking updates
+    - Custom objects or fields not deployed (Salesforce SH_Portfolio__c)
+  </Accordion>
+
+  <Accordion title="Token expired (OAuth integrations)">
+    OAuth tokens refresh automatically. If persistent token errors occur, disconnect and reconnect the integration to re-authorize.
+  </Accordion>
+</AccordionGroup>

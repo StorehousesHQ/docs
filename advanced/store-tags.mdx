@@ -1,0 +1,337 @@
+---
+title: "Store Tags"
+description: "Verify the authenticity and provenance of your physical assets with NFC-powered Store Tags"
+---
+
+import Pro from '/snippets/pro.mdx';
+
+<Pro />
+
+## Overview
+
+Store Tags are physical NFC tags that you attach to your items to verify authenticity, prove ownership, and track provenance. When scanned with your phone, a Store Tag cryptographically confirms the item is genuine and hasn't been tampered with.
+
+<Warning>
+  **Pro Subscription Required**: Store Tags and the verification system are available exclusively to Pro and Lifetime subscribers.
+</Warning>
+
+## Why Store Tags?
+
+<CardGroup cols={2}>
+  <Card title="Cryptographic Verification" icon="shield-check">
+    Each tag uses AES-128 encryption to prove authenticity — no counterfeiting possible
+  </Card>
+
+  <Card title="Tamper Detection" icon="lock">
+    Enterprise tags detect physical tampering with hardware tamper loops
+  </Card>
+
+  <Card title="Provenance Tracking" icon="clock-rotate-left">
+    Build a complete verification history for every item over time
+  </Card>
+
+  <Card title="Risk Scoring" icon="gauge">
+    Automatic risk assessment flags suspicious activity like cloned tags or impossible travel
+  </Card>
+
+  <Card title="Estate & Insurance" icon="file-contract">
+    Verified items strengthen insurance claims and estate documentation
+  </Card>
+
+  <Card title="Works Offline" icon="wifi-slash">
+    Scan tags with any NFC-enabled smartphone — no app required
+  </Card>
+</CardGroup>
+
+## How Store Tags Work
+
+Store Tags use **NFC (Near Field Communication)** technology — the same technology behind contactless payments. Each tag contains a unique identifier linked to your item in Storehouses.
+
+### Verification Levels
+
+| Level | Tag Type | Security | Staleness |
+|-------|----------|----------|-----------|
+| **Cryptographic** | NTAG 424 DNA | AES-128 CMAC authentication, rolling counter, tamper detection | 180 days |
+| **NFC Scan** | NTAG 213 | UID verification against registry | 90 days |
+| **Manual** | Photo/visual | User-submitted photo verification | 30 days |
+
+### What Happens When You Scan
+
+1. You tap your phone to the Store Tag on your item
+2. The tag transmits an encrypted message with a rolling counter
+3. Storehouses verifies the cryptographic signature server-side
+4. You see a verification result with a confidence score and risk assessment
+
+<Note>
+  Enterprise Store Tags (NTAG 424 DNA) use the same cryptographic protocol as contactless payment cards. Each scan produces a unique, non-replayable proof of authenticity.
+</Note>
+
+## Getting Started
+
+### Ordering Store Tags
+
+Store Tags are available in three pack sizes:
+
+| Pack | Best For |
+|------|----------|
+| **5 tags** | Getting started with your most valuable items |
+| **15 tags** | Active collectors with growing portfolios |
+| **30 tags** | Large collections or estate managers with multiple clients |
+
+To order:
+
+<Steps>
+  <Step title="Go to Verification">
+    Navigate to [storehouses.app/verification](https://storehouses.app/verification)
+  </Step>
+  <Step title="Click 'Order Tags'">
+    Select your preferred pack size
+  </Step>
+  <Step title="Complete Checkout">
+    Purchase through Stripe Checkout (payment is secure and PCI compliant)
+  </Step>
+  <Step title="Receive Your Tags">
+    Tags ship to your address and arrive pre-programmed and ready to use
+  </Step>
+</Steps>
+
+### Claiming a Tag
+
+When your tags arrive, you need to claim them to link them to your account:
+
+<Steps>
+  <Step title="Scan the Tag">
+    Hold your phone near the Store Tag — your browser opens the claim page automatically
+  </Step>
+  <Step title="Sign In">
+    Log in to your Storehouses account if not already signed in
+  </Step>
+  <Step title="Confirm Claim">
+    The tag is now linked to your account and ready to assign to an item
+  </Step>
+</Steps>
+
+### Pairing a Tag to an Item
+
+<Steps>
+  <Step title="Go to Verification">
+    Navigate to the **Untagged Items** tab on the Verification page
+  </Step>
+  <Step title="Find Your Item">
+    Search or browse your untagged items
+  </Step>
+  <Step title="Click 'Pair Tag'">
+    Hold the Store Tag near your phone when prompted to write the item's registry ID
+  </Step>
+  <Step title="Attach the Tag">
+    Physically attach the Store Tag to your item (adhesive backing, display case, storage container, etc.)
+  </Step>
+</Steps>
+
+## Verification Page
+
+Access your verification dashboard at [storehouses.app/verification](https://storehouses.app/verification). The page has four tabs:
+
+### Scan Tag
+
+Scan any Store Tag to verify an item. The scanner automatically detects the tag type and routes to the appropriate verification method.
+
+After scanning, you see:
+- **Verification status** — Verified, Caution, Warning, or Alert
+- **Risk score** — 0.00 (no risk) to 1.00 (high risk) with color-coded indicator
+- **Confidence level** — Based on tag type and verification method
+- **Anomaly flags** — Any detected issues (counter rollback, impossible travel, rapid scanning)
+
+### Manage Tags
+
+View all your Store Tags with their current status:
+- **Active** — Tag is paired with an item and working normally
+- **Disabled** — You've temporarily disabled the tag
+- **Lost** — You've reported the tag as lost
+- **Compromised** — The system detected potential cloning or tampering
+
+From this tab you can rename, reassign, disable, or remove tags.
+
+### Untagged Items
+
+Browse items in your portfolio that don't have a Store Tag assigned. Use the "Pair Tag" button to assign a tag to any item.
+
+### Event History
+
+View a complete timeline of all verification events across your portfolio. Each event shows:
+- Timestamp and verification method
+- Confidence level and risk score
+- Any anomaly flags that were triggered
+- The item and tag involved
+
+## Risk Scoring
+
+Every scan produces a risk score from **0.00** (no risk) to **1.00** (high risk):
+
+| Score | Level | Meaning |
+|-------|-------|---------|
+| 0.00 – 0.15 | **Verified** | Cryptographic confidence — item is authentic |
+| 0.15 – 0.30 | **Verified** | Standard confidence |
+| 0.30 – 0.50 | **Caution** | Review recommended |
+| 0.50 – 0.70 | **Warning** | Significant anomalies detected |
+| 0.70 – 1.00 | **Alert** | Likely clone or tamper detected |
+
+### What Affects the Score
+
+**Lowers risk (good):**
+- Successful cryptographic verification (strongest signal)
+- Valid rolling counter
+- Tamper loop intact
+- Scan location matches expected area
+- Photo captured during verification
+
+**Raises risk (bad):**
+- Cryptographic verification failure (strongest negative signal)
+- Counter rollback (suggests cloned tag)
+- Tamper loop broken or changed
+- Impossible travel (scanned in two distant locations too quickly)
+- Rapid scanning (many scans in a short window)
+
+## Anomaly Detection
+
+The system automatically monitors for suspicious patterns:
+
+| Anomaly | What It Means |
+|---------|--------------|
+| **Counter Rollback** | The tag's rolling counter went backwards — strong indicator of a cloned tag |
+| **Impossible Travel** | Tag scanned in two locations too far apart for the time elapsed (>500 km in <1 hour) |
+| **Geo Anomaly** | Tag scanned far from its last known location (>100 km in <1 hour) |
+| **Rapid Scanning** | 5+ scans within a 10-minute window — may indicate automated cloning attempts |
+| **Counter Gap** | Large gap in counter values suggests unreported scans |
+
+<Warning>
+  If a tag accumulates more than 3 anomalies, it is automatically marked as **compromised** and disabled for security. Contact support if you believe this is in error.
+</Warning>
+
+## Tag Lifecycle
+
+Store Tags move through these states:
+
+```
+Provisioned → Shipped → Claimed → Active
+                                     ↓
+                           Disabled / Lost / Replaced
+                                     ↓
+                              Decommissioned
+```
+
+- **Provisioned** — Tag manufactured and cryptographic keys loaded
+- **Shipped** — Tag sent to you
+- **Claimed** — You scanned and linked the tag to your account
+- **Active** — Tag is paired with an item and in use
+- **Disabled** — You temporarily disabled the tag (can be re-enabled)
+- **Lost** — You reported the tag as lost (prevents unauthorized use)
+- **Replaced** — Old tag replaced with a new one
+- **Compromised** — System detected potential cloning (automatic)
+- **Decommissioned** — Permanently retired
+
+## Staleness and Re-Verification
+
+Verification confidence decays over time. Items should be re-scanned periodically:
+
+| Verification Type | Re-scan Recommended |
+|-------------------|-------------------|
+| Cryptographic (NTAG 424 DNA) | Every 180 days |
+| NFC scan (NTAG 213) | Every 90 days |
+| Manual verification | Every 30 days |
+
+Items that haven't been verified within their staleness window show a notification on your dashboard prompting re-verification.
+
+## Enterprise Tags
+
+Enterprise Store Tags use **NTAG 424 DNA** chips with advanced security features:
+
+### Cryptographic Authentication
+
+Each scan generates a unique, non-replayable proof using:
+- **AES-128 CMAC** — Military-grade message authentication
+- **Rolling counter** — 24-bit counter increments with every scan (16M+ scan capacity)
+- **Session keys** — Derived uniquely per scan from the master key and counter
+- **Encrypted UID** — Tag identity encrypted in transit
+
+### Tamper Detection
+
+NTAG 224 DNA StatusDetect tags include a hardware **tamper loop** — a physical wire that detects if the tag has been removed or the item opened. If the loop is broken:
+- The tag reports `tampered` status
+- Risk score increases significantly
+- You receive a notification
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Tag Your Most Valuable Items First">
+    Start with high-value items where provenance matters most — rare watches, fine art, precious metals, and collectible firearms.
+  </Accordion>
+
+  <Accordion title="Scan Regularly">
+    Periodic scans build a verification history that strengthens provenance claims for insurance and estate purposes.
+  </Accordion>
+
+  <Accordion title="Attach Tags Securely">
+    Place tags where they won't be accidentally removed but can still be scanned. Inside display cases, on storage containers, or on item packaging work well.
+  </Accordion>
+
+  <Accordion title="Report Lost Tags Immediately">
+    If a tag is lost or separated from its item, mark it as lost in the Manage Tags tab to prevent unauthorized verification.
+  </Accordion>
+
+  <Accordion title="Keep Your Phone Updated">
+    NFC scanning works best with up-to-date phone software. Ensure NFC is enabled in your phone settings.
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Tag won't scan">
+    - Ensure NFC is enabled on your phone (Settings → NFC)
+    - Hold the phone close to the tag for 2-3 seconds
+    - Try different positions — NFC antennas vary by phone model
+    - Remove phone case if it's thick or metallic
+    - Some phones require the screen to be on and unlocked
+  </Accordion>
+
+  <Accordion title="Tag shows 'Unregistered'">
+    The tag hasn't been claimed yet. Scan it while logged in to claim it to your account.
+  </Accordion>
+
+  <Accordion title="Verification shows 'Caution' or 'Warning'">
+    Check the anomaly flags for details. Common causes:
+    - Scanning from a new location (geo mismatch) — usually resolves on next scan
+    - Long gap between scans (counter gap) — scan again to reset
+    - If counter rollback or impossible travel is flagged, contact support
+  </Accordion>
+
+  <Accordion title="Tag marked as 'Compromised'">
+    This happens when 3+ anomalies are detected. Contact support with your tag details — if it's a false positive, they can restore the tag.
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Do I need a special app to scan tags?">
+    No. Store Tags work with the built-in NFC reader on any modern smartphone. Scanning opens your browser automatically.
+  </Accordion>
+
+  <Accordion title="Can someone else scan my tags?">
+    Anyone can scan the tag, but only you (the owner) can see the full verification details. Others see a limited verification page confirming the item is registered.
+  </Accordion>
+
+  <Accordion title="What if I sell an item with a tag?">
+    You can transfer tag ownership when selling an item. The verification history transfers with it, providing provenance to the buyer.
+  </Accordion>
+
+  <Accordion title="How many tags can I have?">
+    There's no limit on the number of tags per account. Order additional packs as your collection grows.
+  </Accordion>
+
+  <Accordion title="Do tags need batteries?">
+    No. Store Tags are passive NFC devices powered by your phone's NFC signal. They have no batteries and last indefinitely.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,240 @@
+---
+title: "End-to-End Encryption"
+description: "Protect your portfolio data with client-side encryption that ensures only you can read your information"
+---
+
+import Pro from '/snippets/pro.mdx';
+
+<Pro />
+
+## Overview
+
+End-to-End Encryption (E2EE) ensures that your portfolio data is encrypted on your device before it reaches our servers. Storehouses never sees your unencrypted data — only you (and anyone you explicitly grant access) can decrypt it.
+
+<Warning>
+  **Pro Subscription Required**: Enabling encryption requires a Pro or Lifetime subscription. Once enabled, your data stays encrypted even if you downgrade — but you must decrypt before canceling.
+</Warning>
+
+## How It Works
+
+<CardGroup cols={2}>
+  <Card title="Client-Side Encryption" icon="lock">
+    Data is encrypted in your browser using AES-256-GCM before being sent to the server
+  </Card>
+
+  <Card title="Password-Derived Keys" icon="key">
+    Your encryption key is derived from your password — we never store or see it
+  </Card>
+
+  <Card title="Recovery Key" icon="life-ring">
+    A backup recovery key lets you regain access if you forget your password
+  </Card>
+
+  <Card title="Zero Knowledge" icon="eye-slash">
+    Our servers only store encrypted blobs — we cannot decrypt your data even if compelled
+  </Card>
+
+  <Card title="Heir & Firm Access" icon="users">
+    Asymmetric key exchange lets you share access without sharing your password
+  </Card>
+
+  <Card title="Atomic Operations" icon="atom">
+    Encryption enable/disable is all-or-nothing — no partial states
+  </Card>
+</CardGroup>
+
+## What Gets Encrypted
+
+When you enable encryption, the following fields are encrypted on your device:
+
+### Items
+- Title, description, notes, seller
+
+### Category-Specific Fields
+- All text fields for each asset type (brand, model, serial numbers, condition notes, etc.)
+- Numeric fields (values, weights, quantities) remain unencrypted for calculations and filtering
+
+### Locations
+- Name, description, notes
+
+### Collections
+- Name, description
+
+<Note>
+  Numeric fields like market value, purchase price, weight, and quantity are **not** encrypted so that portfolio calculations, charts, and filtering continue to work.
+</Note>
+
+## Enabling Encryption
+
+<Steps>
+  <Step title="Go to Account Settings">
+    Navigate to your [Account Settings](https://storehouses.app/account) and click the **Security** tab.
+  </Step>
+  <Step title="Click 'Enable Encryption'">
+    In the Encryption section, click the enable button.
+  </Step>
+  <Step title="Enter Your Password">
+    Your password is used to derive your encryption key. It never leaves your browser.
+  </Step>
+  <Step title="Save Your Recovery Key">
+    A recovery key is displayed — **save it somewhere safe**. This is the only way to recover your data if you forget your password.
+  </Step>
+  <Step title="Wait for Encryption">
+    All existing data is encrypted in your browser and re-uploaded. A progress indicator shows the process. Do not close your browser.
+  </Step>
+</Steps>
+
+<Warning>
+  **Save your recovery key immediately.** It is shown only once during setup. Without it, losing your password means permanently losing access to your encrypted data.
+</Warning>
+
+## Recovery Key
+
+Your recovery key is a 256-bit key formatted as:
+
+```
+XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
+```
+
+### Safekeeping Recommendations
+
+- Write it down on paper and store in a safe or safe deposit box
+- Store it in a password manager separate from your Storehouses password
+- Give a copy to a trusted family member or attorney
+- Do **not** store it digitally on the same device you use Storehouses on
+
+### Using Your Recovery Key
+
+If you forget your password or need to access your data on a new device:
+
+1. On the login screen, click "Use Recovery Key"
+2. Enter your recovery key
+3. Your data is decrypted using the recovery key path
+4. You can then set a new password
+
+### Regenerating Your Recovery Key
+
+If you believe your recovery key may be compromised:
+
+1. Go to **Account Settings → Security**
+2. Click **Regenerate Recovery Key**
+3. Enter your current password to verify your identity
+4. Save the new recovery key — the old one is invalidated
+
+## Password Changes
+
+When you change your password, your encryption key is automatically re-wrapped with your new password. Your data is **not** re-encrypted — only the key wrapper changes. This is fast and seamless.
+
+## Key Rotation
+
+You can rotate your encryption key for additional security:
+
+1. Go to **Account Settings → Security**
+2. Click **Rotate Encryption Key**
+3. Enter your password
+4. A new encryption key is generated and all data is re-encrypted
+
+<Warning>
+  Key rotation invalidates all heir and firm access. After rotating, you must re-grant access to any heirs or estate managers that had decryption access.
+</Warning>
+
+## Sharing Encrypted Data
+
+### With Heirs
+
+When you designate a [heir](/advanced/heir-access) and they have encryption enabled:
+
+1. Your encryption key is securely wrapped with the heir's public key
+2. The wrapped key is stored on the server (encrypted — we can't read it)
+3. When the heir accesses your portfolio, they unwrap your key using their private key
+4. Your data is decrypted in the heir's browser
+
+The heir never sees your password or encryption key directly.
+
+### With Estate Managers
+
+When you grant a [firm](/enterprise/for-clients) access to your encrypted portfolio:
+
+1. You encrypt your key with the firm's public key
+2. The firm decrypts using their private key
+3. All team members with access receive their own wrapped copy of the firm key
+
+Either you or the firm can revoke encryption access at any time — revocation is instant.
+
+## Disabling Encryption
+
+If you need to disable encryption (for example, before canceling your subscription):
+
+<Steps>
+  <Step title="Go to Account Settings → Security">
+    Navigate to the Encryption section.
+  </Step>
+  <Step title="Click 'Disable Encryption'">
+    Confirm that you want to decrypt all data.
+  </Step>
+  <Step title="Enter Your Password">
+    Your password verifies your identity and unlocks your encryption key.
+  </Step>
+  <Step title="Wait for Decryption">
+    All data is decrypted in your browser and re-uploaded in plaintext. This is atomic — either all data is decrypted or none is.
+  </Step>
+</Steps>
+
+<Note>
+  Disabling encryption also removes all heir and firm encryption keys. Those parties lose decryption access immediately.
+</Note>
+
+## Downgrading with Encryption
+
+If you cancel your Pro subscription while encryption is enabled:
+
+- Your data **remains encrypted** — you can still use the app
+- To fully cancel, you're prompted to decrypt your data first
+- The **Downgrade with Decrypt** modal guides you through decrypting before cancellation
+- This ensures you never lose access to your own data
+
+## Multi-Device and Multi-Tab
+
+- **Multi-tab**: Your encryption key is shared between browser tabs automatically using BroadcastChannel, so you only enter your password once
+- **Session persistence**: Your key is cached (encrypted) in session storage — it survives page refreshes but clears when you close the browser
+- **New devices**: You'll need to enter your password or recovery key when signing in on a new device
+
+## Security Details
+
+| Property | Detail |
+|----------|--------|
+| **Encryption algorithm** | AES-256-GCM (authenticated encryption) |
+| **Key derivation** | Argon2id (memory-hard, 64 MB) with PBKDF2 fallback |
+| **Key exchange** | X25519 (Curve25519 Diffie-Hellman) |
+| **Asymmetric encryption** | NaCl box (XSalsa20-Poly1305) |
+| **IV size** | 96-bit (12 bytes), randomly generated per encryption |
+| **Key size** | 256-bit master encryption key |
+| **Server storage** | Wrapped key blobs only — server never sees plaintext keys |
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can Storehouses read my encrypted data?">
+    No. Your encryption key is derived from your password on your device. We store only encrypted blobs and wrapped keys — we have no way to decrypt your data.
+  </Accordion>
+
+  <Accordion title="What happens if I lose both my password and recovery key?">
+    Your data cannot be recovered. This is by design — zero-knowledge encryption means no one, including us, can decrypt your data without your keys.
+  </Accordion>
+
+  <Accordion title="Does encryption slow down the app?">
+    Minimally. Encryption and decryption happen in your browser and are fast for typical portfolio sizes. You may notice a brief delay when loading large portfolios.
+  </Accordion>
+
+  <Accordion title="Can I use encryption on the free plan?">
+    You need a Pro or Lifetime subscription to enable encryption. However, if you enable it on Pro and later downgrade, your data stays encrypted until you choose to decrypt.
+  </Accordion>
+
+  <Accordion title="Is my data encrypted at rest on your servers?">
+    Yes, in two ways. Supabase (our database) encrypts all data at rest with AES-256. With E2EE enabled, your data is additionally encrypted with your personal key before it ever reaches the database.
+  </Accordion>
+
+  <Accordion title="What about search and filtering?">
+    Search and filtering work on unencrypted fields (category, value, dates). Encrypted text fields (titles, descriptions) are decrypted in your browser for display but cannot be searched server-side.
+  </Accordion>
+</AccordionGroup>
